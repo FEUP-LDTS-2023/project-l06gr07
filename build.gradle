@@ -1,19 +1,25 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
-group = 'org.example'
-version = '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
 
-repositories {
-    mavenCentral()
+application {
+    mainClass.set("org.example.Application")
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation group: 'com.googlecode.lanterna', name: 'lanterna', version: '3.1.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation 'org.mockito:mockito-core:3.7.7'
 }
 
 test {
     useJUnitPlatform()
+}
+
+repositories {
+    mavenCentral()
 }
