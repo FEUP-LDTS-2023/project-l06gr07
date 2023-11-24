@@ -1,4 +1,4 @@
 package org.crazytracks.control;
 
-public class ManuController {
+public class MenuController {
 }
