@@ -4,37 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CSFCollisionStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/CSFCollisionStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Coin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CoinViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/viewer/CoinViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CollisionStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/CollisionStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/control/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ElementViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/viewer/ElementViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EndGameCollisionStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/EndGameCollisionStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/control/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameOverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/control/GameOverController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameOverState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/control/GameOverState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameOverViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/control/GameOverViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/viewer/GameViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ManuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/control/ManuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/MenuState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MenuViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/viewer/MenuViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PowerUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/PowerUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PowerUpViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/viewer/PowerUpViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SICollisionStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/SICollisionStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Surfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Surfer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SurferViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/viewer/SurferViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Track.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TrackElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/TrackElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Wagon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Wagon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WagonViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/viewer/WagonViewer.java" afterDir="false" />
-    </list>
+    <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,8 +63,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "android.gradle.sync.needed": "true",
-    "git-widget-placeholder": "feature/initial__model",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
