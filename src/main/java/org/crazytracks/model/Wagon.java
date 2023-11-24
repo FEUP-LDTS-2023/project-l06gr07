@@ -1,4 +1,7 @@
 package org.crazytracks.model;
 
-public class Wagon {
+public class Wagon extends TrackElement {
+    public Wagon(Position position) {
+        super(position);
+    }
 }
