@@ -5,12 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ApplicationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CSFCollisionStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Coin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CoinViewer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CollisionStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Element.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ElementViewer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/EndGameCollisionStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GameOverController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GameOverState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GameOverViewer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GameState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GameViewer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ManuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/MenuState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/MenuViewer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PowerUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PowerUpViewer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SICollisionStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Surfer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SurferViewer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Track.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/TrackElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Wagon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/WagonViewer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ApplicationTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +68,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -67,8 +96,9 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "hero__example",
+    "git-widget-placeholder": "feature/initial__model",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -157,7 +187,9 @@
       <option name="presentableId" value="Default" />
       <updated>1700737417173</updated>
       <workItem from="1700737418067" duration="865000" />
-      <workItem from="1700738360885" duration="1720000" />
+      <workItem from="1700738360885" duration="2432000" />
+      <workItem from="1700829153943" duration="980000" />
+      <workItem from="1700837920589" duration="3219000" />
     </task>
     <servers />
   </component>
