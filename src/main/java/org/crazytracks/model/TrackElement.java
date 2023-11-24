@@ -1,7 +1,4 @@
-package org.example.model;
-
-import org.example.model.Element;
-import org.example.model.Position;
+package org.crazytracks.model;
 
 public class TrackElement extends Element {
     public TrackElement(Position position) {

@@ -1,4 +1,4 @@
-package org.example.viewer;
+package org.crazytracks.viewer;
 
 public class GameViewer {
 }

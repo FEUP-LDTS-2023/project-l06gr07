@@ -1,6 +1,6 @@
-package org.example.control;
+package org.crazytracks.control;
 
-import org.example.viewer.ElementViewer;
+import org.crazytracks.viewer.ElementViewer;
 
 public class GameOverViewer implements ElementViewer {
 }

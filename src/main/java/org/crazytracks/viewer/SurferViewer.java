@@ -1,6 +1,4 @@
-package org.example.viewer;
-
-import org.example.viewer.ElementViewer;
+package org.crazytracks.viewer;
 
 public class SurferViewer implements ElementViewer {
 }

@@ -1,4 +1,4 @@
-package org.example.control;
+package org.crazytracks.control;
 
 public class GameController {
 }

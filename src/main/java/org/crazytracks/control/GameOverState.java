@@ -1,6 +1,6 @@
-package org.example.control;
+package org.crazytracks.control;
 
-import org.example.model.State;
+import org.crazytracks.model.State;
 
 public class GameOverState implements State {
 }
