@@ -26,7 +26,7 @@
 - ### Architecture
 ---
 <p align="center">
-  <img width=500 src="UML-GERAL.drawio.png">
+  <img width=800 src="UML-GERAL.drawio.png">
 </p>
 This represents the overall design of our game, with its respective MVC architecture
 <br>
