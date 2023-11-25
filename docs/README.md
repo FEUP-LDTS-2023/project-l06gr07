@@ -8,7 +8,6 @@
 ### IMPLEMENTED FEATURES
 
 - **Viewer** - The game prints the elements of the game in the terminal window.
-  ![enter image description here](https://i.imgur.com/YMmuBER.png%5B/img%5D)
 
 - **Model** - The game has some attributes defined to each type of element in the track
 
@@ -24,7 +23,9 @@
 
 - ### Architecture
 ---
-![enter image description here](https://raw.githubusercontent.com/FEUP-LDTS-2023/project-l06gr07/main/docs/UML-GERAL.drawio.png?token=GHSAT0AAAAAACIVQ54QSWEHUDQTUN756GNUZLCCPEA)<br>
+<p align="center">
+  <img width=500 src="UML-GERAL.drawio.png">
+</p>
 This represents the overall design of our game, with its respective MVC architecture
 <br>
 ![enter image description here](https://i.imgur.com/GpUWKhi.png%5B/img%5D)<br>
