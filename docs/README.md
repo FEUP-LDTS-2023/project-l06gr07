@@ -1,32 +1,52 @@
 
 ## LDTS_<T><G>CRAZY-ROAD
 
--This game is a java version of Subway Surfers in 2D, you must move your character left and right to avoid being ran over by the trains.
--This project is being developed by _Abecassis Devesse_ (up202209729@fe.up.pt), _Daniel Basílio_ (up201806838@fe.up.pt) and _Rui Borges_ (up202207475@fe.up.pt) for LDTS 2023/2024
-
+- This game is a java version of Subway Surfers in 2D, you must move your character left and right to avoid being ran over by the trains.
+- This project is being developed by _Abecassis Devesse_ (up202209729@fe.up.pt), _Daniel Basílio_ (up201806838@fe.up.pt) and _Rui Borges_ (up202207475@fe.up.pt) for LDTS 2022/2023
 
 ### IMPLEMENTED FEATURES
 
-> This section should contain a list of implemented features and their descriptions. In the end of the section, include two or three screenshots that illustrate the most important features.
+- **Viewer** - The game prints the elements of the game in the terminal window.
+<p align="center">
+  <img src="https://i.imgur.com/YMmuBER.png%5B/img%5D">
+</p>
 
-**Examples**:
 
-- **Jumping** - The game character will jump when the space bar key is pressed.
-- **Getting hidden coins** - When the game character hits a platform from below (by jumping beneath it) it will smash that segment of the platform and will get any coins that may exist hidden there.
+- **Model** - The game has some attributes defined to each type of element in the track
 
 ### PLANNED FEATURES
 
-> This section is similar to the previous one but should list the features that are not yet implemented. Instead of screenshots you should include GUI mock-ups for the planned features.
+- **Movement** - The Surfer will be able to move left and right to avoid being ran over by the wagons.
+- **Power-Ups** -- The Surfer will be able to catch Power-ups like coins that will increase his score or trigger certain events.
+- **Wagon Collision** - Colliding with a Wagon will cause the Surfer to die.
+- **Menu** - When opening the game the player will have a Menu to choose what to do.
 
 ### DESIGN
 
-> This section should be organized in different subsections, each describing a different design problem that you had to solve during the project. Each subsection should be organized in four different parts:
+- ### Architecture
+---
+<p align="center">
+  <img width=800 src="UML-GERAL.drawio.png">
+</p>
+This represents the overall design of our game, with its respective MVC architecture
+<br>
+
+- **Model** - Stores the data from the game and the current state.
+- **View** - Interacts with the user showing the elements and gettin input data.
+- **Controller** - Defines the rules to be followed, coordinating all the processes that happen in the game.
+
+<br>
+
+- ### Design Patterns
+---
 
 - **Problem in Context.** The game will change beetwen the menu the game itself and the game over sub-menu.
 - **The Pattern.** For this problem we used the state
 - **Implementation.**
+<p align="center">
+<a><img src="https://i.imgur.com/sZIYSn8.png%5B/img%5D" alt=""></a>
+</p>
 
-![](https://i.imgur.com/sZIYSn8.png%5B/img%5D)
 -   **Consequences:**
     -   _Benefits:_
         -   **Maintainability:** With states isolated, making changes or adding new features specific to a state becomes simpler and less error-prone.
@@ -40,8 +60,9 @@
 -   **Problem in Context:** Introducing diverse objects within the game's tracks to enhance gameplay variety.
 -   **The Pattern:** We've utilized the Factory Method Pattern to manage the creation of diverse track objects effectively. This pattern allows us to encapsulate the creation logic for various track objects (such as obstacles, power-ups, or scenery elements) within separate factory classes. Each factory is responsible for generating a specific type of object, ensuring a cohesive and modular approach to object creation.
 -   **Implementation:**
-
-![Factory Method Pattern Implementation](https://i.imgur.com/6634eRB.png[/img])
+<p align="center">
+  <img width=500 src="https://i.imgur.com/6634eRB.png[/img]">
+</p>
 
 -   **Consequences:**
     -   _Benefits:_
@@ -57,8 +78,9 @@
 -   **Problem in Context:** Distinguishing reactions based on collisions between the player and different types of objects within the game.
 -   **The Pattern:** To address this, we've implemented the Strategy Pattern. This pattern enables us to encapsulate varying collision reactions into separate strategy classes. Each strategy represents a distinct reaction (e.g., player death or score increment) upon collision with different types of objects. By dynamically assigning the appropriate strategy to an object, we can control the player's reactions without modifying the player or object classes extensively.
 -   **Implementation:**
-
-![Strategy Pattern Implementation](https://i.imgur.com/q8V9mVg.png[/img])
+<p align="center">
+  <img width=500 src="https://i.imgur.com/q8V9mVg.png[/img]">
+</p>
 
 -   **Consequences:**
     -   _Benefits:_
@@ -82,10 +104,6 @@
 - Link to mutation testing report.
 
 ### SELF-EVALUATION
-
-> In this section describe how the work regarding the project was divided between the students. In the event that members of the group do not agree on a work distribution, the group should send an email to the teacher explaining the disagreement.
-
-**Example**:
 
 - John Doe: 40%
 - Jane Doe: 60%
