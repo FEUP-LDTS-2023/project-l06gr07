@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ConstructorsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TrackElementStrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Coin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/PowerUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/PowerUp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
