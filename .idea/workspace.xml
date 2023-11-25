@@ -5,29 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="">
-<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/MenuState.java" afterDir="false" />
-=======
-<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/Viewer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/CoinViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/CoinViewer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/ElementViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/ElementViewer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/GameViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/GameViewer.java" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/src/test/java/ConstructorsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TrackElementStrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Coin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/PowerUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/PowerUp.java" afterDir="false" />
->>>>>>> 8a6c807863c9d4051843d93c69fcf79889aca39e
->>>>>>> 78de752c07b17b11af25b1665e8d878d4750eab4
-    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,28 +64,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/initial__model",
-    "jdk.selected.JAVA_MODULE": "openjdk-21",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/ruiborges/FEUP/ldts/project-l06gr07/src/main/tests/src/main/java/org/crazytrackstest/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/initial__model&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/ruiborges/FEUP/ldts/project-l06gr07/src/main/tests/src/main/java/org/crazytrackstest/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Gradle.ConstructorsTest">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Game" />
