@@ -7,20 +7,34 @@
 
 ### IMPLEMENTED FEATURES
 
-> This section should contain a list of implemented features and their descriptions. In the end of the section, include two or three screenshots that illustrate the most important features.
+- **Viewer** - The game prints the elements of the game in the terminal window.
+  ![enter image description here](https://i.imgur.com/YMmuBER.png%5B/img%5D)
 
-**Examples**:
-
-- **Jumping** - The game character will jump when the space bar key is pressed.
-- **Getting hidden coins** - When the game character hits a platform from below (by jumping beneath it) it will smash that segment of the platform and will get any coins that may exist hidden there.
+- **Model** - The game has some attributes defined to each type of element in the track
 
 ### PLANNED FEATURES
 
-> This section is similar to the previous one but should list the features that are not yet implemented. Instead of screenshots you should include GUI mock-ups for the planned features.
+- **Movement** - The Surfer will be able to move left and right to avoid being ran over by the wagons.
+- **Power-Ups** -- The Surfer will be able to catch Power-ups like coins that will increase his score or trigger certain events.
+- **Wagon Collision** - Colliding with a Wagon will cause the Surfer to die.
+- **Menu** - When opening the game the player will have a Menu to choose what to do.
 
 ### DESIGN
+<br>
 
-> This section should be organized in different subsections, each describing a different design problem that you had to solve during the project. Each subsection should be organized in four different parts:
+- ### Architecture
+---
+![enter image description here](https://raw.githubusercontent.com/FEUP-LDTS-2023/project-l06gr07/main/docs/UML-GERAL.drawio.png?token=GHSAT0AAAAAACIVQ54QSWEHUDQTUN756GNUZLCCPEA)This represents the overall design of our game, with its respective MVC architecture
+<br>
+![enter image description here](https://i.imgur.com/GpUWKhi.png%5B/img%5D)<br>
+- **Model** - Stores the data from the game and the current state.
+- **View** - Interacts with the user showing the elements and gettin input data.
+- **Controller** - Defines the rules to be followed, coordinating all the processes that happen in the game.
+
+<br>
+
+- ### Design Patterns
+---
 
 - **Problem in Context.** The game will change beetwen the menu the game itself and the game over sub-menu.
 - **The Pattern.** For this problem we used the state
@@ -82,10 +96,6 @@
 - Link to mutation testing report.
 
 ### SELF-EVALUATION
-
-> In this section describe how the work regarding the project was divided between the students. In the event that members of the group do not agree on a work distribution, the group should send an email to the teacher explaining the disagreement.
-
-**Example**:
 
 - John Doe: 40%
 - Jane Doe: 60%
