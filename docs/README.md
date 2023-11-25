@@ -7,8 +7,9 @@
 ### IMPLEMENTED FEATURES
 
 - **Viewer** - The game prints the elements of the game in the terminal window.
-  ![Representative Image](https://i.imgur.com/YMmuBER.png%5B/img%5D)
-
+<p align="center">
+  <img src="https://i.imgur.com/YMmuBER.png%5B/img%5D">
+</p>
 
 
 - **Model** - The game has some attributes defined to each type of element in the track
@@ -21,7 +22,6 @@
 - **Menu** - When opening the game the player will have a Menu to choose what to do.
 
 ### DESIGN
-<br>
 
 - ### Architecture
 ---
