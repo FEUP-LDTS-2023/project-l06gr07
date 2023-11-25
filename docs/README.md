@@ -28,7 +28,7 @@
 </p>
 This represents the overall design of our game, with its respective MVC architecture
 <br>
-![enter image description here](https://i.imgur.com/GpUWKhi.png%5B/img%5D)<br>
+
 - **Model** - Stores the data from the game and the current state.
 - **View** - Interacts with the user showing the elements and gettin input data.
 - **Controller** - Defines the rules to be followed, coordinating all the processes that happen in the game.
