@@ -100,10 +100,13 @@ This represents the overall design of our game, with its respective MVC architec
 
 ### TESTING
 
-- Screenshot of coverage report.
-- Link to mutation testing report.
+<p align="center">
+<img width="500" src="coveragereport.png">
+</p>
+
 
 ### SELF-EVALUATION
 
-- John Doe: 40%
-- Jane Doe: 60%
+- Abecassis Devesse: x%
+- Daniel Basílio: x%
+- Rui Borges: x%
