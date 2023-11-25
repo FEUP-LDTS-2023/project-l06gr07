@@ -46,6 +46,7 @@ This represents the overall design of our game, with its respective MVC architec
 <p align="center">
 <a><img src="https://i.imgur.com/sZIYSn8.png%5B/img%5D" alt=""></a>
 </p>
+
 -   **Consequences:**
     -   _Benefits:_
         -   **Maintainability:** With states isolated, making changes or adding new features specific to a state becomes simpler and less error-prone.
