@@ -1,5 +1,5 @@
 package org.crazytracks.viewer;
 
-public interface ElementViewer {
+public interface ElementDrawer {
     public void draw();
 }
