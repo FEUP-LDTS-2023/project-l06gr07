@@ -39,7 +39,7 @@ public class ViewerTest {
 
         // sleep for a while to see the screen after testing
         try {
-            Thread.sleep(5000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

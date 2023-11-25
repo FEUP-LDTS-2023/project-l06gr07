@@ -3,11 +3,9 @@ package org.crazytracks.viewer;
 import org.crazytracks.gui.GUI;
 import org.crazytracks.model.Element;
 import org.crazytracks.model.GameState;
-import org.crazytracks.model.State;
 import org.crazytracks.model.Track;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class GameViewer implements Viewer {
@@ -27,7 +25,7 @@ public class GameViewer implements Viewer {
         this.elements = new ArrayList<Element>(); // get the elements from model
         for (Element element : elements){
 //            ElementDrawer drawer = element;
-            gui.drawElement(element.getView());
+//            gui.drawElement(element.getView());
         }
     }
 

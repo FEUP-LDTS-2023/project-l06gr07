@@ -3,9 +3,6 @@ package org.crazytracks.gui;
 import org.crazytracks.model.Position;
 
 public interface GUI {
-
-    void drawElement(Object view);
-
     void initGameGUI();
 
     void drawCoin(Position position);
