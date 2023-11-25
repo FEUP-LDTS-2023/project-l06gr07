@@ -1,5 +1,6 @@
 import com.googlecode.lanterna.screen.Screen;
 import org.crazytracks.gui.LanternaGUI;
+import org.crazytracks.model.Position;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -44,8 +45,25 @@ public class ViewerTest {
         }
     }
 
-    @Test
-    public void testGUIInitialization() {
+//    @Test
+//    public void testGUIInitialization() {
+//
+//    }
 
+    @Test
+    public void elementDrawerTest() {
+        Position coinPosition = new Position(17, 5);
+        Position surferPosition = new Position(16, 30);
+
+        lanternaGUI.drawCoin(coinPosition);
+        lanternaGUI.drawSurfer(surferPosition);
+        lanternaGUI.drawPowerUp(new Position(16, 25));
+
+        lanternaGUI.drawWagon(new Position(15, 8));
+        lanternaGUI.drawWagon(new Position(15, 9));
+        lanternaGUI.drawWagon(new Position(15, 10));
+        lanternaGUI.drawWagon(new Position(15, 11));
+
+        lanternaGUI.putScore(25);
     }
 }
