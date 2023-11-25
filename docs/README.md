@@ -26,7 +26,7 @@
 - ### Architecture
 ---
 <p align="center">
-  <img width=800 src="UML-GERAL.drawio.png">
+  <img width=800 src="generaluml.png">
 </p>
 This represents the overall design of our game, with its respective MVC architecture
 <br>
@@ -41,10 +41,12 @@ This represents the overall design of our game, with its respective MVC architec
 ---
 
 - **Problem in Context.** The game will change beetwen the menu the game itself and the game over sub-menu.
-- **The Pattern.** For this problem we used the state
+- **The Pattern.** or this problem we used the factory method pattern because it allows encapsolation of the object creating, and still allows for different types of objects to be added in the future respecting que Open Closed SOLID principle.
+
+
 - **Implementation.**
 <p align="center">
-<a><img src="https://i.imgur.com/sZIYSn8.png%5B/img%5D" alt=""></a>
+<a><img src="statepattern.png" alt=""></a>
 </p>
 
 -   **Consequences:**
@@ -61,7 +63,7 @@ This represents the overall design of our game, with its respective MVC architec
 -   **The Pattern:** We've utilized the Factory Method Pattern to manage the creation of diverse track objects effectively. This pattern allows us to encapsulate the creation logic for various track objects (such as obstacles, power-ups, or scenery elements) within separate factory classes. Each factory is responsible for generating a specific type of object, ensuring a cohesive and modular approach to object creation.
 -   **Implementation:**
 <p align="center">
-  <img width=500 src="https://i.imgur.com/6634eRB.png[/img]">
+  <img width=500 src="factorypattern.png">
 </p>
 
 -   **Consequences:**
@@ -79,7 +81,7 @@ This represents the overall design of our game, with its respective MVC architec
 -   **The Pattern:** To address this, we've implemented the Strategy Pattern. This pattern enables us to encapsulate varying collision reactions into separate strategy classes. Each strategy represents a distinct reaction (e.g., player death or score increment) upon collision with different types of objects. By dynamically assigning the appropriate strategy to an object, we can control the player's reactions without modifying the player or object classes extensively.
 -   **Implementation:**
 <p align="center">
-  <img width=500 src="https://i.imgur.com/q8V9mVg.png[/img]">
+  <img width=500 src="factorypattern.png">
 </p>
 
 -   **Consequences:**
@@ -93,20 +95,10 @@ This represents the overall design of our game, with its respective MVC architec
 
 ---
 
-
-#### KNOWN CODE SMELLS
-
-> This section should describe 3 to 5 different code smells that you have identified in your current implementation.
-
 ### TESTING
 
 <p align="center">
 <img width="500" src="coveragereport.png">
 </p>
 
-
-### SELF-EVALUATION
-
-- Abecassis Devesse: x%
-- Daniel Basílio: x%
-- Rui Borges: x%
+---
