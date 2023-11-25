@@ -101,4 +101,3 @@ This represents the overall design of our game, with its respective MVC architec
 <img width="500" src="coveragereport.png">
 </p>
 
----
