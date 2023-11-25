@@ -4,10 +4,12 @@
 -This game is a java version of Subway Surfers in 2D, you must move your character left and right to avoid being ran over by the trains.
 -This project is being developed by _Abecassis Devesse_ (up202209729@fe.up.pt), _Daniel Basílio_ (up201806838@fe.up.pt) and _Rui Borges_ (up202207475@fe.up.pt) for LDTS 2022/2023
 
-
 ### IMPLEMENTED FEATURES
 
 - **Viewer** - The game prints the elements of the game in the terminal window.
+  ![Representative Image](https://i.imgur.com/YMmuBER.png%5B/img%5D)
+
+
 
 - **Model** - The game has some attributes defined to each type of element in the track
 
@@ -41,8 +43,9 @@ This represents the overall design of our game, with its respective MVC architec
 - **Problem in Context.** The game will change beetwen the menu the game itself and the game over sub-menu.
 - **The Pattern.** For this problem we used the state
 - **Implementation.**
-
-![](https://i.imgur.com/sZIYSn8.png%5B/img%5D)
+<p align="center">
+<a><img src="https://i.imgur.com/sZIYSn8.png%5B/img%5D" alt=""></a>
+</p>
 -   **Consequences:**
     -   _Benefits:_
         -   **Maintainability:** With states isolated, making changes or adding new features specific to a state becomes simpler and less error-prone.
@@ -56,8 +59,9 @@ This represents the overall design of our game, with its respective MVC architec
 -   **Problem in Context:** Introducing diverse objects within the game's tracks to enhance gameplay variety.
 -   **The Pattern:** We've utilized the Factory Method Pattern to manage the creation of diverse track objects effectively. This pattern allows us to encapsulate the creation logic for various track objects (such as obstacles, power-ups, or scenery elements) within separate factory classes. Each factory is responsible for generating a specific type of object, ensuring a cohesive and modular approach to object creation.
 -   **Implementation:**
-
-![Factory Method Pattern Implementation](https://i.imgur.com/6634eRB.png[/img])
+<p align="center">
+  <img width=500 src="https://i.imgur.com/6634eRB.png[/img]">
+</p>
 
 -   **Consequences:**
     -   _Benefits:_
@@ -73,8 +77,9 @@ This represents the overall design of our game, with its respective MVC architec
 -   **Problem in Context:** Distinguishing reactions based on collisions between the player and different types of objects within the game.
 -   **The Pattern:** To address this, we've implemented the Strategy Pattern. This pattern enables us to encapsulate varying collision reactions into separate strategy classes. Each strategy represents a distinct reaction (e.g., player death or score increment) upon collision with different types of objects. By dynamically assigning the appropriate strategy to an object, we can control the player's reactions without modifying the player or object classes extensively.
 -   **Implementation:**
-
-![Strategy Pattern Implementation](https://i.imgur.com/q8V9mVg.png[/img])
+<p align="center">
+  <img width=500 src="https://i.imgur.com/q8V9mVg.png[/img]">
+</p>
 
 -   **Consequences:**
     -   _Benefits:_
