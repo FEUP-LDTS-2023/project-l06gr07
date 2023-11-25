@@ -99,7 +99,7 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawWagon(Position position) {
-        TextCharacter coinCharacter = new TextCharacter('H')
+        TextCharacter coinCharacter = new TextCharacter('█')
                 .withForegroundColor(TextColor.ANSI.RED)
                 .withBackgroundColor(TextColor.ANSI.WHITE);
         screen.setCharacter(position.getX(), position.getY(), coinCharacter);
