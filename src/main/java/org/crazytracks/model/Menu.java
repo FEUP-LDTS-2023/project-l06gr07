@@ -27,7 +27,7 @@ public class Menu{
         return entries.get(i);
     }
 
-    public boolean IsSelected() {
-        return currentEntry == 0;
+    public boolean IsSelected(int entry) {
+        return currentEntry == entry;
     }
 }
