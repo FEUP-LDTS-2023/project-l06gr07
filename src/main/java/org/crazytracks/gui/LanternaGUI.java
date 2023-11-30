@@ -16,19 +16,23 @@ import java.io.IOException;
 
 public class LanternaGUI implements GUI {
     private final Screen screen;
-    private final int terminalWidth = 30;
-    private final int terminalHeight = 40;
-    public LanternaGUI() throws IOException {
-        Font myFont = new Font("Monospaced", Font.PLAIN, 20); // Change the number 20 to your desired font size
+    private final int terminalWidth;
+    private final int terminalHeight;
+    private int leftMargin;
+    PositionAdapter positionAdapter;
+    public LanternaGUI(int terminalWidth, int terminalHeight) throws IOException {
+        this.leftMargin = 14;
+        this.terminalWidth = terminalWidth;
+        this.terminalHeight = terminalHeight;
+
+        Font myFont = new Font("Monospaced", Font.PLAIN, 20);
         AWTTerminalFontConfiguration myFontConfiguration = AWTTerminalFontConfiguration.newInstance(myFont);
-        // Use myFontConfiguration when creating your terminal
-        // Create a default terminal (will use Swing on desktop)
-        // Use myFontConfiguration when creating your terminal
         DefaultTerminalFactory dtf = new DefaultTerminalFactory()
                 .setInitialTerminalSize(new TerminalSize(terminalWidth, terminalHeight));
         dtf.setForceAWTOverSwing(true);
         dtf.setTerminalEmulatorFontConfiguration(myFontConfiguration);
         Terminal terminal = dtf.createTerminal();
+
         this.screen = new TerminalScreen(terminal);
         this.screen.startScreen();
     }
@@ -36,20 +40,19 @@ public class LanternaGUI implements GUI {
     @Override
     public void initGameGUI() {
 
-        int leftMargin = 15;
         int trackWidth = 3;
         int trackHeight = this.terminalHeight;
 
         TextCharacter solidBlock = new TextCharacter(' ').withBackgroundColor(TextColor.ANSI.WHITE);
 
         for (int y = 0; y < trackHeight; y++) {
-            for (int x = leftMargin; x < leftMargin + trackWidth; x++) {
+            for (int x = this.leftMargin; x < this.leftMargin + trackWidth; x++) {
                 screen.setCharacter(x, y, solidBlock);
             }
         }
 
         try {
-            screen.refresh(); // Refresh the screen to display changes
+            screen.refresh();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -60,13 +63,7 @@ public class LanternaGUI implements GUI {
         TextCharacter coinCharacter = new TextCharacter('$')
                 .withForegroundColor(TextColor.ANSI.YELLOW)
                 .withBackgroundColor(TextColor.ANSI.WHITE);
-        screen.setCharacter(position.getX(), position.getY(), coinCharacter);
-
-        try {
-            screen.refresh();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        putCharacter(position, coinCharacter);
     }
 
     @Override
@@ -74,13 +71,7 @@ public class LanternaGUI implements GUI {
         TextCharacter surferCharacter = new TextCharacter('O')
                 .withForegroundColor(TextColor.ANSI.BLUE)
                 .withBackgroundColor(TextColor.ANSI.WHITE);
-        screen.setCharacter(position.getX(), position.getY(), surferCharacter);
-
-        try {
-            screen.refresh();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        putCharacter(position, surferCharacter);
     }
 
     @Override
@@ -88,21 +79,21 @@ public class LanternaGUI implements GUI {
         TextCharacter powerUpCharacter = new TextCharacter('↑')
                 .withForegroundColor(TextColor.ANSI.GREEN)
                 .withBackgroundColor(TextColor.ANSI.WHITE);
-        screen.setCharacter(position.getX(), position.getY(), powerUpCharacter);
-
-        try {
-            screen.refresh();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        putCharacter(position, powerUpCharacter);
     }
 
     @Override
     public void drawWagon(Position position) {
-        TextCharacter coinCharacter = new TextCharacter('█')
-                .withForegroundColor(TextColor.ANSI.RED)
-                .withBackgroundColor(TextColor.ANSI.WHITE);
-        screen.setCharacter(position.getX(), position.getY(), coinCharacter);
+        TextCharacter wagonCharacter = new TextCharacter('H')
+                .withForegroundColor(TextColor.ANSI.BLACK)
+                .withBackgroundColor(TextColor.ANSI.RED);
+        putCharacter(position, wagonCharacter);
+    }
+
+    private void putCharacter(Position position, TextCharacter wagonCharacter) {
+        PositionAdapter positionAdapter = new PositionAdapter(this.leftMargin, this.terminalHeight-1);
+        Position adaptedPosition = positionAdapter.adaptPosition(position);
+        screen.setCharacter(adaptedPosition.getX(), adaptedPosition.getY(), wagonCharacter);
 
         try {
             screen.refresh();
@@ -114,14 +105,13 @@ public class LanternaGUI implements GUI {
     @Override
     public void putScore(int score) {
         TextGraphics textGraphics = screen.newTextGraphics();
-
         int x = 2;
         int y = 2;
         textGraphics.setForegroundColor(TextColor.ANSI.WHITE);
         textGraphics.putString(x, y, "Score: " + String.valueOf(score));
 
         try {
-            screen.refresh(); // Refresh the screen to display changes
+            screen.refresh();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
