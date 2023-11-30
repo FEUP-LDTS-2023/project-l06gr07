@@ -18,7 +18,7 @@ public class ViewerTest {
     @BeforeEach
     public void setUp() {
         try {
-            lanternaGUI = new LanternaGUI();
+            lanternaGUI = new LanternaGUI(30, 30);
             lanternaGUI.initGameGUI();
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,24 +45,30 @@ public class ViewerTest {
         }
     }
 
-//    @Test
-//    public void testGUIInitialization() {
-//
-//    }
-
     @Test
     public void elementDrawerTest() {
-        Position coinPosition = new Position(17, 5);
-        Position surferPosition = new Position(16, 30);
+        Position coinPosition = new Position(2, 5);
+        Position surferPosition = new Position(1, 0);
 
         lanternaGUI.drawCoin(coinPosition);
         lanternaGUI.drawSurfer(surferPosition);
-        lanternaGUI.drawPowerUp(new Position(16, 25));
+        lanternaGUI.drawPowerUp(new Position(1, 25));
 
-        lanternaGUI.drawWagon(new Position(15, 8));
-        lanternaGUI.drawWagon(new Position(15, 9));
-        lanternaGUI.drawWagon(new Position(15, 10));
-        lanternaGUI.drawWagon(new Position(15, 11));
+        lanternaGUI.drawWagon(new Position(0, 8));
+        lanternaGUI.drawWagon(new Position(0, 9));
+        lanternaGUI.drawWagon(new Position(0, 10));
+        lanternaGUI.drawWagon(new Position(0, 11));
+
+        lanternaGUI.drawWagon(new Position(1, 14));
+        lanternaGUI.drawWagon(new Position(1, 15));
+        lanternaGUI.drawWagon(new Position(1, 16));
+
+        lanternaGUI.drawWagon(new Position(0, 22));
+        lanternaGUI.drawWagon(new Position(0, 23));
+
+        lanternaGUI.drawWagon(new Position(2, 21));
+        lanternaGUI.drawWagon(new Position(2, 22));
+        lanternaGUI.drawWagon(new Position(2, 23));
 
         lanternaGUI.putScore(25);
     }
