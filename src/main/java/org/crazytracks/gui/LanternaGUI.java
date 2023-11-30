@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.List;
 
 public class LanternaGUI implements GUI {
     private final Screen screen;
@@ -57,6 +58,7 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void initGameGUI() {
+        clearScreen();
         int trackHeight = this.terminalHeight;
 
         // Paint the grass
@@ -95,6 +97,10 @@ public class LanternaGUI implements GUI {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void initMenuGUI(){
+        clearScreen();
     }
 
     @Override
@@ -172,6 +178,29 @@ public class LanternaGUI implements GUI {
             screen.refresh();
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void drawMenu(List<String> options, int selected) {
+        for (int i = 0; i < options.size(); i++){
+            TextGraphics textGraphics = screen.newTextGraphics();
+            int x = 5;
+            int y = i*2 + 5;
+            textGraphics
+                    .setForegroundColor(TextColor.ANSI.GREEN)
+                    .setBackgroundColor(TextColor.ANSI.WHITE);
+            textGraphics.putString(x, y, "X " + String.valueOf(options.get(i)));
+        }
+    }
+
+    @Override
+    public void clearScreen() {
+        TextCharacter solidBlock = new TextCharacter(' ').withBackgroundColor(TextColor.ANSI.BLACK);
+        for (int y = 0; y < this.terminalHeight; y++) {
+            for (int x = 0; x < this.terminalWidth; x++) {
+                screen.setCharacter(x, y, solidBlock);
+            }
         }
     }
 }

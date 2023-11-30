@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.net.URISyntaxException;
 
-public class ViewerTest {
+public class GameViewerTest {
     private LanternaGUI lanternaGUI;
     private Screen screen;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -85,6 +85,6 @@ public class ViewerTest {
         lanternaGUI.drawWagon(new Position(2, 38));
 
         lanternaGUI.putScore(25);
-        lanternaGUI.putMultiplier(25);
+        lanternaGUI.putMultiplier(3);
     }
 }
