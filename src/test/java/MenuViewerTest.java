@@ -24,10 +24,10 @@ public class MenuViewerTest {
     public void setUp() {
         try {
             lanternaGUI = new LanternaGUI(30, 40);
-            lanternaGUI.initMenuGUI();
         } catch (IOException | URISyntaxException | FontFormatException e) {
             e.printStackTrace();
         }
+        lanternaGUI.clearScreen();
         System.setOut(new PrintStream(outContent));
     }
 
@@ -57,7 +57,6 @@ public class MenuViewerTest {
         List<String> options = new ArrayList<>();
         options.add("Start");
         options.add("Exit");
-
         lanternaGUI.drawMenu(options, selected);
     }
 
