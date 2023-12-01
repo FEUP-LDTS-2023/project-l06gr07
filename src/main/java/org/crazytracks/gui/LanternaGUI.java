@@ -86,13 +86,13 @@ public class LanternaGUI implements GUI {
         paintBorders(xMargin, animMode, borderColor);
     }
 
-    public void paintBorders(int xMargin, int animMode, TextColor bgColor){
+    private void paintBorders(int xMargin, int animMode, TextColor bgColor){
         // Paint the borders of track
         TextCharacter block;
         int x = xMargin-1;
         paintOneBorder(x, animMode, bgColor);
         x = xMargin + numLanes;
-        paintOneBorder(x, animMode+1, bgColor);
+        paintOneBorder(x, (animMode+1)%2, bgColor);
 
         try {
             screen.refresh();
@@ -101,7 +101,7 @@ public class LanternaGUI implements GUI {
         }
     }
 
-    public void paintOneBorder(int xMargin, int animMode, TextColor bgColor){
+    private void paintOneBorder(int xMargin, int animMode, TextColor bgColor){
         TextCharacter block;
         for (int y = 0; y < terminalHeight; y++) {
             if (y%2 == animMode){
