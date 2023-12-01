@@ -6,7 +6,7 @@ plugins {
 sourceCompatibility = 1.8
 
 application {
-    mainClass.set("org.example.Game")
+    mainClass.set("org.crazytracks.Game")
 }
 
 dependencies {
