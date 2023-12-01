@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fonts/AnonymousPro-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/LanternaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/LanternaGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ViewerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ViewerTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,8 +82,8 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.ViewerTest">
-    <configuration name="ConstructorsTest.MenuStateConstructor" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.MenuViewerTest">
+    <configuration name="GameViewerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -104,7 +96,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ConstructorsTest.MenuStateConstructor&quot;" />
+            <option value="&quot;GameViewerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -115,7 +107,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ConstructorsTest.TrackConstructor" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MenuViewerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -128,7 +120,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ConstructorsTest.TrackConstructor&quot;" />
+            <option value="&quot;MenuViewerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -211,11 +203,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.MenuViewerTest" />
+        <item itemvalue="Gradle.GameViewerTest" />
         <item itemvalue="Gradle.ViewerTest" />
         <item itemvalue="Gradle.PositionAdapterTest" />
         <item itemvalue="Gradle.Tests in 'project-l06gr07.test'" />
-        <item itemvalue="Gradle.ConstructorsTest.TrackConstructor" />
-        <item itemvalue="Gradle.ConstructorsTest.MenuStateConstructor" />
       </list>
     </recent_temporary>
   </component>

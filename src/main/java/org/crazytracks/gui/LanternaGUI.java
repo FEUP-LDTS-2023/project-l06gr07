@@ -9,6 +9,7 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import jdk.javadoc.internal.doclets.formats.html.markup.Text;
 import org.crazytracks.model.Position;
 
 import java.awt.*;
@@ -16,9 +17,10 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.List;
 
 public class LanternaGUI implements GUI {
-    private final Screen screen;
+    private Screen screen;
     private final int terminalWidth;
     private final int terminalHeight;
     private final int numLanes = 3;
@@ -57,6 +59,7 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void initGameGUI() {
+        clearScreen();
         int trackHeight = this.terminalHeight;
 
         // Paint the grass
@@ -66,35 +69,57 @@ public class LanternaGUI implements GUI {
                 screen.setCharacter(x, y, solidBlock);
             }
         }
+        TextColor borderColor = TextColor.ANSI.WHITE;
+        paintTrack(this.leftMargin, borderColor);
+    }
 
+    public void paintTrack(int xMargin, TextColor borderColor){
         // Paint the track
-        solidBlock = new TextCharacter('H')
+        TextCharacter block = new TextCharacter('H')
                 .withForegroundColor(TextColor.ANSI.WHITE)
                 .withBackgroundColor(trackColor);
-        for (int y = 0; y < trackHeight; y++) {
-            for (int x = this.leftMargin; x < this.leftMargin + this.numLanes; x++) {
-                screen.setCharacter(x, y, solidBlock);
+        for (int y = 0; y < terminalHeight; y++) {
+            for (int x = xMargin; x < xMargin + this.numLanes; x++) {
+                screen.setCharacter(x, y, block);
             }
         }
+        paintBorders(xMargin, 0, borderColor);
+    }
 
+    public void paintBorders(int xMargin, int animMode, TextColor bgColor){
         // Paint the borders of track
-        solidBlock = new TextCharacter(':')
-                .withForegroundColor(TextColor.ANSI.BLACK)
-                .withBackgroundColor(TextColor.ANSI.GREEN);
-        int x = this.leftMargin-1;
-        for (int y = 0; y < this.terminalHeight; y++) {
-            screen.setCharacter(x, y, solidBlock);
-        }
-        x = this.leftMargin + this.numLanes;
-        for (int y = 0; y < this.terminalHeight; y++) {
-            screen.setCharacter(x, y, solidBlock);
-        }
+        TextCharacter block;
+        int x = xMargin-1;
+        paintOneBorder(x, animMode, bgColor);
+        x = xMargin + numLanes;
+        paintOneBorder(x, animMode+1, bgColor);
 
         try {
             screen.refresh();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void paintOneBorder(int xMargin, int animMode, TextColor bgColor){
+        TextCharacter block;
+        for (int y = 0; y < terminalHeight; y++) {
+            if (y%2 == animMode){
+                block = new TextCharacter(':')
+                        .withForegroundColor(TextColor.ANSI.BLACK)
+                        .withBackgroundColor(bgColor);
+                screen.setCharacter(xMargin, y, block);
+            } else {
+                block = new TextCharacter(' ')
+                        .withForegroundColor(TextColor.ANSI.BLACK)
+                        .withBackgroundColor(bgColor);
+                screen.setCharacter(xMargin, y, block);
+            }
+        }
+    }
+
+    public void initMenuGUI(){
+        clearScreen();
     }
 
     @Override
@@ -172,6 +197,63 @@ public class LanternaGUI implements GUI {
             screen.refresh();
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void drawMenu(List<String> options, int selected) {
+        int logoTopMargin = 10;
+        int textLeftMargin = 3;
+        int textTopMargin = 8;
+
+        int trackLeftMargin = 22;
+
+        paintLogo(textLeftMargin, logoTopMargin);
+        paintOptions(textLeftMargin, textTopMargin + logoTopMargin, options, selected);
+
+        TextColor borderColor = TextColor.ANSI.GREEN;
+        paintTrack(trackLeftMargin, borderColor);
+    }
+
+    public void paintLogo(int xMargin, int yMargin){
+        TextGraphics textGraphics = screen.newTextGraphics();
+        textGraphics
+                .setForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
+                .setBackgroundColor(TextColor.ANSI.BLACK);
+        textGraphics.putString(xMargin, yMargin, "CrazyTracks");
+    }
+    public void paintOptions(int xMargin, int yMargin, List<String> options, int selected){
+        TextGraphics textGraphics;
+        // draw the options in the screen
+        for (int i = 0; i < options.size(); i++){
+            textGraphics = screen.newTextGraphics();
+            int y = i*2 + yMargin;
+            if (selected == i){
+                textGraphics
+                        .setForegroundColor(TextColor.ANSI.BLACK)
+                        .setBackgroundColor(TextColor.ANSI.WHITE);
+            } else {
+                textGraphics
+                        .setForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
+                        .setBackgroundColor(TextColor.ANSI.BLACK);
+            }
+            textGraphics.putString(xMargin, y, options.get(i));
+        }
+
+        try {
+            screen.refresh();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void clearScreen() {
+        TextCharacter solidBlock = new TextCharacter(' ').withBackgroundColor(TextColor.ANSI.BLACK);
+        for (int y = 0; y < this.terminalHeight; y++) {
+            for (int x = 0; x < this.terminalWidth; x++) {
+                screen.setCharacter(x, y, solidBlock);
+            }
         }
     }
 }
