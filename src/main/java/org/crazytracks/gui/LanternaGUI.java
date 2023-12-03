@@ -70,10 +70,10 @@ public class LanternaGUI implements GUI {
             }
         }
         TextColor borderColor = TextColor.ANSI.WHITE;
-        paintTrack(this.leftMargin, borderColor);
+        drawTrack(this.leftMargin, 0, borderColor);
     }
 
-    public void paintTrack(int xMargin, TextColor borderColor){
+    public void drawTrack(int xMargin, int animMode, TextColor borderColor){
         // Paint the track
         TextCharacter block = new TextCharacter('H')
                 .withForegroundColor(TextColor.ANSI.WHITE)
@@ -83,16 +83,16 @@ public class LanternaGUI implements GUI {
                 screen.setCharacter(x, y, block);
             }
         }
-        paintBorders(xMargin, 0, borderColor);
+        paintBorders(xMargin, animMode, borderColor);
     }
 
-    public void paintBorders(int xMargin, int animMode, TextColor bgColor){
+    private void paintBorders(int xMargin, int animMode, TextColor bgColor){
         // Paint the borders of track
         TextCharacter block;
         int x = xMargin-1;
         paintOneBorder(x, animMode, bgColor);
         x = xMargin + numLanes;
-        paintOneBorder(x, animMode+1, bgColor);
+        paintOneBorder(x, (animMode+1)%2, bgColor);
 
         try {
             screen.refresh();
@@ -101,7 +101,7 @@ public class LanternaGUI implements GUI {
         }
     }
 
-    public void paintOneBorder(int xMargin, int animMode, TextColor bgColor){
+    private void paintOneBorder(int xMargin, int animMode, TextColor bgColor){
         TextCharacter block;
         for (int y = 0; y < terminalHeight; y++) {
             if (y%2 == animMode){
@@ -155,9 +155,7 @@ public class LanternaGUI implements GUI {
     }
 
     private void putCharacter(Position position, TextCharacter wagonCharacter) {
-        PositionAdapter positionAdapter = new PositionAdapter(this.leftMargin, this.terminalHeight-1);
-        Position adaptedPosition = positionAdapter.adaptPosition(position);
-        screen.setCharacter(adaptedPosition.getX(), adaptedPosition.getY(), wagonCharacter);
+        screen.setCharacter(position.getX(), position.getY(), wagonCharacter);
 
         try {
             screen.refresh();
@@ -212,7 +210,7 @@ public class LanternaGUI implements GUI {
         paintOptions(textLeftMargin, textTopMargin + logoTopMargin, options, selected);
 
         TextColor borderColor = TextColor.ANSI.GREEN;
-        paintTrack(trackLeftMargin, borderColor);
+        TrackAnimation animTrack = new TrackAnimation(this, trackLeftMargin, borderColor, this.terminalHeight);
     }
 
     private void paintLogo(int xMargin, int yMargin){
@@ -255,5 +253,9 @@ public class LanternaGUI implements GUI {
                 screen.setCharacter(x, y, solidBlock);
             }
         }
+    }
+
+    public int getTerminalHeight() {
+        return this.terminalHeight;
     }
 }
