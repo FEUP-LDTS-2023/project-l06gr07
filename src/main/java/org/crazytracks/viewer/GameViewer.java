@@ -16,15 +16,13 @@ public class GameViewer implements Viewer {
     private List<Element> elements;
     private int numLanes;
     private int numTrackHeight;
-    private GUI gui;
+
     public GameViewer() throws IOException, URISyntaxException, FontFormatException {
         this.numLanes = 3; // width of the track in tiles
         this.numTrackHeight = 20; // height in tiles
-        this.gui = new LanternaGUI(30, 40);
-        gui.initGameGUI();
     }
     @Override
-    public void updateGUI() {
+    public void draw(GUI gui) {
         GameState model = new GameState(new Track()); // get the model
         this.elements = new ArrayList<Element>(); // get the elements from model
         for (Element element : elements){

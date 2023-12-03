@@ -99,8 +99,8 @@ public class TrackAnimation {
             PositionAdapter positionAdapter = new PositionAdapter(this.xMargin, this.trackHeight-1);
             Position adaptedPosition = positionAdapter.adaptPosition(te.getPosition());
             gui.drawWagon(adaptedPosition);
-            gui.refreshScreen();
         }
+        gui.refreshScreen();
     }
 
 }
