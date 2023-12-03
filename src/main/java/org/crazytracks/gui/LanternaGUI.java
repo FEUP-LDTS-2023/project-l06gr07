@@ -174,11 +174,7 @@ public class LanternaGUI implements GUI {
                 .setBackgroundColor(TextColor.ANSI.GREEN);
         textGraphics.putString(x, y, "Score: " + String.valueOf(score));
 
-        try {
-            screen.refresh();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        refreshScreen();
     }
 
     @Override
@@ -191,6 +187,10 @@ public class LanternaGUI implements GUI {
                 .setBackgroundColor(TextColor.ANSI.GREEN);
         textGraphics.putString(x, y, "X" + String.valueOf(powerUpValue));
 
+        refreshScreen();
+    }
+
+    public void refreshScreen() {
         try {
             screen.refresh();
         } catch (IOException e) {
@@ -238,11 +238,7 @@ public class LanternaGUI implements GUI {
             textGraphics.putString(xMargin, y, options.get(i));
         }
 
-        try {
-            screen.refresh();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        refreshScreen();
     }
 
     @Override

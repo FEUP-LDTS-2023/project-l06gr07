@@ -16,4 +16,6 @@ public interface GUI {
     void putMultiplier(int powerUpValue);
     void drawMenu(List<String> options, int selected);
     void clearScreen();
+
+    void refreshScreen();
 }
