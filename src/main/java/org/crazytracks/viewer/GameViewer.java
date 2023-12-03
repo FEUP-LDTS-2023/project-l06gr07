@@ -1,10 +1,14 @@
 package org.crazytracks.viewer;
 
 import org.crazytracks.gui.GUI;
+import org.crazytracks.gui.LanternaGUI;
 import org.crazytracks.model.Element;
 import org.crazytracks.model.GameState;
 import org.crazytracks.model.Track;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,10 +17,10 @@ public class GameViewer implements Viewer {
     private int numLanes;
     private int numTrackHeight;
     private GUI gui;
-    public GameViewer(GUI gui){
+    public GameViewer() throws IOException, URISyntaxException, FontFormatException {
         this.numLanes = 3; // width of the track in tiles
         this.numTrackHeight = 20; // height in tiles
-        this.gui = gui;
+        this.gui = new LanternaGUI(30, 40);
         gui.initGameGUI();
     }
     @Override
