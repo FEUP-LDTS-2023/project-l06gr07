@@ -193,14 +193,14 @@ public class LanternaGUI implements GUI {
         TrackAnimation animTrack = new TrackAnimation(this, trackLeftMargin, borderColor, this.terminalHeight);
     }
 
-    public void paintLogo(int xMargin, int yMargin){
+    private void paintLogo(int xMargin, int yMargin){
         TextGraphics textGraphics = screen.newTextGraphics();
         textGraphics
                 .setForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
                 .setBackgroundColor(TextColor.ANSI.BLACK);
         textGraphics.putString(xMargin, yMargin, "CrazyTracks");
     }
-    public void paintOptions(int xMargin, int yMargin, List<String> options, int selected){
+    private void paintOptions(int xMargin, int yMargin, List<String> options, int selected){
         TextGraphics textGraphics;
         // draw the options in the screen
         for (int i = 0; i < options.size(); i++){
@@ -217,6 +217,11 @@ public class LanternaGUI implements GUI {
             }
             textGraphics.putString(xMargin, y, options.get(i));
         }
+<<<<<<< HEAD
+=======
+
+        refreshScreen();
+>>>>>>> 3cb26f2aa4fae63373b032e8ee4b20dacd93d81d
     }
 
     @Override

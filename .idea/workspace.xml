@@ -6,9 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/LanternaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/LanternaGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/TrackAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/TrackAnimation.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/TrackAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/TrackAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/GameViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/GameViewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/Viewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/Viewer.java" afterDir="false" />
+>>>>>>> 3cb26f2aa4fae63373b032e8ee4b20dacd93d81d
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +71,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
@@ -88,6 +95,31 @@
   }
 }</component>
   <component name="RunManager" selected="Gradle.MenuViewerTest.menuViewerTest">
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "feature/initial__view",
+    "last_opened_file_path": "/home/daniel/Documents/FEUP_LEIC/1º semestre/LDTS/project/project-l06gr07",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Gradle.MenuViewerTest">
+>>>>>>> 3cb26f2aa4fae63373b032e8ee4b20dacd93d81d
     <configuration name="GameViewerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
