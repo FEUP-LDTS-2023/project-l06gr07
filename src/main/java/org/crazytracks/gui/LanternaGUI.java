@@ -217,11 +217,6 @@ public class LanternaGUI implements GUI {
             }
             textGraphics.putString(xMargin, y, options.get(i));
         }
-<<<<<<< HEAD
-=======
-
-        refreshScreen();
->>>>>>> 3cb26f2aa4fae63373b032e8ee4b20dacd93d81d
     }
 
     @Override
