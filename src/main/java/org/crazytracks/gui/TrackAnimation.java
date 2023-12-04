@@ -1,5 +1,4 @@
 package org.crazytracks.gui;
-
 import com.googlecode.lanterna.TextColor;
 import org.crazytracks.model.Position;
 import org.crazytracks.model.TrackElement;
@@ -52,16 +51,47 @@ public class TrackAnimation {
         loadedTrack.add(new Wagon(new Position(2, 27)));
         loadedTrack.add(new Wagon(new Position(2, 28)));
 
+        loadedTrack.add(new Wagon(new Position(0, 22)));
+        loadedTrack.add(new Wagon(new Position(0, 23)));
+        loadedTrack.add(new Wagon(new Position(0, 24)));
+        loadedTrack.add(new Wagon(new Position(0, 25)));
+        loadedTrack.add(new Wagon(new Position(0, 26)));
+        loadedTrack.add(new Wagon(new Position(0, 27)));
+
+        loadedTrack.add(new Wagon(new Position(1, 12)));
+        loadedTrack.add(new Wagon(new Position(1, 13)));
+        loadedTrack.add(new Wagon(new Position(1, 14)));
+        loadedTrack.add(new Wagon(new Position(1, 15)));
+
+        loadedTrack.add(new Wagon(new Position(1, 5)));
+        loadedTrack.add(new Wagon(new Position(1, 6)));
+
+        loadedTrack.add(new Wagon(new Position(1, 34)));
+        loadedTrack.add(new Wagon(new Position(1, 35)));
+
+        loadedTrack.add(new Wagon(new Position(2, 35)));
+        loadedTrack.add(new Wagon(new Position(2, 36)));
+        loadedTrack.add(new Wagon(new Position(2, 37)));
+        loadedTrack.add(new Wagon(new Position(2, 38)));
+        loadedTrack.add(new Wagon(new Position(2, 39)));
+        loadedTrack.add(new Wagon(new Position(2, 40)));
+        loadedTrack.add(new Wagon(new Position(2, 41)));
+        loadedTrack.add(new Wagon(new Position(2, 42)));
+
         return loadedTrack;
     }
     private void decrementYPos(){
+        List<Integer> toRemove = new ArrayList<>();
         for (int i = 0; i < trackElements.size(); i++){
             TrackElement te = trackElements.get(i);
             if (te.getPosition().getY() > 0){
                 te.setPosition(new Position(te.getPosition().getX(), te.getPosition().getY()-1));
             } else {
-                trackElements.remove(i);
+                toRemove.add(i);
             }
+        }
+        for (int i : toRemove){
+            trackElements.remove(i);
         }
     }
     private void drawTrackElements(){
@@ -70,6 +100,7 @@ public class TrackAnimation {
             Position adaptedPosition = positionAdapter.adaptPosition(te.getPosition());
             gui.drawWagon(adaptedPosition);
         }
+        gui.refreshScreen();
     }
 
 }

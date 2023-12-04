@@ -174,11 +174,7 @@ public class LanternaGUI implements GUI {
                 .setBackgroundColor(TextColor.ANSI.GREEN);
         textGraphics.putString(x, y, "Score: " + String.valueOf(score));
 
-        try {
-            screen.refresh();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        refreshScreen();
     }
 
     @Override
@@ -191,6 +187,10 @@ public class LanternaGUI implements GUI {
                 .setBackgroundColor(TextColor.ANSI.GREEN);
         textGraphics.putString(x, y, "X" + String.valueOf(powerUpValue));
 
+        refreshScreen();
+    }
+
+    public void refreshScreen() {
         try {
             screen.refresh();
         } catch (IOException e) {
@@ -213,14 +213,14 @@ public class LanternaGUI implements GUI {
         TrackAnimation animTrack = new TrackAnimation(this, trackLeftMargin, borderColor, this.terminalHeight);
     }
 
-    public void paintLogo(int xMargin, int yMargin){
+    private void paintLogo(int xMargin, int yMargin){
         TextGraphics textGraphics = screen.newTextGraphics();
         textGraphics
                 .setForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
                 .setBackgroundColor(TextColor.ANSI.BLACK);
         textGraphics.putString(xMargin, yMargin, "CrazyTracks");
     }
-    public void paintOptions(int xMargin, int yMargin, List<String> options, int selected){
+    private void paintOptions(int xMargin, int yMargin, List<String> options, int selected){
         TextGraphics textGraphics;
         // draw the options in the screen
         for (int i = 0; i < options.size(); i++){
@@ -238,11 +238,7 @@ public class LanternaGUI implements GUI {
             textGraphics.putString(xMargin, y, options.get(i));
         }
 
-        try {
-            screen.refresh();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        refreshScreen();
     }
 
     @Override
