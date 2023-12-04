@@ -1,7 +1,8 @@
 import com.googlecode.lanterna.screen.Screen;
 import org.crazytracks.gui.LanternaGUI;
 import org.crazytracks.gui.PositionAdapter;
-import org.crazytracks.model.Position;
+import org.crazytracks.model.*;
+import org.crazytracks.viewer.GameViewer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,86 +13,51 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.net.URISyntaxException;
 
+import static java.lang.Boolean.TRUE;
+
 public class GameViewerTest {
-    private LanternaGUI lanternaGUI;
-    private Screen screen;
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private final PrintStream originalOut = System.out;
-    private final int xTrackOffset = 15;
-
-    @BeforeEach
-    public void setUp() {
-        try {
-            lanternaGUI = new LanternaGUI(30, 40);
-            lanternaGUI.initGameGUI();
-        } catch (IOException | URISyntaxException | FontFormatException e) {
-            e.printStackTrace();
-        }
-        System.setOut(new PrintStream(outContent));
-    }
-
-    @AfterEach
-    public void tearDown() {
-        System.setOut(originalOut);
-        try {
-            if (screen != null) {
-                screen.close();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        // sleep for a while to see the screen after testing
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public Position posAdapt(Position position){
-        PositionAdapter positionAdapter = new PositionAdapter(this.xTrackOffset-1, lanternaGUI.getTerminalHeight());
-        return positionAdapter.adaptPosition(position);
-    }
-
     @Test
-    public void elementDrawerTest() {
-        lanternaGUI.drawSurfer(posAdapt(new Position(1, 3)));
-
-        lanternaGUI.drawPowerUp(posAdapt(new Position(1, 25)));
-        lanternaGUI.drawPowerUp(posAdapt(new Position(0, 13)));
-
-        lanternaGUI.drawCoin(posAdapt(new Position(2, 5)));
-        lanternaGUI.drawCoin(posAdapt(new Position(1, 30)));
-        lanternaGUI.drawCoin(posAdapt(new Position(2, 32)));
-        lanternaGUI.drawCoin(posAdapt(new Position(0, 20)));
-
-        lanternaGUI.drawWagon(posAdapt(new Position(0, 8)));
-        lanternaGUI.drawWagon(posAdapt(new Position(0, 9)));
-        lanternaGUI.drawWagon(posAdapt(new Position(0, 10)));
-        lanternaGUI.drawWagon(posAdapt(new Position(0, 11)));
-
-        lanternaGUI.drawWagon(posAdapt(new Position(1, 14)));
-        lanternaGUI.drawWagon(posAdapt(new Position(1, 15)));
-        lanternaGUI.drawWagon(posAdapt(new Position(1, 16)));
-
-        lanternaGUI.drawWagon(posAdapt(new Position(0, 22)));
-        lanternaGUI.drawWagon(posAdapt(new Position(0, 23)));
-
-        lanternaGUI.drawWagon(posAdapt(new Position(2, 21)));
-        lanternaGUI.drawWagon(posAdapt(new Position(2, 22)));
-        lanternaGUI.drawWagon(posAdapt(new Position(2, 23)));
-
-        lanternaGUI.drawWagon(posAdapt(new Position(2, 31)));
-        lanternaGUI.drawWagon(posAdapt(new Position(2, 32)));
-        lanternaGUI.drawWagon(posAdapt(new Position(2, 33)));
-        lanternaGUI.drawWagon(posAdapt(new Position(2, 34)));
-        lanternaGUI.drawWagon(posAdapt(new Position(2, 35)));
-        lanternaGUI.drawWagon(posAdapt(new Position(2, 36)));
-        lanternaGUI.drawWagon(posAdapt(new Position(2, 37)));
-        lanternaGUI.drawWagon(posAdapt(new Position(2, 38)));
-
-        lanternaGUI.putScore(25);
-        lanternaGUI.putMultiplier(3);
+    public void GameViewerTest() throws IOException, URISyntaxException, FontFormatException, InterruptedException {
+        Track track = new Track();
+        track.setSurfer(new Surfer(new Position(15, 30)));
+        track.addTrackElement(new Wagon(new Position(15, 7)));
+        track.addTrackElement(new Wagon(new Position(15, 8)));
+        track.addTrackElement(new Wagon(new Position(15, 9)));
+        track.addTrackElement(new Wagon(new Position(15, 10)));
+        track.addTrackElement(new PowerUp(new Position(15, 25)));
+        LanternaGUI gui = new LanternaGUI(30, 40);
+        GameViewer viewer = new GameViewer(track);
+        int i = 0;
+        int FPS = 60;
+        int frameTime = 1000 / FPS;
+        while (TRUE){
+            if (i==100){
+                track.addTrackElement(new Wagon(new Position(15, 7)));
+                track.addTrackElement(new Wagon(new Position(15, 8)));
+                track.addTrackElement(new Wagon(new Position(15, 9)));
+                track.addTrackElement(new Wagon(new Position(15, 10)));
+                track.addTrackElement(new PowerUp(new Position(15, 25)));
+                track.getSurfer().setMultiplier(2);
+                i=0;
+            }
+            for (TrackElement element : track.getTrackElements()) {
+                if (element instanceof Wagon) {
+                    ((Wagon) element).setPosition(new Position(((Wagon) element).getPosition().getX(), ((Wagon) element).getPosition().getY()+1));
+                }
+                if (track.getSurfer().getScore()<1000) {
+                    track.getSurfer().increaseScore();
+                }
+            }
+            long startTime = System.currentTimeMillis();
+            viewer.draw(gui);
+            long elapsedTime = System.currentTimeMillis() - startTime;
+            long sleepTime = frameTime - elapsedTime;
+            try {
+                if (sleepTime > 0) Thread.sleep(sleepTime);
+            } catch (InterruptedException e) {
+            }
+            i++;
+        }
+        Thread.sleep(10000);
     }
 }

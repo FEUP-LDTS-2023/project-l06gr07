@@ -3,6 +3,7 @@ package org.crazytracks.gui;
 import com.googlecode.lanterna.TextColor;
 import org.crazytracks.model.Position;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface GUI {
@@ -16,4 +17,6 @@ public interface GUI {
     void putMultiplier(int powerUpValue);
     void drawMenu(List<String> options, int selected);
     void clearScreen();
+
+    void refreshScreen() throws IOException;
 }

@@ -93,12 +93,6 @@ public class LanternaGUI implements GUI {
         paintOneBorder(x, animMode, bgColor);
         x = xMargin + numLanes;
         paintOneBorder(x, (animMode+1)%2, bgColor);
-
-        try {
-            screen.refresh();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     private void paintOneBorder(int xMargin, int animMode, TextColor bgColor){
@@ -156,12 +150,6 @@ public class LanternaGUI implements GUI {
 
     private void putCharacter(Position position, TextCharacter wagonCharacter) {
         screen.setCharacter(position.getX(), position.getY(), wagonCharacter);
-
-        try {
-            screen.refresh();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -173,12 +161,6 @@ public class LanternaGUI implements GUI {
                 .setForegroundColor(TextColor.ANSI.BLACK)
                 .setBackgroundColor(TextColor.ANSI.GREEN);
         textGraphics.putString(x, y, "Score: " + String.valueOf(score));
-
-        try {
-            screen.refresh();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Override
@@ -190,12 +172,10 @@ public class LanternaGUI implements GUI {
                 .setForegroundColor(TextColor.ANSI.BLACK)
                 .setBackgroundColor(TextColor.ANSI.GREEN);
         textGraphics.putString(x, y, "X" + String.valueOf(powerUpValue));
+    }
 
-        try {
-            screen.refresh();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public void refreshScreen() throws IOException {
+        screen.refresh();
     }
 
     @Override
@@ -237,22 +217,11 @@ public class LanternaGUI implements GUI {
             }
             textGraphics.putString(xMargin, y, options.get(i));
         }
-
-        try {
-            screen.refresh();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Override
     public void clearScreen() {
-        TextCharacter solidBlock = new TextCharacter(' ').withBackgroundColor(TextColor.ANSI.BLACK);
-        for (int y = 0; y < this.terminalHeight; y++) {
-            for (int x = 0; x < this.terminalWidth; x++) {
-                screen.setCharacter(x, y, solidBlock);
-            }
-        }
+        screen.clear();
     }
 
     public int getTerminalHeight() {

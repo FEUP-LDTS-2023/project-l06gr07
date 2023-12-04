@@ -1,10 +1,9 @@
-package org.crazytracks.control;
+package org.crazytracks.viewer;
 
 import org.crazytracks.gui.GUI;
 import org.crazytracks.model.Element;
-import org.crazytracks.viewer.ElementDrawer;
 
-public class GameOverDrawer implements ElementDrawer {
+public class GameOverViewer implements ElementViewer {
 
     @Override
     public void draw(Element element, GUI gui) {

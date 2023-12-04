@@ -1,6 +1,6 @@
 package org.crazytracks.model;
 
-import org.crazytracks.viewer.SurferDrawer;
+import org.crazytracks.viewer.SurferViewer;
 
 public class Element{
     Position position;
@@ -17,6 +17,6 @@ public class Element{
     }
 
     public Object getView() {
-        return new SurferDrawer();
+        return new SurferViewer();
     }
 }
