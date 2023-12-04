@@ -17,10 +17,6 @@ public interface GUI {
     void putMultiplier(int powerUpValue);
     void drawMenu(List<String> options, int selected) throws IOException;
     void clearScreen();
-
-<<<<<<< HEAD
     void refreshScreen() throws IOException;
-=======
-    void refreshScreen();
->>>>>>> 3cb26f2aa4fae63373b032e8ee4b20dacd93d81d
+
 }
