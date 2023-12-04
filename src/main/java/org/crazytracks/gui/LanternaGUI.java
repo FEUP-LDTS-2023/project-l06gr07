@@ -20,11 +20,11 @@ import java.net.URL;
 import java.util.List;
 
 public class LanternaGUI implements GUI {
-    private Screen screen;
+    private final Screen screen;
     private final int terminalWidth;
     private final int terminalHeight;
     private final int numLanes = 3;
-    private int leftMargin;
+    private final int leftMargin;
     private final TextColor trackColor = new TextColor.RGB(188,187,156);
     PositionAdapter positionAdapter;
     public LanternaGUI(int terminalWidth, int terminalHeight) throws IOException, URISyntaxException, FontFormatException {
