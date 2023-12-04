@@ -4,6 +4,7 @@ import org.crazytracks.gui.GUI;
 import org.crazytracks.model.Element;
 import org.crazytracks.model.Track;
 
+import java.io.IOException;
 import java.util.List;
 
 public class GameViewer extends Viewer<Track>{
@@ -23,7 +24,8 @@ public class GameViewer extends Viewer<Track>{
     }
 
     @Override
-    protected void drawElements(GUI gui) {
+    protected void drawElements(GUI gui) throws IOException {
+        gui.initGameGUI();
         drawElements(gui, getModel().getWagons(), new WagonDrawer());
         drawElements(gui, getModel().getPowerUps(), new PowerUpViewer());
         drawElement(gui, getModel().getSurfer(), new SurferViewer());

@@ -7,6 +7,8 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+import static java.lang.Boolean.TRUE;
+
 public class NewViewerTest {
 
     @Test
@@ -19,7 +21,25 @@ public class NewViewerTest {
         track.addTrackElement(new Wagon(new Position(15, 10)));
         track.addTrackElement(new PowerUp(new Position(15, 25)));
         LanternaGUI gui = new LanternaGUI(30, 40);
-        new GameViewer(track).draw(gui);
+        GameViewer viewer = new GameViewer(track);
+        int i = 0;
+        int FPS = 60;
+        int frameTime = 1000 / FPS;
+        while (TRUE){
+            for (TrackElement element : track.getTrackElements()) {
+                if (element instanceof Wagon) {
+                        ((Wagon) element).setPosition(new Position(((Wagon) element).getPosition().getX(), ((Wagon) element).getPosition().getY()+1));
+                }
+            }
+            long startTime = System.currentTimeMillis();
+            viewer.draw(gui);
+            long elapsedTime = System.currentTimeMillis() - startTime;
+            long sleepTime = frameTime - elapsedTime;
+            try {
+                if (sleepTime > 0) Thread.sleep(sleepTime);
+            } catch (InterruptedException e) {
+            }
+        }
         Thread.sleep(10000);
     }
 }

@@ -4,6 +4,7 @@ import org.crazytracks.model.Position;
 import org.crazytracks.model.TrackElement;
 import org.crazytracks.model.Wagon;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class TrackAnimation {
     private int trackHeight;
     private List<TrackElement> trackElements;
 
-    public TrackAnimation(GUI gui, int xMargin, TextColor borderColor, int trackHeight){
+    public TrackAnimation(GUI gui, int xMargin, TextColor borderColor, int trackHeight) throws IOException {
         this.gui = gui;
         this.xMargin = xMargin;
         this.trackHeight = trackHeight;
@@ -32,7 +33,7 @@ public class TrackAnimation {
             }
         }
     }
-    public void step(){
+    public void step() throws IOException {
         this.animMode = (this.animMode + 1)%2;
         decrementYPos();
         gui.drawTrack(xMargin, animMode, borderColor);
@@ -94,7 +95,7 @@ public class TrackAnimation {
             trackElements.remove(i);
         }
     }
-    private void drawTrackElements(){
+    private void drawTrackElements() throws IOException {
         for (TrackElement te : trackElements){
             PositionAdapter positionAdapter = new PositionAdapter(this.xMargin, this.trackHeight-1);
             Position adaptedPosition = positionAdapter.adaptPosition(te.getPosition());

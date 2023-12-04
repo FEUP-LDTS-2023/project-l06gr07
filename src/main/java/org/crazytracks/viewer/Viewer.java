@@ -17,10 +17,9 @@ public abstract class Viewer<T> {
 
     public void draw(GUI gui) throws IOException {
         gui.clearScreen();
-        gui.initGameGUI();
         drawElements(gui);
         gui.refreshScreen();
     }
 
-    protected abstract void drawElements(GUI gui);
+    protected abstract void drawElements(GUI gui) throws IOException;
 }

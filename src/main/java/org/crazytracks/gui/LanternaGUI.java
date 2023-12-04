@@ -93,12 +93,6 @@ public class LanternaGUI implements GUI {
         paintOneBorder(x, animMode, bgColor);
         x = xMargin + numLanes;
         paintOneBorder(x, (animMode+1)%2, bgColor);
-
-        try {
-            screen.refresh();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     private void paintOneBorder(int xMargin, int animMode, TextColor bgColor){
@@ -157,15 +151,10 @@ public class LanternaGUI implements GUI {
     private void putCharacter(Position position, TextCharacter wagonCharacter) {
         screen.setCharacter(position.getX(), position.getY(), wagonCharacter);
 
-        try {
-            screen.refresh();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
-    public void putScore(int score) {
+    public void putScore(int score) throws IOException {
         TextGraphics textGraphics = screen.newTextGraphics();
         int x = 2;
         int y = 2;
@@ -173,12 +162,10 @@ public class LanternaGUI implements GUI {
                 .setForegroundColor(TextColor.ANSI.BLACK)
                 .setBackgroundColor(TextColor.ANSI.GREEN);
         textGraphics.putString(x, y, "Score: " + String.valueOf(score));
-
-        refreshScreen();
     }
 
     @Override
-    public void putMultiplier(int powerUpValue) {
+    public void putMultiplier(int powerUpValue) throws IOException {
         TextGraphics textGraphics = screen.newTextGraphics();
         int x = this.terminalWidth - 6;
         int y = 2;
@@ -186,20 +173,14 @@ public class LanternaGUI implements GUI {
                 .setForegroundColor(TextColor.ANSI.BLACK)
                 .setBackgroundColor(TextColor.ANSI.GREEN);
         textGraphics.putString(x, y, "X" + String.valueOf(powerUpValue));
-
-        refreshScreen();
     }
 
-    public void refreshScreen() {
-        try {
-            screen.refresh();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public void refreshScreen() throws IOException {
+        screen.refresh();
     }
 
     @Override
-    public void drawMenu(List<String> options, int selected) {
+    public void drawMenu(List<String> options, int selected) throws IOException {
         int logoTopMargin = 10;
         int textLeftMargin = 3;
         int textTopMargin = 8;
@@ -220,7 +201,7 @@ public class LanternaGUI implements GUI {
                 .setBackgroundColor(TextColor.ANSI.BLACK);
         textGraphics.putString(xMargin, yMargin, "CrazyTracks");
     }
-    private void paintOptions(int xMargin, int yMargin, List<String> options, int selected){
+    private void paintOptions(int xMargin, int yMargin, List<String> options, int selected) throws IOException {
         TextGraphics textGraphics;
         // draw the options in the screen
         for (int i = 0; i < options.size(); i++){
@@ -237,18 +218,11 @@ public class LanternaGUI implements GUI {
             }
             textGraphics.putString(xMargin, y, options.get(i));
         }
-
-        refreshScreen();
     }
 
     @Override
     public void clearScreen() {
-        TextCharacter solidBlock = new TextCharacter(' ').withBackgroundColor(TextColor.ANSI.BLACK);
-        for (int y = 0; y < this.terminalHeight; y++) {
-            for (int x = 0; x < this.terminalWidth; x++) {
-                screen.setCharacter(x, y, solidBlock);
-            }
-        }
+        screen.clear();
     }
 
     public int getTerminalHeight() {

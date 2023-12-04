@@ -51,7 +51,7 @@ public class MenuViewerTest {
     }
 
     @Test
-    public void drawingMenuTest() {
+    public void drawingMenuTest() throws IOException {
         int selected = 0;
 
         List<String> options = new ArrayList<>();

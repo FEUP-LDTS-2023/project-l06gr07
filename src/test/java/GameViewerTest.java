@@ -55,7 +55,7 @@ public class GameViewerTest {
     }
 
     @Test
-    public void elementDrawerTest() {
+    public void elementDrawerTest() throws IOException {
         lanternaGUI.drawSurfer(posAdapt(new Position(1, 3)));
 
         lanternaGUI.drawPowerUp(posAdapt(new Position(1, 25)));
