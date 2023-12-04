@@ -1,4 +1,6 @@
 import org.crazytracks.model.*;
+import org.crazytracks.states.GameState;
+import org.crazytracks.states.MenuState;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
