@@ -15,7 +15,7 @@ public interface GUI {
     void drawWagon(Position position);
     void putScore(int score);
     void putMultiplier(int powerUpValue);
-    void drawMenu(List<String> options, int selected);
+    void drawMenu(List<String> options, int selected) throws IOException;
     void clearScreen();
 
     void refreshScreen() throws IOException;

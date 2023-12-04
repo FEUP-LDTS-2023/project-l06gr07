@@ -179,7 +179,7 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void drawMenu(List<String> options, int selected) {
+    public void drawMenu(List<String> options, int selected) throws IOException {
         int logoTopMargin = 10;
         int textLeftMargin = 3;
         int textTopMargin = 8;
