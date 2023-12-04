@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/NewViewerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/TrackAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/TrackAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/GameOverDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/GameOverDrawer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Element.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Track.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/CoinDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/CoinDrawer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/ElementViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/ElementViewer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/GameViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/GameViewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/PowerUpViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/PowerUpViewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/SurferViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/SurferViewer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/Viewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/Viewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/WagonDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/WagonDrawer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +81,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "feature/initial__view",
+    "git-widget-placeholder": "feature/initial__controller",
     "last_opened_file_path": "/home/daniel/Documents/FEUP_LEIC/1º semestre/LDTS/project/project-l06gr07",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -87,7 +95,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.MenuViewerTest">
+  <component name="RunManager" selected="Gradle.NewViewerTest.testNewViewer">
     <configuration name="GameViewerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -136,6 +144,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="NewViewerTest.testNewViewer" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;NewViewerTest.testNewViewer&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="PositionAdapterTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -150,28 +182,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;PositionAdapterTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Tests in 'project-l06gr07.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -208,11 +218,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.NewViewerTest.testNewViewer" />
         <item itemvalue="Gradle.MenuViewerTest" />
         <item itemvalue="Gradle.GameViewerTest" />
         <item itemvalue="Gradle.ViewerTest" />
         <item itemvalue="Gradle.PositionAdapterTest" />
-        <item itemvalue="Gradle.Tests in 'project-l06gr07.test'" />
       </list>
     </recent_temporary>
   </component>
