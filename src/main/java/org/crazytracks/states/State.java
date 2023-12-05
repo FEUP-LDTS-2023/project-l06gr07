@@ -1,4 +1,4 @@
-package org.crazytracks.model;
+package org.crazytracks.states;
 
 public abstract class State<T> {
     private final T model;

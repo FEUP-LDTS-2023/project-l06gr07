@@ -2,11 +2,12 @@ package org.crazytracks.viewer;
 
 import org.crazytracks.gui.GUI;
 import org.crazytracks.model.Element;
+import org.crazytracks.model.Wagon;
 
-public class PowerUpDrawer implements ElementDrawer {
+public class WagonViewer implements ElementViewer<Wagon> {
 
     @Override
     public void draw(Element element, GUI gui) {
-        gui.drawPowerUp(element.getPosition());
+        gui.drawWagon(element.getPosition());
     }
 }

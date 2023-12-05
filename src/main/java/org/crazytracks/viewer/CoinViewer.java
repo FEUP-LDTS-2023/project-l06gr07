@@ -1,9 +1,10 @@
 package org.crazytracks.viewer;
 
 import org.crazytracks.gui.GUI;
+import org.crazytracks.model.Coin;
 import org.crazytracks.model.Element;
 
-public class CoinDrawer implements ElementDrawer {
+public class CoinViewer implements ElementViewer<Coin> {
 
     @Override
     public void draw(Element coin, GUI gui) {
