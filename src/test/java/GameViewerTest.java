@@ -1,4 +1,5 @@
 import com.googlecode.lanterna.screen.Screen;
+import org.crazytracks.gui.GUI;
 import org.crazytracks.gui.LanternaGUI;
 import org.crazytracks.gui.PositionAdapter;
 import org.crazytracks.model.*;
@@ -25,7 +26,7 @@ public class GameViewerTest {
         track.addTrackElement(new Wagon(new Position(15, 9)));
         track.addTrackElement(new Wagon(new Position(15, 10)));
         track.addTrackElement(new PowerUp(new Position(15, 25)));
-        LanternaGUI gui = new LanternaGUI(30, 40);
+        GUI gui = new LanternaGUI(30, 40);
         GameViewer viewer = new GameViewer(track);
         int i = 0;
         int FPS = 60;

@@ -2,6 +2,8 @@ package org.crazytracks.viewer;
 import org.crazytracks.gui.GUI;
 import org.crazytracks.model.Element;
 import org.crazytracks.model.Track;
+
+import javax.swing.*;
 import java.util.List;
 
 public class GameViewer extends Viewer<Track>{
@@ -21,8 +23,9 @@ public class GameViewer extends Viewer<Track>{
 
     protected void drawElements(GUI gui){
         gui.initGameGUI();
-        drawElements(gui, getModel().getWagons(), new WagonViewer());
         drawElements(gui, getModel().getPowerUps(), new PowerUpViewer());
+        drawElements(gui, getModel().getCoins(), new CoinViewer());
+        drawElements(gui, getModel().getWagons(), new WagonViewer());
         drawElement(gui, getModel().getSurfer(), new SurferViewer());
         gui.putScore(getModel().getSurfer().getScore());
         gui.putMultiplier(getModel().getSurfer().getMultiplier());
