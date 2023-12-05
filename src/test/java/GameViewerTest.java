@@ -58,6 +58,5 @@ public class GameViewerTest {
             }
             i++;
         }
-        Thread.sleep(10000);
     }
 }

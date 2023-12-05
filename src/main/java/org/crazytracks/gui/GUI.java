@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.List;
 
 public interface GUI {
+    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT}
+    ACTION getNextAction() throws IOException;
     void initGameGUI();
     void drawTrack(int xMargin, int animMode, TextColor borderColor);
     void drawCoin(Position position);
