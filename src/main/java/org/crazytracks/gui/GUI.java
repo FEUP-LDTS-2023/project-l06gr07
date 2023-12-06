@@ -20,5 +20,5 @@ public interface GUI {
     void drawMenu(List<String> options, int selected) throws IOException;
     void clearScreen();
     void refreshScreen() throws IOException;
-
+    void closeScreen() throws IOException;
 }

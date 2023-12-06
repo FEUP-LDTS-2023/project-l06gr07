@@ -12,7 +12,6 @@ public class Menu{
         this.entries = Arrays.asList("Start", "Exit");
     }
 
-
     public List<String> getEntries() {
         return entries;
     }
@@ -39,5 +38,13 @@ public class Menu{
 
     public boolean IsSelected(int entry) {
         return currentEntry == entry;
+    }
+
+    public boolean isSelectedStart() {
+        return IsSelected(0);
+    }
+
+    public boolean isSelectedExit() {
+        return IsSelected(1);
     }
 }

@@ -30,14 +30,7 @@ public class TrackAnimation {
         this.trackElements = loadTrackList();
         this.positionAdapter = new PositionAdapter(this.xMargin, this.trackHeight-1);
         initAnimation();
-        for (int i = 0; i < 20; i++){
-            step();
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+
     }
     public void step() throws IOException {
         this.animMode = (this.animMode + 1)%2;
