@@ -1,3 +1,4 @@
+import org.crazytracks.gui.GUI;
 import org.crazytracks.gui.LanternaGUI;
 import org.crazytracks.model.Menu;
 import org.crazytracks.viewer.MenuViewer;
@@ -12,7 +13,7 @@ public class MenuViewerTest {
     public void menuViewerTest() throws InterruptedException, IOException, URISyntaxException, FontFormatException {
         Menu menu = new Menu();
         MenuViewer viewer = new MenuViewer(menu);
-        LanternaGUI gui = new LanternaGUI(30, 40);
+        GUI gui = new LanternaGUI(30, 40);
         viewer.draw(gui);
         Thread.sleep(10000);
     }
