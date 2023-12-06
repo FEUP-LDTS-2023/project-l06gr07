@@ -246,6 +246,11 @@ public class LanternaGUI implements GUI {
 
         return ACTION.NONE;
     }
+
+    @Override
+    public void closeScreen() throws IOException {
+        screen.close();
+    }
 }
 
 
