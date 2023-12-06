@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static javax.swing.UIManager.get;
+
 public class TrackAnimation {
     private final int xMargin;
     private final TextColor borderColor;
@@ -16,6 +18,9 @@ public class TrackAnimation {
     private int trackHeight;
     private List<TrackElement> trackElements;
 
+    private PositionAdapter positionAdapter;
+
+
     public TrackAnimation(GUI gui, int xMargin, TextColor borderColor, int trackHeight) throws IOException {
         this.gui = gui;
         this.xMargin = xMargin;
@@ -23,6 +28,7 @@ public class TrackAnimation {
         this.animMode = 0;
         this.borderColor = borderColor;
         this.trackElements = loadTrackList();
+        this.positionAdapter = new PositionAdapter(this.xMargin, this.trackHeight-1);
         initAnimation();
         for (int i = 0; i < 20; i++){
             step();
@@ -82,22 +88,22 @@ public class TrackAnimation {
         return loadedTrack;
     }
     private void decrementYPos(){
-        List<Integer> toRemove = new ArrayList<>();
+        List<Integer> toLoop = new ArrayList<>();
         for (int i = 0; i < trackElements.size(); i++){
             TrackElement te = trackElements.get(i);
             if (te.getPosition().getY() > 0){
                 te.setPosition(new Position(te.getPosition().getX(), te.getPosition().getY()-1));
             } else {
-                toRemove.add(i);
+                toLoop.add(i);
             }
         }
-        for (int i : toRemove){
-            trackElements.remove(i);
+        for (int i : toLoop){
+            int elementXPos = trackElements.get(i).getPosition().getX();
+            trackElements.get(i).setPosition(new Position(elementXPos, this.trackHeight-1));
         }
     }
     private void drawTrackElements() throws IOException {
         for (TrackElement te : trackElements){
-            PositionAdapter positionAdapter = new PositionAdapter(this.xMargin, this.trackHeight-1);
             Position adaptedPosition = positionAdapter.adaptPosition(te.getPosition());
             gui.drawWagon(adaptedPosition);
         }
