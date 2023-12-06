@@ -1,4 +1,4 @@
 package org.crazytracks.model;
 
-public class SICollisionStrategy extends CollisionStrategy{
-}
+//public class SICollisionStrategy extends CollisionStrategy{
+//}

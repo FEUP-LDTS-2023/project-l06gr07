@@ -23,6 +23,24 @@ public class Track {
         this.trackElements = trackElements;
     }
 
+    public boolean isEmpty(Position position) {
+        for (TrackElement trackElement : trackElements) {
+            if (trackElement.getPosition().equals(position)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public TrackElement getTrackElement(Position position) {
+        for (TrackElement trackElement : trackElements) {
+            if (trackElement.getPosition().equals(position)) {
+                return trackElement;
+            }
+        }
+        return null;
+    }
+
     public List<Element> getWagons() {
         List<Element> wagons = new ArrayList<>();
         for (TrackElement trackElement : trackElements) {

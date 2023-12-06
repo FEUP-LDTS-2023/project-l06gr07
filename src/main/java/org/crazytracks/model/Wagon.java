@@ -5,7 +5,7 @@ public class Wagon extends TrackElement {
     public Wagon(Position position) {
         super(position);
     }
-    protected CollisionStrategy createCollisionStrategy() {
+    public CollisionStrategy createCollisionStrategy() {
         return new EndGameCollisionStrategy();
     }
     public int getWagon_lenght() {
@@ -14,4 +14,5 @@ public class Wagon extends TrackElement {
     public void setWagon_lenght(int wagon_lenght) {
         this.wagon_lenght = wagon_lenght;
     }
+
 }
