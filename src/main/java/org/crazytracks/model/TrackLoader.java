@@ -5,6 +5,6 @@ import org.crazytracks.gui.PositionAdapter;
 public class TrackLoader extends TrackBuilder{
     @Override
     protected Surfer createSurfer() {
-        return new Surfer(new Position(15,39));
+        return new Surfer(new Position(15,35));
     }
 }

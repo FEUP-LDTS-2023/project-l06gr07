@@ -47,6 +47,7 @@ public class SurferController extends GameController{
 
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
+        getModel().getSurfer().increaseScore();
         switch (action) {
             case LEFT:
                 moveSurferLeft();
