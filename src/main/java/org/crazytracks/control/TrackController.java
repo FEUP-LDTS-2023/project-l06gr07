@@ -22,6 +22,8 @@ public class TrackController extends GameController{
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         if (action == GUI.ACTION.QUIT)
             game.setState(new MenuState(new Menu()));
+        else if(!getModel().getSurfer().isAlive())
+            game.setState(new MenuState(new Menu()));
         else {
             surferController.step(game, action, time);
             trackElementController.step(game, action, time);

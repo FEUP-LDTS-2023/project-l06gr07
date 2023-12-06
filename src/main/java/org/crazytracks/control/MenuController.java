@@ -4,6 +4,7 @@ import org.crazytracks.Game;
 import org.crazytracks.gui.GUI;
 import org.crazytracks.model.Menu;
 import org.crazytracks.model.Track;
+import org.crazytracks.model.TrackLoader;
 import org.crazytracks.states.GameState;
 
 import java.io.IOException;
@@ -27,7 +28,7 @@ public class MenuController extends Controller<Menu> {
                 break;
             case SELECT:
                 if (getModel().isSelectedExit()) game.setState(null);
-                if (getModel().isSelectedStart()) game.setState(new GameState(new Track()));
+                if (getModel().isSelectedStart()) game.setState(new GameState(new TrackLoader().createTrack()));
         }
     }
 }

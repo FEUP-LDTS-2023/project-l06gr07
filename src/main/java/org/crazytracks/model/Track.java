@@ -74,4 +74,9 @@ public class Track {
     public void addTrackElement(TrackElement trackElement) {
         trackElements.add(trackElement);
     }
+
+    public void removeTrackElement(Position position) {
+        TrackElement trackElement = getTrackElement(position);
+        trackElements.remove(trackElement);
+    }
 }
