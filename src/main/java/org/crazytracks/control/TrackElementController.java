@@ -25,17 +25,23 @@ public class TrackElementController extends GameController{
     public void moveWagons(long time) {
         long currentTime2 = System.currentTimeMillis();
         if (currentTime2 - lastUpdateTime >= time) {
-            for (Wagon wagon : getModel().getWagons()) {
-                Position nextPosition = wagon.getDownPosition();
-                if (nextPosition.equals(getModel().getSurfer().getPosition())) {
-                    getModel().getSurfer().setAlive(FALSE);
-                }else if (getModel().isEmpty(nextPosition)) {
-                    wagon.setPosition(nextPosition);
-                } else if (wagon.getPosition().getY() == 0){
-                    getModel().removeTrackElement(wagon.getPosition());
-                }
-            }
+            getModel().moveAllTrackElementsDown();
+            checkWagonCollisions();
             lastUpdateTime = currentTime2;
+        }
+    }
+
+    public void checkWagonCollisions(){
+        List<Wagon> wagons = getModel().getWagons();
+        for (Wagon wagon : wagons) {
+            System.out.println("Wagon:" + wagon.getPosition().getX() + "," + wagon.getPosition().getY());
+            System.out.println("Surfer:" + getModel().getSurfer().getPosition().getX() + "," + getModel().getSurfer().getPosition().getY());
+            if (getModel().getSurfer().getPosition().equals(wagon.getPosition())) {
+                getModel().getSurfer().setAlive(FALSE);
+            }
+            if (wagon.getPosition().getY() == 40){
+                getModel().removeTrackElement(wagon.getPosition());
+            }
         }
     }
 

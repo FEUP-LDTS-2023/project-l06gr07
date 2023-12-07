@@ -79,4 +79,10 @@ public class Track {
         TrackElement trackElement = getTrackElement(position);
         trackElements.remove(trackElement);
     }
+
+    public void moveAllTrackElementsDown() {
+        for (TrackElement trackElement : trackElements) {
+            trackElement.setPosition(trackElement.getDownPosition());
+        }
+    }
 }
