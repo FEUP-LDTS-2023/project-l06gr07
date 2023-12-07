@@ -29,12 +29,17 @@ public class LanternaGUI implements GUI {
     private final int leftMargin;
     private final TextColor trackColor = new TextColor.RGB(188,187,156);
     PositionAdapter positionAdapter;
+    private boolean trackAnimCreated;
+    private TrackAnimation animTrack;
+
     public LanternaGUI(int terminalWidth, int terminalHeight) throws IOException, URISyntaxException, FontFormatException {
         this.leftMargin = 14;
         this.terminalWidth = terminalWidth;
         this.terminalHeight = terminalHeight;
 
         Terminal terminal = terminalCreation(terminalWidth, terminalHeight);
+
+        this.trackAnimCreated = false;
 
         this.screen = new TerminalScreen(terminal);
         this.screen.startScreen();
@@ -114,8 +119,9 @@ public class LanternaGUI implements GUI {
         }
     }
 
-    public void initMenuGUI(){
+    public void initMenuGUI(List<String> options, int selected) throws IOException {
         clearScreen();
+        drawMenu(options, selected);
     }
 
     @Override
@@ -192,7 +198,13 @@ public class LanternaGUI implements GUI {
         paintOptions(textLeftMargin, textTopMargin + logoTopMargin, options, selected);
 
         TextColor borderColor = TextColor.ANSI.GREEN;
-        TrackAnimation animTrack = new TrackAnimation(this, trackLeftMargin, borderColor, this.terminalHeight);
+        if (!this.trackAnimCreated) {
+            this.animTrack = new TrackAnimation(this, trackLeftMargin, borderColor, this.terminalHeight);
+            Thread animThread = new Thread(animTrack);
+            animThread.start();
+            this.trackAnimCreated = true;
+        }
+        this.animTrack.drawTrackAnimation();
     }
 
     private void paintLogo(int xMargin, int yMargin){

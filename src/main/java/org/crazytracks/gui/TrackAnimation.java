@@ -8,9 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.swing.UIManager.get;
-
-public class TrackAnimation {
+public class TrackAnimation implements Runnable {
     private final int xMargin;
     private final TextColor borderColor;
     private final GUI gui;
@@ -29,12 +27,18 @@ public class TrackAnimation {
         this.borderColor = borderColor;
         this.trackElements = loadTrackList();
         this.positionAdapter = new PositionAdapter(this.xMargin, this.trackHeight-1);
-        initAnimation();
 
     }
-    public void step() throws IOException {
+    public void step() throws IOException, InterruptedException {
         this.animMode = (this.animMode + 1)%2;
         decrementYPos();
+//        gui.drawTrack(xMargin, animMode, borderColor);
+        drawTrackElements();
+//        gui.refreshScreen();
+        Thread.sleep(1000);
+    }
+
+    public void drawTrackAnimation() throws IOException {
         gui.drawTrack(xMargin, animMode, borderColor);
         drawTrackElements();
     }
@@ -100,7 +104,14 @@ public class TrackAnimation {
             Position adaptedPosition = positionAdapter.adaptPosition(te.getPosition());
             gui.drawWagon(adaptedPosition);
         }
-        gui.refreshScreen();
     }
 
+    @Override
+    public void run() {
+        do try {
+            step();
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        } while (true);
+    }
 }
