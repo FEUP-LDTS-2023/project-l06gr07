@@ -1,5 +1,7 @@
 package org.crazytracks.model;
 
+import static java.lang.Boolean.TRUE;
+
 public class Surfer extends Element{
 
     private int score = 0;
@@ -7,6 +9,8 @@ public class Surfer extends Element{
     private int score_multiplier = 1;
 
     private int currentLane = 1;
+
+    boolean isAlive = TRUE;
 
     public void setCurrentLane(int currentLane) {
         this.currentLane = currentLane;
@@ -20,7 +24,6 @@ public class Surfer extends Element{
         isAlive = alive;
     }
 
-    boolean isAlive = true;
 
     public Surfer(Position position) {
         super(position);

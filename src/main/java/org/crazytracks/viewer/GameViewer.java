@@ -12,8 +12,8 @@ public class GameViewer extends Viewer<Track>{
         super(model);
     }
 
-    private <T extends Element> void drawElements(GUI gui, List<Element> elements, ElementViewer<T> viewer) {
-        for (Element element : elements)
+    private <T extends Element> void drawElements(GUI gui, List<T> elements, ElementViewer<T> viewer) {
+        for (T element : elements)
             drawElement(gui, element, viewer);
     }
 

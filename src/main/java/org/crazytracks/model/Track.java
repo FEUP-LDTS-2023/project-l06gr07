@@ -29,7 +29,7 @@ public class Track {
                 return false;
             }
         }
-        return true;
+        return !surfer.getPosition().equals(position);
     }
 
     public TrackElement getTrackElement(Position position) {
@@ -41,8 +41,8 @@ public class Track {
         return null;
     }
 
-    public List<Element> getWagons() {
-        List<Element> wagons = new ArrayList<>();
+    public List<Wagon> getWagons() {
+        List<Wagon> wagons = new ArrayList<>();
         for (TrackElement trackElement : trackElements) {
             if (trackElement instanceof Wagon) {
                 wagons.add((Wagon) trackElement);
@@ -51,21 +51,21 @@ public class Track {
         return wagons;
     }
 
-    public List<Element> getPowerUps() {
-        List<Element> powerUps = new ArrayList<>();
+    public List<PowerUp> getPowerUps() {
+        List<PowerUp> powerUps = new ArrayList<>();
         for (TrackElement trackElement : trackElements) {
             if (trackElement instanceof PowerUp) {
-                powerUps.add(trackElement);
+                powerUps.add((PowerUp) trackElement);
             }
         }
         return powerUps;
     }
 
-    public List<Element> getCoins() {
-        List<Element> coins = new ArrayList<>();
+    public List<Coin> getCoins() {
+        List<Coin> coins = new ArrayList<>();
         for (TrackElement trackElement : trackElements) {
             if (trackElement instanceof Coin) {
-                coins.add(trackElement);
+                coins.add((Coin) trackElement);
             }
         }
         return coins;
