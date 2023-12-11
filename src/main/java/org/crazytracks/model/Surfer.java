@@ -37,8 +37,8 @@ public class Surfer extends Element{
         this.score = score;
     }
 
-    public void increaseScore(){
-        this.score++;
+    public void increaseScore(int score, int score_multiplier){
+        this.score+= score*score_multiplier;
     }
 
     public int getMultiplier() {

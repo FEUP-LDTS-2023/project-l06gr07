@@ -44,7 +44,7 @@ public class TrackElementController extends GameController{
         List<Coin> coins = getModel().getCoins();
         for (Coin coin : coins) {
             if (getModel().getSurfer().getPosition().equals(coin.getPosition())) {
-                getModel().getSurfer().increaseScore();
+                getModel().getSurfer().increaseScore(100, getModel().getSurfer().getMultiplier());
             }
         }
     }
