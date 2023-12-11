@@ -6,6 +6,11 @@ import java.util.List;
 public class Track {
     private Surfer surfer;
     private List<TrackElement> trackElements = new ArrayList<>();
+    private int animMode;
+
+    public Track(){
+        this.animMode = 0;
+    }
 
     public Surfer getSurfer() {
         return surfer;
@@ -84,5 +89,10 @@ public class Track {
         for (TrackElement trackElement : trackElements) {
             trackElement.setPosition(trackElement.getDownPosition());
         }
+        this.animMode = (this.animMode+1)%2;
+    }
+
+    public int getAnimMode(){
+        return animMode;
     }
 }

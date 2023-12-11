@@ -22,7 +22,7 @@ public class GameViewer extends Viewer<Track>{
     }
 
     protected void drawElements(GUI gui){
-        gui.initGameGUI();
+        gui.initGameGUI(getModel().getAnimMode());
         drawElements(gui, getModel().getPowerUps(), new PowerUpViewer());
         drawElements(gui, getModel().getCoins(), new CoinViewer());
         drawElements(gui, getModel().getWagons(), new WagonViewer());
