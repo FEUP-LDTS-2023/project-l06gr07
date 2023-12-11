@@ -46,7 +46,7 @@ public class GameViewerTest {
                     ((Wagon) element).setPosition(new Position(((Wagon) element).getPosition().getX(), ((Wagon) element).getPosition().getY()+1));
                 }
                 if (track.getSurfer().getScore()<1000) {
-                    track.getSurfer().increaseScore();
+                    track.getSurfer().increaseScore(1,track.getSurfer().getMultiplier());
                 }
             }
             long startTime = System.currentTimeMillis();

@@ -12,6 +12,8 @@ public class Surfer extends Element{
 
     boolean isAlive = TRUE;
 
+    private int multiplierSteps = 0;
+
     public void setCurrentLane(int currentLane) {
         this.currentLane = currentLane;
     }
@@ -37,8 +39,8 @@ public class Surfer extends Element{
         this.score = score;
     }
 
-    public void increaseScore(){
-        this.score++;
+    public void increaseScore(int score, int score_multiplier){
+        this.score+= score*score_multiplier;
     }
 
     public int getMultiplier() {
@@ -55,5 +57,21 @@ public class Surfer extends Element{
 
     public int getCurrentLane() {
         return currentLane;
+    }
+
+    public void setMultiplierSteps(int multiplierSteps) {
+        this.multiplierSteps = multiplierSteps;
+    }
+
+    public int getMultiplierSteps() {
+        return multiplierSteps;
+    }
+
+    public void decreaseMultiplierSteps() {
+        this.multiplierSteps--;
+    }
+
+    public void resetMultiplierSteps() {
+        this.multiplierSteps = 0;
     }
 }

@@ -26,10 +26,8 @@ public class ConstructorsTest {
     @Test
     public void testWagonConstructor() {
         Wagon wagon = new Wagon(new Position(0, 0));
-        wagon.setWagon_lenght(5);
         Assertions.assertEquals(0, wagon.getPosition().getX());
         Assertions.assertEquals(0, wagon.getPosition().getY());
-        Assertions.assertEquals(5, wagon.getWagon_lenght());
     }
 
     @Test

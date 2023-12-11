@@ -18,6 +18,7 @@ public class SurferController extends GameController{
         else if (getModel().getTrackElement(position) instanceof PowerUp) {
             getModel().getSurfer().setPosition(position);
             getModel().getSurfer().setMultiplier(getModel().getSurfer().getMultiplier() + 1);
+            getModel().getSurfer().setMultiplierSteps(10*60);
             getModel().removeTrackElement(position);
         }
         else if (getModel().getTrackElement(position) instanceof Coin) {
@@ -47,7 +48,7 @@ public class SurferController extends GameController{
 
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
-        getModel().getSurfer().increaseScore();
+        getModel().getSurfer().increaseScore(1, getModel().getSurfer().getMultiplier());
         switch (action) {
             case LEFT:
                 moveSurferLeft();
