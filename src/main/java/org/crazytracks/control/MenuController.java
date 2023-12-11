@@ -11,11 +11,11 @@ import java.io.IOException;
 import java.lang.foreign.Arena;
 
 public class MenuController extends Controller<Menu> {
-        private Menu model;
+    private Menu model;
 
-        public MenuController(Menu model) {
-            super(model);
-        }
+    public MenuController(Menu model) {
+        super(model);
+    }
 
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {

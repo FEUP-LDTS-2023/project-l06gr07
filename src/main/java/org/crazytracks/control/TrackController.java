@@ -2,11 +2,9 @@ package org.crazytracks.control;
 
 import org.crazytracks.Game;
 import org.crazytracks.gui.GUI;
-import org.crazytracks.model.Element;
-import org.crazytracks.model.Menu;
-import org.crazytracks.model.Track;
-import org.crazytracks.model.TrackElement;
+import org.crazytracks.model.*;
 import org.crazytracks.model.factory.WagonFactory;
+import org.crazytracks.states.GameOverState;
 import org.crazytracks.states.MenuState;
 
 import java.io.IOException;
@@ -28,7 +26,7 @@ public class TrackController extends GameController {
         if (action == GUI.ACTION.QUIT)
             game.setState(new MenuState(new Menu()));
         if (!getModel().getSurfer().isAlive()){
-            game.setState(new MenuState(new Menu()));
+            game.setState(new GameOverState(new GameOver(getModel().getSurfer().getScore())));
         }
         else {
             surferController.step(game, action, time);

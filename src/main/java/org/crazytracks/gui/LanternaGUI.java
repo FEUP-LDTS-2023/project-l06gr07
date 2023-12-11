@@ -162,12 +162,15 @@ public class LanternaGUI implements GUI {
             }
         }
     }
-
     @Override
-    public void putScore(int score) {
+    public void putScore(int score){ // default putScore()
+        putScore(score, 2, 2);
+    }
+    @Override
+    public void putScore(int score, int xMargin, int yMargin) {
         TextGraphics textGraphics = screen.newTextGraphics();
-        int x = 2;
-        int y = 2;
+        int x = xMargin;
+        int y = yMargin;
         textGraphics
                 .setForegroundColor(TextColor.ANSI.BLACK)
                 .setBackgroundColor(TextColor.ANSI.GREEN);
@@ -211,8 +214,17 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void drawGameOverMenu(int score) {
-
+    public void drawGameOver(int score, List<String> options, int selected) {
+        paintGameOverText(5, 5);
+        putScore(score, 5, 10);
+        paintOptions(5, 15, options, selected);
+    }
+    private void paintGameOverText(int xMargin, int yMargin){
+        TextGraphics textGraphics = screen.newTextGraphics();
+        textGraphics
+                .setForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
+                .setBackgroundColor(TextColor.ANSI.BLACK);
+        textGraphics.putString(xMargin, yMargin, "GameOver");
     }
 
     private void paintLogo(int xMargin, int yMargin){
