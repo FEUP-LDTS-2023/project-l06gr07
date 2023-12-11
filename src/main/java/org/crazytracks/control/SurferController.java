@@ -18,6 +18,7 @@ public class SurferController extends GameController{
         else if (getModel().getTrackElement(position) instanceof PowerUp) {
             getModel().getSurfer().setPosition(position);
             getModel().getSurfer().setMultiplier(getModel().getSurfer().getMultiplier() + 1);
+            getModel().getSurfer().setMultiplierTime(10*60);
             getModel().removeTrackElement(position);
         }
         else if (getModel().getTrackElement(position) instanceof Coin) {

@@ -36,6 +36,7 @@ public class TrackElementController extends GameController{
         for (PowerUp powerUp : powerUps) {
             if (getModel().getSurfer().getPosition().equals(powerUp.getPosition())) {
                 getModel().getSurfer().setMultiplier(2);
+                getModel().getSurfer().setMultiplierTime(10*60);
             }
         }
     }
@@ -102,16 +103,6 @@ public class TrackElementController extends GameController{
         }
     }
 
-    public void moveTrackElements(long time) {
-        long currentTime2 = System.currentTimeMillis();
-        if (currentTime2 - lastUpdateTime >= time) {
-            getModel().moveAllTrackElementsDown();
-            checkWagonCollisions();
-            checkPowerUpCollisions();
-            checkCoinCollisions();
-            lastUpdateTime = currentTime2;
-        }
-    }
     public void createCoin(long time){
         long currentTime = System.currentTimeMillis();
         if (currentTime - lastCoinCreationTime >= time) {
@@ -125,11 +116,31 @@ public class TrackElementController extends GameController{
         }
     }
 
+    public void moveTrackElements(long time) {
+        long currentTime2 = System.currentTimeMillis();
+        if (currentTime2 - lastUpdateTime >= time) {
+            getModel().moveAllTrackElementsDown();
+            checkWagonCollisions();
+            checkPowerUpCollisions();
+            checkCoinCollisions();
+            lastUpdateTime = currentTime2;
+        }
+    }
+
+    public void checkMultiplierTime(){
+        getModel().getSurfer().decreaseMultiplierTime();
+        if (getModel().getSurfer().getMultiplierTime() == 0){
+            getModel().getSurfer().setMultiplier(1);
+        }
+    }
+
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
+        getModel().getSurfer().decreaseMultiplierTime();
+        checkMultiplierTime();
         createWagon(1300);
         createWagon2(1300);
-        createPowerUp(1300);
+        createPowerUp(13000);
         createCoin(500);
         moveTrackElements(100);
     }

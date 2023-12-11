@@ -12,6 +12,8 @@ public class Surfer extends Element{
 
     boolean isAlive = TRUE;
 
+    private int multiplierTime = 0;
+
     public void setCurrentLane(int currentLane) {
         this.currentLane = currentLane;
     }
@@ -55,5 +57,21 @@ public class Surfer extends Element{
 
     public int getCurrentLane() {
         return currentLane;
+    }
+
+    public void setMultiplierTime(int multiplierTime) {
+        this.multiplierTime = multiplierTime;
+    }
+
+    public int getMultiplierTime() {
+        return multiplierTime;
+    }
+
+    public void decreaseMultiplierTime() {
+        this.multiplierTime--;
+    }
+
+    public void resetMultiplierTime() {
+        this.multiplierTime = 0;
     }
 }
