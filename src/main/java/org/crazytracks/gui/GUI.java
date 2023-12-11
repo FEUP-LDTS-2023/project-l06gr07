@@ -18,6 +18,7 @@ public interface GUI {
     void putScore(int score);
     void putMultiplier(int powerUpValue);
     void drawMenu(List<String> options, int selected) throws IOException;
+    void drawGameOverMenu(int score);
     void clearScreen();
     void refreshScreen() throws IOException;
     void closeScreen() throws IOException;

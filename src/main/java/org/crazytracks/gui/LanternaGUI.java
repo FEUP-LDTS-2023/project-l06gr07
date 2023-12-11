@@ -157,7 +157,11 @@ public class LanternaGUI implements GUI {
     }
 
     private void putCharacter(Position position, TextCharacter wagonCharacter) {
-        screen.setCharacter(position.getX(), position.getY(), wagonCharacter);
+        if (position.getY() >= 0 && position.getY() < this.terminalHeight){
+            if (position.getX() >= 0 && position.getX() < this.terminalWidth){
+                screen.setCharacter(position.getX(), position.getY(), wagonCharacter);
+            }
+        }
     }
 
     @Override
@@ -205,6 +209,11 @@ public class LanternaGUI implements GUI {
             this.trackAnimCreated = true;
         }
         this.animTrack.drawTrackAnimation();
+    }
+
+    @Override
+    public void drawGameOverMenu(int score) {
+
     }
 
     private void paintLogo(int xMargin, int yMargin){
