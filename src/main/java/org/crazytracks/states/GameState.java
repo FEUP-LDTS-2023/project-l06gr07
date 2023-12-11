@@ -15,7 +15,6 @@ public class GameState extends State<Track>{
     protected Viewer<Track> getViewer() {
         return new GameViewer(getModel());
     }
-
     @Override
     protected Controller<Track> getController() {
         return new TrackController(getModel());
