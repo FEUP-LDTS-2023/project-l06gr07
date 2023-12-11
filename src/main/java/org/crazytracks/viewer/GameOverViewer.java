@@ -2,10 +2,16 @@ package org.crazytracks.viewer;
 
 import org.crazytracks.gui.GUI;
 import org.crazytracks.model.Element;
+import org.crazytracks.model.GameOver;
 
-public class GameOverViewer implements ElementViewer {
+import java.io.IOException;
+
+public class GameOverViewer extends Viewer<GameOver> {
+    public GameOverViewer(GameOver model){
+        super(model);
+    }
     @Override
-    public void draw(Element element, GUI gui) {
-
+    protected void drawElements(GUI gui) throws IOException {
+        gui.drawGameOver(getModel().getScore(), getModel().getOptions(), getModel().getSelected());
     }
 }
