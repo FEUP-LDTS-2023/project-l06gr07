@@ -19,12 +19,15 @@ public class GameOverController extends Controller<GameOver> {
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         switch (action) {
-            case QUIT:
+            case UP:
+                getModel().previousEntry();
+                break;
+            case DOWN:
+                getModel().nextEntry();
+                break;
             case SELECT:
-                game.setState(new MenuState(new Menu()));
-                break;
-            case NONE:
-                break;
+                if (getModel().getCurrentEntry()=="Try Again") game.setState(new GameState(new TrackLoader().createTrack()));
+                if (getModel().getCurrentEntry()=="Back to Menu") game.setState(new MenuState(new Menu()));
         }
     }
 }
