@@ -9,7 +9,9 @@ import java.util.List;
 public interface GUI {
     enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT}
     ACTION getNextAction() throws IOException;
-    void initGameGUI();
+
+    void initGameGUI(int animMode);
+
     void drawTrack(int xMargin, int animMode, TextColor borderColor);
     void drawCoin(Position position);
     void drawSurfer(Position position);
@@ -18,6 +20,7 @@ public interface GUI {
     void putScore(int score);
     void putMultiplier(int powerUpValue);
     void drawMenu(List<String> options, int selected) throws IOException;
+    void drawGameOverMenu(int score);
     void clearScreen();
     void refreshScreen() throws IOException;
     void closeScreen() throws IOException;

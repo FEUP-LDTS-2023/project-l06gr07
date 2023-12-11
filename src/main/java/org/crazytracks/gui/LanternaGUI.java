@@ -11,7 +11,6 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
-import jdk.javadoc.internal.doclets.formats.html.markup.Text;
 import org.crazytracks.model.Position;
 
 import java.awt.*;
@@ -65,7 +64,7 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void initGameGUI() {
+    public void initGameGUI(int animMode) {
         clearScreen();
         int trackHeight = this.terminalHeight;
 
@@ -77,7 +76,7 @@ public class LanternaGUI implements GUI {
             }
         }
         TextColor borderColor = TextColor.ANSI.WHITE;
-        drawTrack(this.leftMargin, 0, borderColor);
+        drawTrack(this.leftMargin, animMode, borderColor);
     }
 
     public void drawTrack(int xMargin, int animMode, TextColor borderColor){
@@ -157,7 +156,11 @@ public class LanternaGUI implements GUI {
     }
 
     private void putCharacter(Position position, TextCharacter wagonCharacter) {
-        screen.setCharacter(position.getX(), position.getY(), wagonCharacter);
+        if (position.getY() >= 0 && position.getY() < this.terminalHeight){
+            if (position.getX() >= 0 && position.getX() < this.terminalWidth){
+                screen.setCharacter(position.getX(), position.getY(), wagonCharacter);
+            }
+        }
     }
 
     @Override
@@ -205,6 +208,11 @@ public class LanternaGUI implements GUI {
             this.trackAnimCreated = true;
         }
         this.animTrack.drawTrackAnimation();
+    }
+
+    @Override
+    public void drawGameOverMenu(int score) {
+
     }
 
     private void paintLogo(int xMargin, int yMargin){

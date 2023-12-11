@@ -15,7 +15,7 @@ public class WagonFactory  extends ElementFactory{
         int randomSize = ThreadLocalRandom.current().nextInt(5,8);
         int randomLane = ThreadLocalRandom.current().nextInt(0,3);
         for (int i = 0; i < randomSize; i++) {
-            wagons.add(new Wagon(new Position(randomLane+14, i)));
+            wagons.add(new Wagon(new Position(randomLane+14, -i)));
         }
         return wagons;
     }
