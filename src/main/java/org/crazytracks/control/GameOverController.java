@@ -9,6 +9,7 @@ import org.crazytracks.states.GameState;
 import org.crazytracks.states.MenuState;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class GameOverController extends Controller<GameOver> {
     private GameOver model;
@@ -26,8 +27,8 @@ public class GameOverController extends Controller<GameOver> {
                 getModel().nextEntry();
                 break;
             case SELECT:
-                if (getModel().getCurrentEntry()=="Try Again") game.setState(new GameState(new TrackLoader().createTrack()));
-                if (getModel().getCurrentEntry()=="Back to Menu") game.setState(new MenuState(new Menu()));
+                if (Objects.equals(getModel().getCurrentEntry(), "Try Again")) game.setState(new GameState(new TrackLoader().createTrack()));
+                if (Objects.equals(getModel().getCurrentEntry(), "Back to Menu")) game.setState(new MenuState(new Menu()));
         }
     }
 }

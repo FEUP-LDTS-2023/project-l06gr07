@@ -32,23 +32,7 @@ public class GameOver {
         currentEntry = (currentEntry - 1 + entries.size()) % entries.size();
     }
 
-    public String getEntry(int i) {
-        return entries.get(i);
-    }
-
     public int getCurrentEntryIndex() {
         return currentEntry;
-    }
-
-    public boolean IsSelected(int entry) {
-        return currentEntry == entry;
-    }
-
-    public boolean isSelectedStart() {
-        return IsSelected(0);
-    }
-
-    public boolean isSelectedExit() {
-        return IsSelected(1);
     }
 }
