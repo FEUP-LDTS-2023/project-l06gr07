@@ -36,7 +36,7 @@ public class TrackElementController extends GameController{
         for (PowerUp powerUp : powerUps) {
             if (getModel().getSurfer().getPosition().equals(powerUp.getPosition())) {
                 getModel().getSurfer().setMultiplier(2);
-                getModel().getSurfer().setMultiplierTime(10*60);
+                getModel().getSurfer().setMultiplierSteps(10*60);
             }
         }
     }
@@ -128,15 +128,15 @@ public class TrackElementController extends GameController{
     }
 
     public void checkMultiplierTime(){
-        getModel().getSurfer().decreaseMultiplierTime();
-        if (getModel().getSurfer().getMultiplierTime() == 0){
+        getModel().getSurfer().decreaseMultiplierSteps();
+        if (getModel().getSurfer().getMultiplierSteps() == 0){
             getModel().getSurfer().setMultiplier(1);
         }
     }
 
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
-        getModel().getSurfer().decreaseMultiplierTime();
+        getModel().getSurfer().decreaseMultiplierSteps();
         checkMultiplierTime();
         createWagon(1300);
         createWagon2(1300);
