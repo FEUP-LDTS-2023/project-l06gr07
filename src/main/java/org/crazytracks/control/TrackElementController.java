@@ -37,6 +37,7 @@ public class TrackElementController extends GameController{
             if (getModel().getSurfer().getPosition().equals(powerUp.getPosition())) {
                 getModel().getSurfer().setMultiplier(getModel().getSurfer().getMultiplier() + 1);
                 getModel().getSurfer().setMultiplierSteps(10*60);
+                getModel().getTrackElements().remove(powerUp);
             }
         }
     }
@@ -46,6 +47,7 @@ public class TrackElementController extends GameController{
         for (Coin coin : coins) {
             if (getModel().getSurfer().getPosition().equals(coin.getPosition())) {
                 getModel().getSurfer().increaseScore(10, getModel().getSurfer().getMultiplier());
+                getModel().getTrackElements().remove(coin);
             }
         }
     }
@@ -53,8 +55,6 @@ public class TrackElementController extends GameController{
     public void checkWagonCollisions(){
         List<Wagon> wagons = getModel().getWagons();
         for (Wagon wagon : wagons) {
-            System.out.println("Wagon:" + wagon.getPosition().getX() + "," + wagon.getPosition().getY());
-            System.out.println("Surfer:" + getModel().getSurfer().getPosition().getX() + "," + getModel().getSurfer().getPosition().getY());
             if (getModel().getSurfer().getPosition().equals(wagon.getPosition())) {
                 getModel().getSurfer().setAlive(FALSE);
             }
