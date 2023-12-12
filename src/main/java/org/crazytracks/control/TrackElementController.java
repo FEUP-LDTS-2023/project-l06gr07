@@ -18,10 +18,10 @@ public class TrackElementController extends GameController{
     private long lastWagonCreationTime2 = System.currentTimeMillis();
     private long lastPowerUpCreationTime = System.currentTimeMillis();
     private long lastCoinCreationTime = System.currentTimeMillis();
-    private WagonFactory wagonFactory;
-    private WagonFactory wagonFactory2;
-    private PowerUpFactory powerUpFactory;
-    private CoinFactory coinFactory;
+    private final WagonFactory wagonFactory;
+    private final WagonFactory wagonFactory2;
+    private final PowerUpFactory powerUpFactory;
+    private final CoinFactory coinFactory;
     public TrackElementController(Track model) {
         super(model);
         wagonFactory = new WagonFactory();
@@ -35,7 +35,7 @@ public class TrackElementController extends GameController{
         List<PowerUp> powerUps = getModel().getPowerUps();
         for (PowerUp powerUp : powerUps) {
             if (getModel().getSurfer().getPosition().equals(powerUp.getPosition())) {
-                getModel().getSurfer().setMultiplier(2);
+                getModel().getSurfer().setMultiplier(getModel().getSurfer().getMultiplier() + 1);
                 getModel().getSurfer().setMultiplierSteps(10*60);
                 getModel().getTrackElements().remove(powerUp);
             }
@@ -46,7 +46,7 @@ public class TrackElementController extends GameController{
         List<Coin> coins = getModel().getCoins();
         for (Coin coin : coins) {
             if (getModel().getSurfer().getPosition().equals(coin.getPosition())) {
-                getModel().getSurfer().increaseScore(100, getModel().getSurfer().getMultiplier());
+                getModel().getSurfer().increaseScore(10, getModel().getSurfer().getMultiplier());
                 getModel().getTrackElements().remove(coin);
             }
         }
