@@ -1,4 +1,5 @@
 package org.crazytracks.viewer;
+import com.googlecode.lanterna.TextColor;
 import org.crazytracks.gui.GUI;
 import org.crazytracks.model.Element;
 import org.crazytracks.model.Track;
@@ -28,7 +29,6 @@ public class GameViewer extends Viewer<Track>{
         drawElement(gui, getModel().getSurfer(), new SurferViewer());
         drawElements(gui, getModel().getWagons(), new WagonViewer());
         gui.putScore(getModel().getSurfer().getScore());
-        gui.putMultiplier(getModel().getSurfer().getMultiplier());
-
+        gui.putMultiplier(getModel().getSurfer().getMultiplier(), getModel().getSurfer().getMultiplierState());
     }
 }

@@ -181,14 +181,22 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void putMultiplier(int powerUpValue) {
+    public void putMultiplier(int powerUpValue, boolean multiplierOn) {
         TextGraphics textGraphics = screen.newTextGraphics();
         int x = this.terminalWidth - 4;
         int y = 2;
-        textGraphics
-                .setForegroundColor(TextColor.ANSI.BLACK)
-                .setBackgroundColor(TextColor.ANSI.GREEN);
-        textGraphics.putString(x, y, "X" + String.valueOf(powerUpValue));
+        if (multiplierOn){
+            textGraphics
+                    .setForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
+                    .setBackgroundColor(TextColor.ANSI.GREEN);
+            textGraphics.putString(x, y, "X" + String.valueOf(powerUpValue));
+        } else {
+            textGraphics
+                    .setForegroundColor(TextColor.ANSI.BLACK)
+                    .setBackgroundColor(TextColor.ANSI.GREEN);
+            textGraphics.putString(x, y, "X" + String.valueOf(powerUpValue));
+        }
+
     }
 
     public void refreshScreen() throws IOException {

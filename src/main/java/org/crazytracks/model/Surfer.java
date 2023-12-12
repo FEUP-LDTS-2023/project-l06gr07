@@ -7,7 +7,7 @@ public class Surfer extends Element{
     private int score = 0;
 
     private int score_multiplier = 1;
-
+    private boolean multiplierOn;
     private int currentLane = 1;
 
     boolean isAlive = TRUE;
@@ -29,6 +29,7 @@ public class Surfer extends Element{
 
     public Surfer(Position position) {
         super(position);
+        this.multiplierOn = false;
     }
 
     public int getScore() {
@@ -46,11 +47,25 @@ public class Surfer extends Element{
     public int getMultiplier() {
         return score_multiplier;
     }
+    public boolean getMultiplierState(){
+        return multiplierOn;
+    }
 
     public void setMultiplier(int multiplier) {
         this.score_multiplier = multiplier;
+        if (score_multiplier > 1) {
+            multiplierOn();
+        } else {
+            multiplierOff();
+        }
     }
 
+    private void multiplierOn(){
+        this.multiplierOn = true;
+    }
+    private void multiplierOff(){
+        this.multiplierOn = false;
+    }
     public void collectCoin(){
         this.score += 100;
     }
