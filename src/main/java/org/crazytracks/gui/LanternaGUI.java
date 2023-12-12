@@ -98,7 +98,7 @@ public class LanternaGUI implements GUI {
         int x = xMargin-1;
         paintOneBorder(x, animMode, bgColor);
         x = xMargin + numLanes;
-        paintOneBorder(x, (animMode+1)%4, bgColor);
+        paintOneBorder(x, (animMode+2)%4, bgColor);
     }
 
     private void paintOneBorder(int xMargin, int animMode, TextColor bgColor){
