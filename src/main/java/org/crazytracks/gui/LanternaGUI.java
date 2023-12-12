@@ -28,7 +28,6 @@ public class LanternaGUI implements GUI {
     private final int leftMargin;
     private final TextColor trackColor = new TextColor.RGB(188,187,156);
     PositionAdapter positionAdapter;
-    private boolean trackAnimCreated;
     private TrackAnimation animTrack;
 
     public LanternaGUI(int terminalWidth, int terminalHeight) throws IOException, URISyntaxException, FontFormatException {
@@ -38,7 +37,7 @@ public class LanternaGUI implements GUI {
 
         Terminal terminal = terminalCreation(terminalWidth, terminalHeight);
 
-        this.trackAnimCreated = false;
+        this.animTrack = null;
 
         this.screen = new TerminalScreen(terminal);
         this.screen.startScreen();
@@ -162,6 +161,21 @@ public class LanternaGUI implements GUI {
             }
         }
     }
+    private void drawScoreIncrease(Integer scoreIncrease, int lineNum){
+        TextGraphics textGraphics = screen.newTextGraphics();
+        int x = 2;
+        int y = lineNum + 4;
+        textGraphics
+                .setForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
+                .setBackgroundColor(TextColor.ANSI.GREEN);
+        textGraphics.putString(x, y + 1, String.valueOf(scoreIncrease));
+    }
+
+    public void putScoreDisplayList(List<Integer> scoreDisplayList){
+        for (int i = 0; i < scoreDisplayList.size(); i++){
+            drawScoreIncrease(scoreDisplayList.get(i), i);
+        }
+    }
     @Override
     public void putScore(int score){ // default putScore()
         putScore(score, 2, 2);
@@ -215,11 +229,10 @@ public class LanternaGUI implements GUI {
         paintOptions(textLeftMargin, textTopMargin + logoTopMargin, options, selected);
 
         TextColor borderColor = TextColor.ANSI.GREEN;
-        if (!this.trackAnimCreated) {
+        if (this.animTrack == null) {
             this.animTrack = new TrackAnimation(this, trackLeftMargin, borderColor, this.terminalHeight);
             Thread animThread = new Thread(animTrack);
             animThread.start();
-            this.trackAnimCreated = true;
         }
         this.animTrack.drawTrackAnimation();
     }

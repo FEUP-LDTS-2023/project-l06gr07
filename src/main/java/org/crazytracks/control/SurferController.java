@@ -45,7 +45,6 @@ public class SurferController extends GameController{
             moveSurfer(getModel().getSurfer().getRightPosition());
         }
     }
-
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         getModel().getSurfer().increaseScore(1, getModel().getSurfer().getMultiplier());

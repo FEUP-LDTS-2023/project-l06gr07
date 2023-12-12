@@ -1,14 +1,11 @@
 package org.crazytracks.viewer;
-import com.googlecode.lanterna.TextColor;
 import org.crazytracks.gui.GUI;
 import org.crazytracks.model.Element;
 import org.crazytracks.model.Track;
 
-import javax.swing.*;
 import java.util.List;
 
 public class GameViewer extends Viewer<Track>{
-
     public GameViewer(Track model) {
         super(model);
     }
@@ -30,5 +27,6 @@ public class GameViewer extends Viewer<Track>{
         drawElements(gui, getModel().getWagons(), new WagonViewer());
         gui.putScore(getModel().getSurfer().getScore());
         gui.putMultiplier(getModel().getSurfer().getMultiplier(), getModel().getSurfer().getMultiplierState());
+        gui.putScoreDisplayList(getModel().getSurfer().getScoreDisplayList());
     }
 }
