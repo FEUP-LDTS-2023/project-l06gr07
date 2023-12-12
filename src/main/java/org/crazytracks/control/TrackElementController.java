@@ -18,10 +18,10 @@ public class TrackElementController extends GameController{
     private long lastWagonCreationTime2 = System.currentTimeMillis();
     private long lastPowerUpCreationTime = System.currentTimeMillis();
     private long lastCoinCreationTime = System.currentTimeMillis();
-    private WagonFactory wagonFactory;
-    private WagonFactory wagonFactory2;
-    private PowerUpFactory powerUpFactory;
-    private CoinFactory coinFactory;
+    private final WagonFactory wagonFactory;
+    private final WagonFactory wagonFactory2;
+    private final PowerUpFactory powerUpFactory;
+    private final CoinFactory coinFactory;
     public TrackElementController(Track model) {
         super(model);
         wagonFactory = new WagonFactory();
