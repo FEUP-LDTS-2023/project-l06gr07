@@ -8,8 +8,6 @@ import org.crazytracks.model.TrackLoader;
 import org.crazytracks.states.GameState;
 
 import java.io.IOException;
-import java.lang.foreign.Arena;
-
 public class MenuController extends Controller<Menu> {
     private Menu model;
 

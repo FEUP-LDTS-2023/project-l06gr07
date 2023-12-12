@@ -32,9 +32,6 @@ public class TrackAnimation implements Runnable {
     public void step() throws IOException, InterruptedException {
         this.animMode = (this.animMode + 1)%2;
         decrementYPos();
-//        gui.drawTrack(xMargin, animMode, borderColor);
-        drawTrackElements();
-//        gui.refreshScreen();
         Thread.sleep(1000);
     }
 
