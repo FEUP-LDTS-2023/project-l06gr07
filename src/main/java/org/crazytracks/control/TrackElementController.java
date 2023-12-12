@@ -35,7 +35,7 @@ public class TrackElementController extends GameController{
         List<PowerUp> powerUps = getModel().getPowerUps();
         for (PowerUp powerUp : powerUps) {
             if (getModel().getSurfer().getPosition().equals(powerUp.getPosition())) {
-                getModel().getSurfer().setMultiplier(2);
+                getModel().getSurfer().setMultiplier(getModel().getSurfer().getMultiplier() + 1);
                 getModel().getSurfer().setMultiplierSteps(10*60);
             }
         }
@@ -45,7 +45,7 @@ public class TrackElementController extends GameController{
         List<Coin> coins = getModel().getCoins();
         for (Coin coin : coins) {
             if (getModel().getSurfer().getPosition().equals(coin.getPosition())) {
-                getModel().getSurfer().increaseScore(100, getModel().getSurfer().getMultiplier());
+                getModel().getSurfer().increaseScore(10, getModel().getSurfer().getMultiplier());
             }
         }
     }
