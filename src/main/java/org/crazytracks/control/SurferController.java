@@ -10,6 +10,7 @@ public class SurferController extends GameController{
     public SurferController(Track model) {
         super(model);
     }
+    private long lastScoreIncrease = System.currentTimeMillis();
 
     public void moveSurfer(Position position) {
         if (getModel().isEmpty(position)) {
@@ -46,9 +47,17 @@ public class SurferController extends GameController{
         }
     }
 
+    public void increaseScore(long time) {
+        long currentTime = System.currentTimeMillis();
+        if (currentTime - lastScoreIncrease >= time) {
+            getModel().getSurfer().increaseScore(1, getModel().getSurfer().getMultiplier());
+            lastScoreIncrease = currentTime;
+        }
+    }
+
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
-        getModel().getSurfer().increaseScore(1, getModel().getSurfer().getMultiplier());
+        increaseScore(500);
         switch (action) {
             case LEFT:
                 moveSurferLeft();
