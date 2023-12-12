@@ -98,13 +98,13 @@ public class LanternaGUI implements GUI {
         int x = xMargin-1;
         paintOneBorder(x, animMode, bgColor);
         x = xMargin + numLanes;
-        paintOneBorder(x, (animMode+1)%2, bgColor);
+        paintOneBorder(x, (animMode+1)%4, bgColor);
     }
 
     private void paintOneBorder(int xMargin, int animMode, TextColor bgColor){
         TextCharacter block;
         for (int y = 0; y < terminalHeight; y++) {
-            if (y%2 == animMode){
+            if (y%4 == animMode){
                 block = new TextCharacter(':')
                         .withForegroundColor(TextColor.ANSI.BLACK)
                         .withBackgroundColor(bgColor);

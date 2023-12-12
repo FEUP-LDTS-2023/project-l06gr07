@@ -89,7 +89,7 @@ public class Track {
         for (TrackElement trackElement : trackElements) {
             trackElement.setPosition(trackElement.getDownPosition());
         }
-        this.animMode = (this.animMode+1)%2;
+        this.animMode = (this.animMode+1)%4;
     }
 
     public int getAnimMode(){

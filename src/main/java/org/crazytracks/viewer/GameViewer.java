@@ -25,8 +25,8 @@ public class GameViewer extends Viewer<Track>{
         gui.initGameGUI(getModel().getAnimMode());
         drawElements(gui, getModel().getPowerUps(), new PowerUpViewer());
         drawElements(gui, getModel().getCoins(), new CoinViewer());
-        drawElements(gui, getModel().getWagons(), new WagonViewer());
         drawElement(gui, getModel().getSurfer(), new SurferViewer());
+        drawElements(gui, getModel().getWagons(), new WagonViewer());
         gui.putScore(getModel().getSurfer().getScore());
         gui.putMultiplier(getModel().getSurfer().getMultiplier());
 
