@@ -174,13 +174,16 @@ public class LanternaGUI implements GUI {
         textGraphics
                 .setForegroundColor(TextColor.ANSI.BLACK)
                 .setBackgroundColor(TextColor.ANSI.GREEN);
-        textGraphics.putString(x, y, "Score: " + String.valueOf(score));
+        ///textGraphics.putString(x, y, "Score: " + String.valueOf(score));
+        textGraphics.putString(x, y, "Score:");
+        textGraphics.putString(x, y + 1, String.valueOf(score));
+
     }
 
     @Override
     public void putMultiplier(int powerUpValue) {
         TextGraphics textGraphics = screen.newTextGraphics();
-        int x = this.terminalWidth - 6;
+        int x = this.terminalWidth - 4;
         int y = 2;
         textGraphics
                 .setForegroundColor(TextColor.ANSI.BLACK)
