@@ -8,14 +8,14 @@ import java.util.TimerTask;
 import static java.lang.Boolean.TRUE;
 
 public class Surfer extends Element{
-
+    private double surferSpeed;
+    private final double maxSurferSpeed = 30;
     private int score = 0;
     private List<Integer> scoreDisplayList;
 
     private int score_multiplier = 1;
     private boolean multiplierOn;
     private int currentLane = 1;
-
     boolean isAlive = TRUE;
 
     private int multiplierSteps = 0;
@@ -37,6 +37,25 @@ public class Surfer extends Element{
         super(position);
         this.multiplierOn = false;
         this.scoreDisplayList = new ArrayList<>();
+
+        this.surferSpeed = 5;
+        startAcceleration();
+    }
+
+    private void startAcceleration(){
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                increaseSurferSpeed();
+                if (surferSpeed < maxSurferSpeed){
+                    startAcceleration();
+                }
+            }
+        }, 5000);
+    }
+    private void increaseSurferSpeed(){
+        this.surferSpeed += 1;
     }
 
     public int getScore() {
@@ -84,9 +103,8 @@ public class Surfer extends Element{
     private void multiplierOff(){
         this.multiplierOn = false;
     }
-    public void collectCoin(){
-        Integer scoreInc = 300;
-        this.score += scoreInc;
+    public void collectCoin(Coin coin){
+        Integer scoreInc = coin.getCoinValue();
         increaseScore(scoreInc, score_multiplier);
     }
 
@@ -112,5 +130,13 @@ public class Surfer extends Element{
 
     public List<Integer> getScoreDisplayList() {
         return scoreDisplayList;
+    }
+
+    public double getSurferSpeed(){
+        return surferSpeed;
+    }
+
+    public double getMaxSurferSpeed(){
+        return maxSurferSpeed;
     }
 }

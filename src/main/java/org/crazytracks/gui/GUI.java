@@ -19,6 +19,7 @@ public interface GUI {
     void putScore(int score);
     void putScore(int score, int xMargin, int yMargin);
     void putMultiplier(int powerUpValue, boolean multiplierOn);
+    void putSurferSpeed(int score, int maxSpeed);
     void drawMenu(List<String> options, int selected) throws IOException;
     void drawGameOver(int score, List<String> options, int selected);
     void clearScreen();

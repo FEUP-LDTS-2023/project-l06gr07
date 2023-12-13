@@ -28,5 +28,6 @@ public class GameViewer extends Viewer<Track>{
         gui.putScore(getModel().getSurfer().getScore());
         gui.putMultiplier(getModel().getSurfer().getMultiplier(), getModel().getSurfer().getMultiplierState());
         gui.putScoreDisplayList(getModel().getSurfer().getScoreDisplayList());
+        gui.putSurferSpeed((int)getModel().getSurfer().getSurferSpeed(), (int)getModel().getSurfer().getMaxSurferSpeed());
     }
 }
