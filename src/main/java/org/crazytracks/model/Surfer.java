@@ -1,13 +1,19 @@
 package org.crazytracks.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import static java.lang.Boolean.TRUE;
 
 public class Surfer extends Element{
 
     private int score = 0;
+    private List<Integer> scoreDisplayList;
 
     private int score_multiplier = 1;
-
+    private boolean multiplierOn;
     private int currentLane = 1;
 
     boolean isAlive = TRUE;
@@ -29,6 +35,8 @@ public class Surfer extends Element{
 
     public Surfer(Position position) {
         super(position);
+        this.multiplierOn = false;
+        this.scoreDisplayList = new ArrayList<>();
     }
 
     public int getScore() {
@@ -40,19 +48,46 @@ public class Surfer extends Element{
     }
 
     public void increaseScore(int score, int score_multiplier){
-        this.score+= score*score_multiplier;
+        Integer scoreInc = score * score_multiplier;
+        this.score += scoreInc;
+        if (scoreInc > 10){
+            scoreDisplayList.add(scoreInc);
+            Timer timer = new Timer();
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    scoreDisplayList.remove(0);
+                }
+            }, 1000);
+        }
     }
 
     public int getMultiplier() {
         return score_multiplier;
     }
+    public boolean getMultiplierState(){
+        return multiplierOn;
+    }
 
     public void setMultiplier(int multiplier) {
         this.score_multiplier = multiplier;
+        if (score_multiplier > 1) {
+            multiplierOn();
+        } else {
+            multiplierOff();
+        }
     }
 
+    private void multiplierOn(){
+        this.multiplierOn = true;
+    }
+    private void multiplierOff(){
+        this.multiplierOn = false;
+    }
     public void collectCoin(){
-        this.score += 100;
+        Integer scoreInc = 300;
+        this.score += scoreInc;
+        increaseScore(scoreInc, score_multiplier);
     }
 
     public int getCurrentLane() {
@@ -73,5 +108,9 @@ public class Surfer extends Element{
 
     public void resetMultiplierSteps() {
         this.multiplierSteps = 0;
+    }
+
+    public List<Integer> getScoreDisplayList() {
+        return scoreDisplayList;
     }
 }
