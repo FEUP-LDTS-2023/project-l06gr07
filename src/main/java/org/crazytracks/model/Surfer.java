@@ -50,7 +50,7 @@ public class Surfer extends Element{
     public void increaseScore(int score, int score_multiplier){
         Integer scoreInc = score * score_multiplier;
         this.score += scoreInc;
-        if (scoreInc > 10){
+        if (scoreInc > 2){
             scoreDisplayList.add(scoreInc);
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
