@@ -2,6 +2,7 @@ package org.crazytracks;
 
 import org.crazytracks.gui.LanternaGUI;
 import org.crazytracks.model.Menu;
+import org.crazytracks.model.MusicPlayer;
 import org.crazytracks.states.MenuState;
 import org.crazytracks.states.State;
 
@@ -19,6 +20,8 @@ public class Game {
     }
 
     public static void main(String[] args) throws IOException, FontFormatException, URISyntaxException {
+        MusicPlayer player = new MusicPlayer();
+        player.playFromResource("/music.wav");
         new Game().start();
     }
 
