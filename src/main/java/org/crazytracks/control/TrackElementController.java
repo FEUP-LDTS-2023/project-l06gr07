@@ -46,7 +46,7 @@ public class TrackElementController extends GameController{
         List<Coin> coins = getModel().getCoins();
         for (Coin coin : coins) {
             if (getModel().getSurfer().getPosition().equals(coin.getPosition())) {
-                getModel().getSurfer().increaseScore(10, getModel().getSurfer().getMultiplier());
+                getModel().getSurfer().collectCoin(coin);
                 getModel().getTrackElements().remove(coin);
             }
         }
@@ -138,10 +138,13 @@ public class TrackElementController extends GameController{
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         getModel().getSurfer().decreaseMultiplierSteps();
         checkMultiplierTime();
-        createWagon(1300);
-        createWagon2(1300);
-        createPowerUp(13000);
-        createCoin(500);
-        moveTrackElements(100);
+
+        double currSurferSpeed = getModel().getSurfer().getSurferSpeed() / 10;
+
+        createWagon((long)(1800/currSurferSpeed));
+        createWagon2((long)(1800/currSurferSpeed));
+        createPowerUp((long)(10000/currSurferSpeed));
+        createCoin((long)(1000/currSurferSpeed));
+        moveTrackElements((long)(100/currSurferSpeed));
     }
 }

@@ -168,7 +168,7 @@ public class LanternaGUI implements GUI {
         textGraphics
                 .setForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
                 .setBackgroundColor(TextColor.ANSI.GREEN);
-        textGraphics.putString(x, y + 1, String.valueOf(scoreIncrease));
+        textGraphics.putString(x, y + 1, "+" + String.valueOf(scoreIncrease));
     }
 
     public void putScoreDisplayList(List<Integer> scoreDisplayList){
@@ -188,7 +188,6 @@ public class LanternaGUI implements GUI {
         textGraphics
                 .setForegroundColor(TextColor.ANSI.BLACK)
                 .setBackgroundColor(TextColor.ANSI.GREEN);
-        ///textGraphics.putString(x, y, "Score: " + String.valueOf(score));
         textGraphics.putString(x, y, "Score:");
         textGraphics.putString(x, y + 1, String.valueOf(score));
 
@@ -211,6 +210,38 @@ public class LanternaGUI implements GUI {
             textGraphics.putString(x, y, "X" + String.valueOf(powerUpValue));
         }
 
+    }
+
+    @Override
+    public void putSurferSpeed(int speed, int maxSpeed) {
+        int x = 2;
+        int y = this.terminalHeight - 5;
+        TextColor speedColor = getSpeedColor(speed, maxSpeed);
+        TextGraphics textGraphics = screen.newTextGraphics();
+        textGraphics
+                .setForegroundColor(TextColor.ANSI.BLACK)
+                .setBackgroundColor(TextColor.ANSI.GREEN);
+        textGraphics.putString(x, y, "Speed:");
+        textGraphics
+                .setForegroundColor(speedColor);
+        textGraphics.putString(x, y + 1, String.valueOf(speed) + " Km/h");
+    }
+
+    private static TextColor getSpeedColor(int speed, int maxSpeed) {
+        TextColor speedColor = null;
+        int blackThreshold = maxSpeed / 4;
+        int yellowThreshold = maxSpeed * 2 / 4;
+        int redThreshold = maxSpeed * 3 / 4;
+        if (speed > redThreshold){
+            speedColor = TextColor.ANSI.RED;
+        } else if (speed > yellowThreshold) {
+            speedColor = TextColor.ANSI.YELLOW_BRIGHT;
+        } else if (speed > blackThreshold) {
+            speedColor = TextColor.ANSI.BLACK;
+        } else {
+            speedColor = TextColor.ANSI.BLUE;
+        }
+        return speedColor;
     }
 
     public void refreshScreen() throws IOException {

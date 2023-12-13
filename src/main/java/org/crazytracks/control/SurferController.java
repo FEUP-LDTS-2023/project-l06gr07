@@ -23,8 +23,9 @@ public class SurferController extends GameController{
             getModel().removeTrackElement(position);
         }
         else if (getModel().getTrackElement(position) instanceof Coin) {
+            Coin coin = (Coin) getModel().getTrackElement(position);
             getModel().getSurfer().setPosition(position);
-            getModel().getSurfer().collectCoin();
+            getModel().getSurfer().collectCoin(coin);
             getModel().removeTrackElement(position);
         }
         else if (getModel().getTrackElement(position) instanceof Wagon){
