@@ -12,6 +12,7 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import org.crazytracks.model.Position;
+import org.crazytracks.leaderboard.Player;
 
 import java.awt.*;
 import java.io.File;
@@ -307,6 +308,10 @@ public class LanternaGUI implements GUI {
             textGraphics.putString(xMargin, y, options.get(i));
         }
     }
+
+    public void drawLeaderboard(List<Player> listOfPlayers){
+
+    };
 
     @Override
     public void clearScreen() {

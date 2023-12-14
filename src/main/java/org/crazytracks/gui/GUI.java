@@ -2,6 +2,7 @@ package org.crazytracks.gui;
 
 import com.googlecode.lanterna.TextColor;
 import org.crazytracks.model.Position;
+import org.crazytracks.leaderboard.Player;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,6 +23,7 @@ public interface GUI {
     void putSurferSpeed(int score, int maxSpeed);
     void drawMenu(List<String> options, int selected) throws IOException;
     void drawGameOver(int score, List<String> options, int selected);
+    void drawLeaderboard(List<Player> listOfPlayers);
     void clearScreen();
     void refreshScreen() throws IOException;
     void closeScreen() throws IOException;
