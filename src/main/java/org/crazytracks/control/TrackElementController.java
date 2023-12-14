@@ -18,10 +18,10 @@ public class TrackElementController extends GameController{
     private long lastWagonCreationTime2 = System.currentTimeMillis();
     private long lastPowerUpCreationTime = System.currentTimeMillis();
     private long lastCoinCreationTime = System.currentTimeMillis();
-    private WagonFactory wagonFactory;
-    private WagonFactory wagonFactory2;
-    private PowerUpFactory powerUpFactory;
-    private CoinFactory coinFactory;
+    private final WagonFactory wagonFactory;
+    private final WagonFactory wagonFactory2;
+    private final PowerUpFactory powerUpFactory;
+    private final CoinFactory coinFactory;
     public TrackElementController(Track model) {
         super(model);
         wagonFactory = new WagonFactory();
@@ -35,8 +35,9 @@ public class TrackElementController extends GameController{
         List<PowerUp> powerUps = getModel().getPowerUps();
         for (PowerUp powerUp : powerUps) {
             if (getModel().getSurfer().getPosition().equals(powerUp.getPosition())) {
-                getModel().getSurfer().setMultiplier(2);
+                getModel().getSurfer().setMultiplier(getModel().getSurfer().getMultiplier() + 1);
                 getModel().getSurfer().setMultiplierSteps(10*60);
+                getModel().getTrackElements().remove(powerUp);
             }
         }
     }
@@ -45,7 +46,8 @@ public class TrackElementController extends GameController{
         List<Coin> coins = getModel().getCoins();
         for (Coin coin : coins) {
             if (getModel().getSurfer().getPosition().equals(coin.getPosition())) {
-                getModel().getSurfer().increaseScore(100, getModel().getSurfer().getMultiplier());
+                getModel().getSurfer().collectCoin(coin);
+                getModel().getTrackElements().remove(coin);
             }
         }
     }
@@ -53,8 +55,6 @@ public class TrackElementController extends GameController{
     public void checkWagonCollisions(){
         List<Wagon> wagons = getModel().getWagons();
         for (Wagon wagon : wagons) {
-            System.out.println("Wagon:" + wagon.getPosition().getX() + "," + wagon.getPosition().getY());
-            System.out.println("Surfer:" + getModel().getSurfer().getPosition().getX() + "," + getModel().getSurfer().getPosition().getY());
             if (getModel().getSurfer().getPosition().equals(wagon.getPosition())) {
                 getModel().getSurfer().setAlive(FALSE);
             }
@@ -138,10 +138,13 @@ public class TrackElementController extends GameController{
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         getModel().getSurfer().decreaseMultiplierSteps();
         checkMultiplierTime();
-        createWagon(1300);
-        createWagon2(1300);
-        createPowerUp(13000);
-        createCoin(500);
-        moveTrackElements(100);
+
+        double currSurferSpeed = getModel().getSurfer().getSurferSpeed() / 10;
+
+        createWagon((long)(1800/currSurferSpeed));
+        createWagon2((long)(1800/currSurferSpeed));
+        createPowerUp((long)(10000/currSurferSpeed));
+        createCoin((long)(1000/currSurferSpeed));
+        moveTrackElements((long)(100/currSurferSpeed));
     }
 }

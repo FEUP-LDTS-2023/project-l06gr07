@@ -3,11 +3,9 @@ import org.crazytracks.gui.GUI;
 import org.crazytracks.model.Element;
 import org.crazytracks.model.Track;
 
-import javax.swing.*;
 import java.util.List;
 
 public class GameViewer extends Viewer<Track>{
-
     public GameViewer(Track model) {
         super(model);
     }
@@ -25,10 +23,11 @@ public class GameViewer extends Viewer<Track>{
         gui.initGameGUI(getModel().getAnimMode());
         drawElements(gui, getModel().getPowerUps(), new PowerUpViewer());
         drawElements(gui, getModel().getCoins(), new CoinViewer());
-        drawElements(gui, getModel().getWagons(), new WagonViewer());
         drawElement(gui, getModel().getSurfer(), new SurferViewer());
+        drawElements(gui, getModel().getWagons(), new WagonViewer());
         gui.putScore(getModel().getSurfer().getScore());
-        gui.putMultiplier(getModel().getSurfer().getMultiplier());
-
+        gui.putMultiplier(getModel().getSurfer().getMultiplier(), getModel().getSurfer().getMultiplierState());
+        gui.putScoreDisplayList(getModel().getSurfer().getScoreDisplayList());
+        gui.putSurferSpeed((int)getModel().getSurfer().getSurferSpeed(), (int)getModel().getSurfer().getMaxSurferSpeed());
     }
 }

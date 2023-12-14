@@ -36,9 +36,8 @@ public class Track {
         }
         return !surfer.getPosition().equals(position);
     }
-
     public TrackElement getTrackElement(Position position) {
-        for (TrackElement trackElement : trackElements) {
+        for (TrackElement trackElement: trackElements) {
             if (trackElement.getPosition().equals(position)) {
                 return trackElement;
             }
@@ -82,14 +81,14 @@ public class Track {
 
     public void removeTrackElement(Position position) {
         TrackElement trackElement = getTrackElement(position);
-        trackElements.remove(trackElement);
+        this.trackElements.remove(trackElement);
     }
 
     public void moveAllTrackElementsDown() {
         for (TrackElement trackElement : trackElements) {
             trackElement.setPosition(trackElement.getDownPosition());
         }
-        this.animMode = (this.animMode+1)%2;
+        this.animMode = (this.animMode+1)%4;
     }
 
     public int getAnimMode(){

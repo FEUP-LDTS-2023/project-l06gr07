@@ -12,6 +12,7 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import org.crazytracks.model.Position;
+import org.crazytracks.leaderboard.Player;
 
 import java.awt.*;
 import java.io.File;
@@ -28,7 +29,6 @@ public class LanternaGUI implements GUI {
     private final int leftMargin;
     private final TextColor trackColor = new TextColor.RGB(188,187,156);
     PositionAdapter positionAdapter;
-    private boolean trackAnimCreated;
     private TrackAnimation animTrack;
 
     public LanternaGUI(int terminalWidth, int terminalHeight) throws IOException, URISyntaxException, FontFormatException {
@@ -38,7 +38,7 @@ public class LanternaGUI implements GUI {
 
         Terminal terminal = terminalCreation(terminalWidth, terminalHeight);
 
-        this.trackAnimCreated = false;
+        this.animTrack = null;
 
         this.screen = new TerminalScreen(terminal);
         this.screen.startScreen();
@@ -98,13 +98,13 @@ public class LanternaGUI implements GUI {
         int x = xMargin-1;
         paintOneBorder(x, animMode, bgColor);
         x = xMargin + numLanes;
-        paintOneBorder(x, (animMode+1)%2, bgColor);
+        paintOneBorder(x, (animMode+2)%4, bgColor);
     }
 
     private void paintOneBorder(int xMargin, int animMode, TextColor bgColor){
         TextCharacter block;
         for (int y = 0; y < terminalHeight; y++) {
-            if (y%2 == animMode){
+            if (y%4 == animMode){
                 block = new TextCharacter(':')
                         .withForegroundColor(TextColor.ANSI.BLACK)
                         .withBackgroundColor(bgColor);
@@ -162,6 +162,21 @@ public class LanternaGUI implements GUI {
             }
         }
     }
+    private void drawScoreIncrease(Integer scoreIncrease, int lineNum){
+        TextGraphics textGraphics = screen.newTextGraphics();
+        int x = 2;
+        int y = lineNum + 4;
+        textGraphics
+                .setForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
+                .setBackgroundColor(TextColor.ANSI.GREEN);
+        textGraphics.putString(x, y + 1, "+" + String.valueOf(scoreIncrease));
+    }
+
+    public void putScoreDisplayList(List<Integer> scoreDisplayList){
+        for (int i = 0; i < scoreDisplayList.size(); i++){
+            drawScoreIncrease(scoreDisplayList.get(i), i);
+        }
+    }
     @Override
     public void putScore(int score){ // default putScore()
         putScore(score, 2, 2);
@@ -174,18 +189,60 @@ public class LanternaGUI implements GUI {
         textGraphics
                 .setForegroundColor(TextColor.ANSI.BLACK)
                 .setBackgroundColor(TextColor.ANSI.GREEN);
-        textGraphics.putString(x, y, "Score: " + String.valueOf(score));
+        textGraphics.putString(x, y, "Score:");
+        textGraphics.putString(x, y + 1, String.valueOf(score));
+
     }
 
     @Override
-    public void putMultiplier(int powerUpValue) {
+    public void putMultiplier(int powerUpValue, boolean multiplierOn) {
         TextGraphics textGraphics = screen.newTextGraphics();
-        int x = this.terminalWidth - 6;
+        int x = this.terminalWidth - 4;
         int y = 2;
+        if (multiplierOn){
+            textGraphics
+                    .setForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
+                    .setBackgroundColor(TextColor.ANSI.GREEN);
+            textGraphics.putString(x, y, "X" + String.valueOf(powerUpValue));
+        } else {
+            textGraphics
+                    .setForegroundColor(TextColor.ANSI.BLACK)
+                    .setBackgroundColor(TextColor.ANSI.GREEN);
+            textGraphics.putString(x, y, "X" + String.valueOf(powerUpValue));
+        }
+
+    }
+
+    @Override
+    public void putSurferSpeed(int speed, int maxSpeed) {
+        int x = 2;
+        int y = this.terminalHeight - 5;
+        TextColor speedColor = getSpeedColor(speed, maxSpeed);
+        TextGraphics textGraphics = screen.newTextGraphics();
         textGraphics
                 .setForegroundColor(TextColor.ANSI.BLACK)
                 .setBackgroundColor(TextColor.ANSI.GREEN);
-        textGraphics.putString(x, y, "X" + String.valueOf(powerUpValue));
+        textGraphics.putString(x, y, "Speed:");
+        textGraphics
+                .setForegroundColor(speedColor);
+        textGraphics.putString(x, y + 1, String.valueOf(speed) + " Km/h");
+    }
+
+    private static TextColor getSpeedColor(int speed, int maxSpeed) {
+        TextColor speedColor = null;
+        int blackThreshold = maxSpeed / 4;
+        int yellowThreshold = maxSpeed * 2 / 4;
+        int redThreshold = maxSpeed * 3 / 4;
+        if (speed > redThreshold){
+            speedColor = TextColor.ANSI.RED;
+        } else if (speed > yellowThreshold) {
+            speedColor = TextColor.ANSI.YELLOW_BRIGHT;
+        } else if (speed > blackThreshold) {
+            speedColor = TextColor.ANSI.BLACK;
+        } else {
+            speedColor = TextColor.ANSI.BLUE;
+        }
+        return speedColor;
     }
 
     public void refreshScreen() throws IOException {
@@ -204,11 +261,10 @@ public class LanternaGUI implements GUI {
         paintOptions(textLeftMargin, textTopMargin + logoTopMargin, options, selected);
 
         TextColor borderColor = TextColor.ANSI.GREEN;
-        if (!this.trackAnimCreated) {
+        if (this.animTrack == null) {
             this.animTrack = new TrackAnimation(this, trackLeftMargin, borderColor, this.terminalHeight);
             Thread animThread = new Thread(animTrack);
             animThread.start();
-            this.trackAnimCreated = true;
         }
         this.animTrack.drawTrackAnimation();
     }
@@ -252,6 +308,10 @@ public class LanternaGUI implements GUI {
             textGraphics.putString(xMargin, y, options.get(i));
         }
     }
+
+    public void drawLeaderboard(List<Player> listOfPlayers){
+
+    };
 
     @Override
     public void clearScreen() {

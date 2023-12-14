@@ -8,15 +8,11 @@ import org.crazytracks.model.TrackLoader;
 import org.crazytracks.states.GameState;
 
 import java.io.IOException;
-import java.lang.foreign.Arena;
-
 public class MenuController extends Controller<Menu> {
     private Menu model;
-
     public MenuController(Menu model) {
         super(model);
     }
-
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         switch (action) {
