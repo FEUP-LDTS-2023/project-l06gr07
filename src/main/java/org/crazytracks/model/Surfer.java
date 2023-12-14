@@ -9,7 +9,7 @@ import static java.lang.Boolean.TRUE;
 
 public class Surfer extends Element{
     private double surferSpeed;
-    private final double maxSurferSpeed = 30;
+    private final double maxSurferSpeed = 25;
     private int score = 0;
     private List<Integer> scoreDisplayList;
 

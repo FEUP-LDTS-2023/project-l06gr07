@@ -26,7 +26,7 @@ public class TrackController extends GameController {
         if (action == GUI.ACTION.QUIT)
             game.setState(new MenuState(new Menu()));
         if (!getModel().getSurfer().isAlive()){
-            game.setState(new GameOverState(new GameOver(getModel().getSurfer().getScore())));
+            game.setState(new GameOverState(new GameOver(getModel().getSurfer().getScore(), (int) getModel().getSurfer().getSurferSpeed())));
         }
         else {
             surferController.step(game, action, time);

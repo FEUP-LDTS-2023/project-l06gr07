@@ -1,6 +1,5 @@
 package org.crazytracks.model;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,10 +7,12 @@ public class GameOver {
     private final int score;
     private final List<String> entries;
     private int currentEntry;
-    public GameOver(int score){
+    private int endSpeed;
+    public GameOver(int score, int endSpeed){
         this.score = score;
         this.entries = Arrays.asList("Try Again", "Back to Menu");
         this.currentEntry = 0;
+        this.endSpeed = endSpeed;
     }
     public int getScore() {
         return score;
@@ -34,5 +35,9 @@ public class GameOver {
 
     public int getCurrentEntryIndex() {
         return currentEntry;
+    }
+
+    public int getEndSpeed(){
+        return endSpeed;
     }
 }

@@ -19,6 +19,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class LanternaGUI implements GUI {
@@ -214,9 +216,13 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void putSurferSpeed(int speed, int maxSpeed) {
-        int x = 2;
-        int y = this.terminalHeight - 5;
+    public void putSurferSpeed(int speed, int maxSpeed){
+        putSurferSpeed(speed, maxSpeed, 2, this.terminalHeight - 5);
+    }
+
+    private void putSurferSpeed(int speed, int maxSpeed, int xMargin, int yMargin) {
+        int x = xMargin;
+        int y = yMargin;
         TextColor speedColor = getSpeedColor(speed, maxSpeed);
         TextGraphics textGraphics = screen.newTextGraphics();
         textGraphics
@@ -270,25 +276,22 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void drawGameOver(int score, List<String> options, int selected) {
-        paintGameOverText(5, 5);
+    public void drawGameOver(int score, int endSpeed, List<String> options, int selected) {
+        putText("GameOver", 5, 5);
         putScore(score, 5, 10);
-        paintOptions(5, 15, options, selected);
+        putSurferSpeed(endSpeed, endSpeed*3, 5, 15);
+        paintOptions(5, 20, options, selected);
     }
-    private void paintGameOverText(int xMargin, int yMargin){
+    private void putText(String text, int xMargin, int yMargin){
         TextGraphics textGraphics = screen.newTextGraphics();
         textGraphics
                 .setForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
                 .setBackgroundColor(TextColor.ANSI.BLACK);
-        textGraphics.putString(xMargin, yMargin, "GameOver");
+        textGraphics.putString(xMargin, yMargin, text);
     }
 
     private void paintLogo(int xMargin, int yMargin){
-        TextGraphics textGraphics = screen.newTextGraphics();
-        textGraphics
-                .setForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
-                .setBackgroundColor(TextColor.ANSI.BLACK);
-        textGraphics.putString(xMargin, yMargin, "CrazyTracks");
+        putText("CrazyTracks", xMargin, yMargin);
     }
     private void paintOptions(int xMargin, int yMargin, List<String> options, int selected){
         TextGraphics textGraphics;
@@ -310,7 +313,15 @@ public class LanternaGUI implements GUI {
     }
 
     public void drawLeaderboard(List<Player> listOfPlayers){
-
+        putText("Leaderboard", 5, 5);
+        int count = 0;
+        for (int i = 7; i < listOfPlayers.size(); i++){
+            Player player = listOfPlayers.get(i);
+            putText(String.valueOf(i) + ": " + player.getName() + "\t" + player.getSavedScore(), 5, i*2);
+            count = i;
+        }
+        List<String> options = Collections.singletonList("Back to Menu");
+        paintOptions(5, 7 + count * 2 + 2, options, 0);
     };
 
     @Override
