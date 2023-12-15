@@ -15,7 +15,6 @@ public class LeaderboardLoader {
                 new Player("Jane Doe", 19, 13),
                 new Player("Somebody else Doe", 31, 23)
         );
-        Leaderboard newLeaderboard = new Leaderboard(newListPlayers);
-        return newLeaderboard;
+        return new Leaderboard(newListPlayers);
     }
 }

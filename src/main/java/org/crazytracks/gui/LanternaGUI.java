@@ -313,15 +313,27 @@ public class LanternaGUI implements GUI {
     }
 
     public void drawLeaderboard(List<Player> listOfPlayers){
-        putText("Leaderboard", 5, 5);
-        int count = 0;
-        for (int i = 7; i < listOfPlayers.size(); i++){
+        int xMargin = 3;
+        int currLine = 5;
+        putText("Leaderboard", xMargin, currLine);
+        currLine += 4;
+        putText("Pos" + "  Name" + "           Score", xMargin-1, currLine);
+        currLine += 2;
+        for (int i = 0; i < listOfPlayers.size(); i++){
             Player player = listOfPlayers.get(i);
-            putText(String.valueOf(i) + ": " + player.getName() + "\t" + player.getSavedScore(), 5, i*2);
-            count = i;
+            String nameDisplayed;
+            int maxSizeOfName = 14;
+            if (player.getName().length() <= maxSizeOfName) {
+                nameDisplayed = player.getName();
+            } else {
+                nameDisplayed = player.getName().substring(0, maxSizeOfName) + "...";
+            }
+            putText(String.valueOf(i) + ":  " + nameDisplayed, xMargin, currLine + i);
+            putText(String.valueOf(player.getSavedScore()), xMargin + 22, currLine + i);
         }
+        currLine += listOfPlayers.size();
         List<String> options = Collections.singletonList("Back to Menu");
-        paintOptions(5, 7 + count * 2 + 2, options, 0);
+        paintOptions(3, this.terminalHeight - 5, options, 0);
     };
 
     @Override

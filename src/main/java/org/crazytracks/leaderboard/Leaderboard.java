@@ -19,23 +19,18 @@ public class Leaderboard {
     public List<Player> getListOfPlayers() {
         return listOfPlayers;
     }
-
     public List<String> getEntries() {
         return entries;
     }
-
     public String getCurrentEntry() {
         return entries.get(currentEntry);
     }
-
     public void nextEntry() {
         currentEntry = (currentEntry + 1) % entries.size();
     }
-
     public void previousEntry() {
         currentEntry = (currentEntry - 1 + entries.size()) % entries.size();
     }
-
     public int getCurrentEntryIndex() {
         return currentEntry;
     }
