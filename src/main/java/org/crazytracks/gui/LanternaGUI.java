@@ -4,6 +4,7 @@ import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.googlecode.lanterna.gui2.dialogs.TextInputDialogBuilder;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
@@ -19,7 +20,10 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+
 
 public class LanternaGUI implements GUI {
     private final Screen screen;
@@ -214,9 +218,13 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void putSurferSpeed(int speed, int maxSpeed) {
-        int x = 2;
-        int y = this.terminalHeight - 5;
+    public void putSurferSpeed(int speed, int maxSpeed){
+        putSurferSpeed(speed, maxSpeed, 2, this.terminalHeight - 5);
+    }
+
+    private void putSurferSpeed(int speed, int maxSpeed, int xMargin, int yMargin) {
+        int x = xMargin;
+        int y = yMargin;
         TextColor speedColor = getSpeedColor(speed, maxSpeed);
         TextGraphics textGraphics = screen.newTextGraphics();
         textGraphics
@@ -270,25 +278,22 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void drawGameOver(int score, List<String> options, int selected) {
-        paintGameOverText(5, 5);
+    public void drawGameOver(int score, int endSpeed, List<String> options, int selected) {
+        putText("GameOver", 5, 5);
         putScore(score, 5, 10);
-        paintOptions(5, 15, options, selected);
+        putSurferSpeed(endSpeed, endSpeed*3, 5, 15);
+        paintOptions(5, 20, options, selected);
     }
-    private void paintGameOverText(int xMargin, int yMargin){
+    private void putText(String text, int xMargin, int yMargin){
         TextGraphics textGraphics = screen.newTextGraphics();
         textGraphics
                 .setForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
                 .setBackgroundColor(TextColor.ANSI.BLACK);
-        textGraphics.putString(xMargin, yMargin, "GameOver");
+        textGraphics.putString(xMargin, yMargin, text);
     }
 
     private void paintLogo(int xMargin, int yMargin){
-        TextGraphics textGraphics = screen.newTextGraphics();
-        textGraphics
-                .setForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
-                .setBackgroundColor(TextColor.ANSI.BLACK);
-        textGraphics.putString(xMargin, yMargin, "CrazyTracks");
+        putText("CrazyTracks", xMargin, yMargin);
     }
     private void paintOptions(int xMargin, int yMargin, List<String> options, int selected){
         TextGraphics textGraphics;
@@ -310,7 +315,28 @@ public class LanternaGUI implements GUI {
     }
 
     public void drawLeaderboard(List<Player> listOfPlayers){
+        int xMargin = 3;
+        int currLine = 5;
+        putText("Leaderboard", xMargin, currLine);
+        currLine += 4;
+        putText("Pos" + "  Name" + "           Score", xMargin-1, currLine);
+        currLine += 2;
 
+        for (int i = 0; i < listOfPlayers.size(); i++){
+            Player player = listOfPlayers.get(i);
+            String nameDisplayed;
+            int maxSizeOfName = 14;
+            if (player.getName().length() <= maxSizeOfName) {
+                nameDisplayed = player.getName();
+            } else {
+                nameDisplayed = player.getName().substring(0, maxSizeOfName) + "...";
+            }
+            putText(String.valueOf(i+1) + " " + nameDisplayed, xMargin-1, currLine + i);
+            putText(String.valueOf(player.getSavedScore()), xMargin + 19, currLine + i);
+        }
+
+        List<String> options = Collections.singletonList("Back to Menu");
+        paintOptions(3, this.terminalHeight - 5, options, 0);
     };
 
     @Override

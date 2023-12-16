@@ -1,6 +1,7 @@
 package org.crazytracks.states;
 
 import org.crazytracks.control.Controller;
+import org.crazytracks.control.LeaderboardController;
 import org.crazytracks.leaderboard.Leaderboard;
 import org.crazytracks.viewer.LeaderboardViewer;
 import org.crazytracks.viewer.Viewer;
@@ -17,6 +18,6 @@ public class LeaderboardState extends State<Leaderboard>{
 
     @Override
     protected Controller<Leaderboard> getController() {
-        return null;
+        return new LeaderboardController(getModel());
     }
 }
