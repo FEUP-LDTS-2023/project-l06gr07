@@ -4,6 +4,7 @@ import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.googlecode.lanterna.gui2.dialogs.TextInputDialogBuilder;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
@@ -22,6 +23,7 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
 
 public class LanternaGUI implements GUI {
     private final Screen screen;
@@ -319,6 +321,7 @@ public class LanternaGUI implements GUI {
         currLine += 4;
         putText("Pos" + "  Name" + "           Score", xMargin-1, currLine);
         currLine += 2;
+
         for (int i = 0; i < listOfPlayers.size(); i++){
             Player player = listOfPlayers.get(i);
             String nameDisplayed;
@@ -328,10 +331,10 @@ public class LanternaGUI implements GUI {
             } else {
                 nameDisplayed = player.getName().substring(0, maxSizeOfName) + "...";
             }
-            putText(String.valueOf(i) + ":  " + nameDisplayed, xMargin, currLine + i);
-            putText(String.valueOf(player.getSavedScore()), xMargin + 22, currLine + i);
+            putText(String.valueOf(i+1) + " " + nameDisplayed, xMargin-1, currLine + i);
+            putText(String.valueOf(player.getSavedScore()), xMargin + 19, currLine + i);
         }
-        currLine += listOfPlayers.size();
+
         List<String> options = Collections.singletonList("Back to Menu");
         paintOptions(3, this.terminalHeight - 5, options, 0);
     };

@@ -3,6 +3,7 @@ package org.crazytracks;
 import org.crazytracks.gui.LanternaGUI;
 import org.crazytracks.leaderboard.Leaderboard;
 import org.crazytracks.leaderboard.LeaderboardLoader;
+import org.crazytracks.leaderboard.Player;
 import org.crazytracks.model.Menu;
 import org.crazytracks.states.MenuState;
 import org.crazytracks.states.State;

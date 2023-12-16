@@ -1,8 +1,6 @@
 package org.crazytracks.leaderboard;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Leaderboard {
     private final List<String> entries;
@@ -15,6 +13,8 @@ public class Leaderboard {
     }
     public void insertPlayer(Player playerToInsert){
         this.listOfPlayers.add(playerToInsert);
+        Collections.sort(this.listOfPlayers, Comparator.comparingInt(Player::getSavedScore).reversed());
+
     }
     public List<Player> getListOfPlayers() {
         return listOfPlayers;
