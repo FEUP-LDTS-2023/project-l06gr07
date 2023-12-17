@@ -321,8 +321,11 @@ public class LanternaGUI implements GUI {
         currLine += 4;
         putText("Pos" + "  Name" + "           Score", xMargin-1, currLine);
         currLine += 2;
-
-        for (int i = 0; i < listOfPlayers.size(); i++){
+        int displayedPlayerNum = listOfPlayers.size();
+        if (displayedPlayerNum > 23){
+            displayedPlayerNum = 23;
+        }
+        for (int i = 0; i < displayedPlayerNum; i++){
             Player player = listOfPlayers.get(i);
             String nameDisplayed;
             int maxSizeOfName = 14;
@@ -353,12 +356,14 @@ public class LanternaGUI implements GUI {
         if (keyStroke == null) return ACTION.NONE;
 
         if (keyStroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;
-        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'q') return ACTION.QUIT;
-
-        if (keyStroke.getKeyType() == KeyType.ArrowUp) {
-            System.out.print("up");
-            return ACTION.UP;
+        if (keyStroke.getKeyType() == KeyType.Escape) {
+            return ACTION.QUIT;
         }
+        if (keyStroke.getKeyType() == KeyType.Character) {
+            return ACTION.TYPING;
+        }
+
+        if (keyStroke.getKeyType() == KeyType.ArrowUp) return ACTION.UP;
         if (keyStroke.getKeyType() == KeyType.ArrowRight) return ACTION.RIGHT;
         if (keyStroke.getKeyType() == KeyType.ArrowDown) return ACTION.DOWN;
         if (keyStroke.getKeyType() == KeyType.ArrowLeft) return ACTION.LEFT;

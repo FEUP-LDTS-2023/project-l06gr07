@@ -139,7 +139,7 @@ public class TrackElementController extends GameController{
         getModel().getSurfer().decreaseMultiplierSteps();
         checkMultiplierTime();
 
-        double currSurferSpeed = getModel().getSurfer().getSurferSpeed() / 10;
+        double currSurferSpeed = getModel().getSurfer().getSurferSpeed() / 12;
 
         createWagon((long)(1500/currSurferSpeed));
         createWagon2((long)(1500/currSurferSpeed));
