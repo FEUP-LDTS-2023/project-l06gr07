@@ -15,17 +15,14 @@ import static java.lang.Boolean.FALSE;
 public class TrackElementController extends GameController{
     private long lastUpdateTime = System.currentTimeMillis();
     private long lastWagonCreationTime = System.currentTimeMillis();
-    private long lastWagonCreationTime2 = System.currentTimeMillis();
     private long lastPowerUpCreationTime = System.currentTimeMillis();
     private long lastCoinCreationTime = System.currentTimeMillis();
     private final WagonFactory wagonFactory;
-    private final WagonFactory wagonFactory2;
     private final PowerUpFactory powerUpFactory;
     private final CoinFactory coinFactory;
     public TrackElementController(Track model) {
         super(model);
         wagonFactory = new WagonFactory();
-        wagonFactory2 = new WagonFactory();
         powerUpFactory = new PowerUpFactory();
         coinFactory = new CoinFactory();
     }
@@ -67,26 +64,21 @@ public class TrackElementController extends GameController{
     public void createWagon(long time){
         long currentTime = System.currentTimeMillis();
         if (currentTime - lastWagonCreationTime >= time) {
-            List<Element> wagons = wagonFactory.createElement();
-            for (Element wagon : wagons) {
+            List<Element> wagons1 = wagonFactory.createElement();
+            for (Element wagon : wagons1) {
                 if (getModel().isEmpty(wagon.getPosition())) {
                     getModel().addTrackElement((TrackElement) wagon);
                 }
             }
-            lastWagonCreationTime = currentTime;
-        }
-    }
 
-    public void createWagon2(long time){
-        long currentTime = System.currentTimeMillis();
-        if (currentTime - lastWagonCreationTime2 >= time) {
-            List<Element> wagons = wagonFactory2.createElement();
-            for (Element wagon : wagons) {
+            List<Element> wagons2 = wagonFactory.createElement();
+            for (Element wagon : wagons2) {
                 if (getModel().isEmpty(wagon.getPosition())) {
                     getModel().addTrackElement((TrackElement) wagon);
                 }
             }
-            lastWagonCreationTime2 = currentTime;
+
+            lastWagonCreationTime = currentTime;
         }
     }
 
@@ -142,7 +134,6 @@ public class TrackElementController extends GameController{
         double currSurferSpeed = getModel().getSurfer().getSurferSpeed() / 12;
 
         createWagon((long)(1500/currSurferSpeed));
-        createWagon2((long)(1500/currSurferSpeed));
         createPowerUp((long)(10000/currSurferSpeed));
         createCoin((long)(1000/currSurferSpeed));
         moveTrackElements((long)(100/currSurferSpeed));
