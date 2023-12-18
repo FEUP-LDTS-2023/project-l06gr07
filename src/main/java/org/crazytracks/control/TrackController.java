@@ -2,6 +2,7 @@ package org.crazytracks.control;
 
 import org.crazytracks.Game;
 import org.crazytracks.gui.GUI;
+import org.crazytracks.leaderboard.Player;
 import org.crazytracks.model.*;
 import org.crazytracks.model.factory.WagonFactory;
 import org.crazytracks.states.GameOverState;
@@ -26,7 +27,15 @@ public class TrackController extends GameController {
         if (action == GUI.ACTION.QUIT)
             game.setState(new MenuState(new Menu()));
         if (!getModel().getSurfer().isAlive()){
-            game.setState(new GameOverState(new GameOver(getModel().getSurfer().getScore())));
+            game.getLeaderboard().insertPlayer(new Player(
+                    "daniel",
+                    getModel().getSurfer().getScore(),
+                    (int) getModel().getSurfer().getSurferSpeed()
+            ));
+            game.setState(new GameOverState(new GameOver(
+                    getModel().getSurfer().getScore(),
+                    (int) getModel().getSurfer().getSurferSpeed()
+            )));
         }
         else {
             surferController.step(game, action, time);

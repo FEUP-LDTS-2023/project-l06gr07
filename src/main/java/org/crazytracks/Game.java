@@ -1,6 +1,9 @@
 package org.crazytracks;
 
 import org.crazytracks.gui.LanternaGUI;
+import org.crazytracks.leaderboard.Leaderboard;
+import org.crazytracks.leaderboard.LeaderboardLoader;
+import org.crazytracks.leaderboard.Player;
 import org.crazytracks.model.Menu;
 import org.crazytracks.states.MenuState;
 import org.crazytracks.states.State;
@@ -12,14 +15,24 @@ import java.net.URISyntaxException;
 public class Game {
     private final LanternaGUI gui;
     private State state;
+    private Leaderboard leaderboard;
 
     public Game() throws FontFormatException, IOException, URISyntaxException {
         this.gui = new LanternaGUI(30, 40);
         this.state = new MenuState(new Menu());
+        this.leaderboard = loadLeaderboard();
     }
 
     public static void main(String[] args) throws IOException, FontFormatException, URISyntaxException, InterruptedException {
         new Game().start();
+    }
+    private Leaderboard loadLeaderboard(){
+        LeaderboardLoader ll = new LeaderboardLoader("somefilepath.txt");
+        return ll.load();
+    }
+
+    public Leaderboard getLeaderboard(){
+        return leaderboard;
     }
 
     public void setState(State state) {
