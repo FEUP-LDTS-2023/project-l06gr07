@@ -8,8 +8,9 @@ import java.io.IOException;
 import java.util.List;
 
 public interface GUI {
-    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT}
+    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT, TYPING}
     ACTION getNextAction() throws IOException;
+    char getCurrChar() throws IOException;
     void initGameGUI(int animMode);
     void drawTrack(int xMargin, int animMode, TextColor borderColor);
     void drawCoin(Position position);
@@ -24,7 +25,7 @@ public interface GUI {
     void drawMenu(List<String> options, int selected) throws IOException;
     void drawGameOver(int score, int endSpeed, List<String> options, int selected);
     void drawLeaderboard(List<Player> listOfPlayers);
-    void drawInputName();
+    void drawInputName(String inputText);
     void clearScreen();
     void refreshScreen() throws IOException;
     void closeScreen() throws IOException;

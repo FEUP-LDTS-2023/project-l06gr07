@@ -35,6 +35,8 @@ public class LanternaGUI implements GUI {
     PositionAdapter positionAdapter;
     private TrackAnimation animTrack;
 
+    private char currChar;
+
     public LanternaGUI(int terminalWidth, int terminalHeight) throws IOException, URISyntaxException, FontFormatException {
         this.leftMargin = 14;
         this.terminalWidth = terminalWidth;
@@ -43,6 +45,8 @@ public class LanternaGUI implements GUI {
         Terminal terminal = terminalCreation(terminalWidth, terminalHeight);
 
         this.animTrack = null;
+
+        this.currChar = 'a';
 
         this.screen = new TerminalScreen(terminal);
         this.screen.startScreen();
@@ -339,9 +343,11 @@ public class LanternaGUI implements GUI {
         paintOptions(3, this.terminalHeight - 5, options, 0);
     };
 
-    public void drawInputName(){
+    public void drawInputName(String textInput){
         putText("hello world", 3, 5);
         putText("This is working!", 3, 7);
+        putText("Now let's see if you can input text:", 3, 9);
+        putText(textInput + "_", 3, 11);
     }
 
     @Override
@@ -353,17 +359,26 @@ public class LanternaGUI implements GUI {
         return this.terminalHeight;
     }
 
+    public char getCurrChar() throws IOException {
+        return this.currChar;
+    }
+
+    public void setCurrChar(char nextChar){
+        this.currChar = nextChar;
+    }
+
     public ACTION getNextAction() throws IOException {
         KeyStroke keyStroke = screen.pollInput();
         if (keyStroke == null) return ACTION.NONE;
 
         if (keyStroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;
-        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'q') return ACTION.QUIT;
-
-        if (keyStroke.getKeyType() == KeyType.ArrowUp) {
-            System.out.print("up");
-            return ACTION.UP;
+        if (keyStroke.getKeyType() == KeyType.Escape) return ACTION.QUIT;
+        if (keyStroke.getKeyType() == KeyType.Character) {
+            setCurrChar(keyStroke.getCharacter());
+            return ACTION.TYPING;
         }
+
+        if (keyStroke.getKeyType() == KeyType.ArrowUp) return ACTION.UP;
         if (keyStroke.getKeyType() == KeyType.ArrowRight) return ACTION.RIGHT;
         if (keyStroke.getKeyType() == KeyType.ArrowDown) return ACTION.DOWN;
         if (keyStroke.getKeyType() == KeyType.ArrowLeft) return ACTION.LEFT;
