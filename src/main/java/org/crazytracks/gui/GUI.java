@@ -24,6 +24,7 @@ public interface GUI {
     void drawMenu(List<String> options, int selected) throws IOException;
     void drawGameOver(int score, int endSpeed, List<String> options, int selected);
     void drawLeaderboard(List<Player> listOfPlayers);
+    void drawInputName();
     void clearScreen();
     void refreshScreen() throws IOException;
     void closeScreen() throws IOException;

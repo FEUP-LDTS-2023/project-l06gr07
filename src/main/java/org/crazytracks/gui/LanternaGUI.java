@@ -339,6 +339,11 @@ public class LanternaGUI implements GUI {
         paintOptions(3, this.terminalHeight - 5, options, 0);
     };
 
+    public void drawInputName(){
+        putText("hello world", 3, 5);
+        putText("This is working!", 3, 7);
+    }
+
     @Override
     public void clearScreen() {
         screen.clear();
