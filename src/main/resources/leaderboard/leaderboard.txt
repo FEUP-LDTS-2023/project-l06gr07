@@ -1,0 +1,4 @@
+daniel	7476	25
+daniel	1850	13
+daniel	69	7
+daniel b	67	7

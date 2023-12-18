@@ -6,15 +6,25 @@ public class Leaderboard {
     private final List<String> entries;
     private int currentEntry;
     private List<Player> listOfPlayers;
+    private final LeaderboardLoader ll;
     public Leaderboard(List<Player> listOfPlayers){
-        this.listOfPlayers = listOfPlayers;
-        this.entries = Arrays.asList("Back to Menu");
+        this.ll = new LeaderboardLoader("src/main/resources/leaderboard/leaderboard.txt");
+        this.listOfPlayers = ll.loadList();
+
+        this.entries = Collections.singletonList("Back to Menu");
         this.currentEntry = 0;
     }
     public void insertPlayer(Player playerToInsert){
         this.listOfPlayers.add(playerToInsert);
-        Collections.sort(this.listOfPlayers, Comparator.comparingInt(Player::getSavedScore).reversed());
+        this.listOfPlayers.sort(Comparator.comparingInt(Player::getSavedScore).reversed());
+        ll.save(this);
 
+    }
+    public void save() {
+        ll.save(this);
+    }
+    public void load(){
+        this.listOfPlayers = ll.loadList();
     }
     public List<Player> getListOfPlayers() {
         return listOfPlayers;
