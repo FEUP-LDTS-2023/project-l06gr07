@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.List;
 
 public interface GUI {
-    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT, TYPING}
+    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT, TYPING, UNDO}
     ACTION getNextAction() throws IOException;
     char getCurrChar() throws IOException;
     void initGameGUI(int animMode);
@@ -23,7 +23,7 @@ public interface GUI {
     void putMultiplier(int powerUpValue, boolean multiplierOn);
     void putSurferSpeed(int score, int endSpeed);
     void drawMenu(List<String> options, int selected) throws IOException;
-    void drawGameOver(int score, int endSpeed, List<String> options, int selected);
+    void drawGameOver(Player player, List<String> options, int selected) throws IOException;
     void drawLeaderboard(List<Player> listOfPlayers);
     void drawInputName(String inputText);
     void clearScreen();
