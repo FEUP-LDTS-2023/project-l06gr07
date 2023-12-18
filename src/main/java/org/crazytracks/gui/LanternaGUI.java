@@ -331,8 +331,11 @@ public class LanternaGUI implements GUI {
         currLine += 4;
         putText("Pos" + "  Name" + "           Score", xMargin-1, currLine);
         currLine += 2;
-
-        for (int i = 0; i < listOfPlayers.size(); i++){
+        int displayedPlayerNum = listOfPlayers.size();
+        if (displayedPlayerNum > 23){
+            displayedPlayerNum = 23;
+        }
+        for (int i = 0; i < displayedPlayerNum; i++){
             Player player = listOfPlayers.get(i);
             String nameDisplayed;
             int maxSizeOfName = 14;
