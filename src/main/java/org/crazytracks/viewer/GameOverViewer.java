@@ -12,6 +12,6 @@ public class GameOverViewer extends Viewer<GameOver> {
     }
     @Override
     protected void drawElements(GUI gui) throws IOException {
-        gui.drawGameOver(getModel().getScore(), getModel().getEndSpeed(), getModel().getEntries(), getModel().getCurrentEntryIndex());
+        gui.drawGameOver(getModel().getPlayer(), getModel().getEntries(), getModel().getCurrentEntryIndex());
     }
 }

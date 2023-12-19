@@ -1,21 +1,23 @@
 package org.crazytracks.model;
 
+import org.crazytracks.leaderboard.Player;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class GameOver {
-    private final int score;
+    private final Player player;
     private final List<String> entries;
     private int currentEntry;
-    private int endSpeed;
-    public GameOver(int score, int endSpeed){
-        this.score = score;
+
+    public GameOver(Player player){
+        this.player = player;
+
         this.entries = Arrays.asList("Try Again", "Back to Menu");
         this.currentEntry = 0;
-        this.endSpeed = endSpeed;
     }
-    public int getScore() {
-        return score;
+    public Player getPlayer(){
+        return player;
     }
     public List<String> getEntries() {
         return entries;
@@ -37,7 +39,5 @@ public class GameOver {
         return currentEntry;
     }
 
-    public int getEndSpeed(){
-        return endSpeed;
-    }
+
 }

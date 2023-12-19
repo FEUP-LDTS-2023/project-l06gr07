@@ -1,5 +1,6 @@
 package org.crazytracks.leaderboard;
 
+import java.io.*;
 import java.util.*;
 
 public class LeaderboardLoader {
@@ -8,39 +9,44 @@ public class LeaderboardLoader {
         this.filepath = filepath; // for future implementation of persistent data
     }
 
-    public Leaderboard load(){
+    public void save(Leaderboard leaderboard){
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filepath))){
+            List<Player> listPlayers = leaderboard.getListOfPlayers();
+            for (Player player : listPlayers){
+                writer.write(player.getName());
+                writer.write("\t");
+                writer.write(String.valueOf(player.getSavedScore()));
+                writer.write("\t");
+                writer.write(String.valueOf(player.getEndSpeed()));
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public List<Player> loadList(){
+        System.out.println("loadingList");
         List<Player> newListPlayers = new ArrayList<>();
-        newListPlayers.add(new Player("John Doe", 10, 11));
-        newListPlayers.add(new Player("John Doe", 10, 11));
-        newListPlayers.add(new Player("John Doe", 10, 11));
-        newListPlayers.add(new Player("John Doe", 10, 11));
-        newListPlayers.add(new Player("John Doe", 10, 11));
-        newListPlayers.add(new Player("John Doe", 10, 11));
-        newListPlayers.add(new Player("John Doe", 10, 11));
-        newListPlayers.add(new Player("John Doe", 10, 11));
-        newListPlayers.add(new Player("John Doe", 10, 11));
-        newListPlayers.add(new Player("John Doe", 10, 11));
-        newListPlayers.add(new Player("John Doe", 10, 11));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Jane Doe", 19, 13));
-        newListPlayers.add(new Player("Somebody else Doe", 31, 23));
-        newListPlayers.add(new Player("John Doe", 5, 11));
+        try (BufferedReader reader = new BufferedReader(new FileReader(filepath))){
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] attrs = line.split("\t");
+                if (attrs.length == 3){
+                    Player currPlayer = new Player(
+                            attrs[0],
+                            Integer.parseInt(attrs[1]),
+                            Integer.parseInt(attrs[2])
+                    );
+                    newListPlayers.add(currPlayer);
+                }
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
         newListPlayers.sort(Comparator.comparingInt(Player::getSavedScore).reversed());
-        return new Leaderboard(newListPlayers);
+        return newListPlayers;
     }
 }

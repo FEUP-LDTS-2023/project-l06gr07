@@ -35,6 +35,8 @@ public class LanternaGUI implements GUI {
     PositionAdapter positionAdapter;
     private TrackAnimation animTrack;
 
+    private char currChar;
+
     public LanternaGUI(int terminalWidth, int terminalHeight) throws IOException, URISyntaxException, FontFormatException {
         this.leftMargin = 14;
         this.terminalWidth = terminalWidth;
@@ -43,6 +45,8 @@ public class LanternaGUI implements GUI {
         Terminal terminal = terminalCreation(terminalWidth, terminalHeight);
 
         this.animTrack = null;
+
+        this.currChar = 'a';
 
         this.screen = new TerminalScreen(terminal);
         this.screen.startScreen();
@@ -278,17 +282,23 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void drawGameOver(int score, int endSpeed, List<String> options, int selected) {
-        putText("GameOver", 5, 5);
-        putScore(score, 5, 10);
-        putSurferSpeed(endSpeed, endSpeed*3, 5, 15);
-        paintOptions(5, 20, options, selected);
+    public void drawGameOver(Player player, List<String> options, int selected) throws IOException {
+        int xMargin = 3;
+        putText("Game over,", xMargin, 5);
+        putText(player.getName(), xMargin, 7);
+        putScore(player.getSavedScore(), xMargin, 12);
+        putSurferSpeed(player.getEndSpeed(), player.getEndSpeed()*3, xMargin, 18);
+        paintOptions(xMargin, this.terminalHeight - 8, options, selected);
+        this.animTrack.drawTrackAnimation();
     }
     private void putText(String text, int xMargin, int yMargin){
+        putText(text, xMargin, yMargin, TextColor.ANSI.GREEN_BRIGHT, TextColor.ANSI.BLACK);
+    }
+    private void putText(String text, int xMargin, int yMargin, TextColor textColor, TextColor bgColor){
         TextGraphics textGraphics = screen.newTextGraphics();
         textGraphics
-                .setForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
-                .setBackgroundColor(TextColor.ANSI.BLACK);
+                .setForegroundColor(textColor)
+                .setBackgroundColor(bgColor);
         textGraphics.putString(xMargin, yMargin, text);
     }
 
@@ -342,6 +352,15 @@ public class LanternaGUI implements GUI {
         paintOptions(3, this.terminalHeight - 5, options, 0);
     };
 
+    public void drawInputName(String textInput){
+        putText("You may have crashed...", 3, 5);
+        putText("but your journey,", 3, 7);
+        putText("shall never be forgotten.", 3, 9);
+        putText("Write your name into", 3, 14);
+        putText("history:", 3, 16);
+        putText(textInput + "_", 3, 18, TextColor.ANSI.BLACK, TextColor.ANSI.GREEN_BRIGHT);
+    }
+
     @Override
     public void clearScreen() {
         screen.clear();
@@ -351,17 +370,25 @@ public class LanternaGUI implements GUI {
         return this.terminalHeight;
     }
 
+    public char getCurrChar() throws IOException {
+        return this.currChar;
+    }
+
+    public void setCurrChar(char nextChar){
+        this.currChar = nextChar;
+    }
+
     public ACTION getNextAction() throws IOException {
         KeyStroke keyStroke = screen.pollInput();
         if (keyStroke == null) return ACTION.NONE;
 
         if (keyStroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;
-        if (keyStroke.getKeyType() == KeyType.Escape) {
-            return ACTION.QUIT;
-        }
+        if (keyStroke.getKeyType() == KeyType.Escape) return ACTION.QUIT;
         if (keyStroke.getKeyType() == KeyType.Character) {
+            setCurrChar(keyStroke.getCharacter());
             return ACTION.TYPING;
         }
+        if  (keyStroke.getKeyType() == KeyType.Backspace) return ACTION.UNDO;
 
         if (keyStroke.getKeyType() == KeyType.ArrowUp) return ACTION.UP;
         if (keyStroke.getKeyType() == KeyType.ArrowRight) return ACTION.RIGHT;
