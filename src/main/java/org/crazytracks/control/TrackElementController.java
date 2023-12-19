@@ -115,6 +115,7 @@ public class TrackElementController extends GameController{
             checkWagonCollisions();
             checkPowerUpCollisions();
             checkCoinCollisions();
+            getModel().getSurfer().nextAnimMode(); // surfer moves synchronised to speed of track
             lastUpdateTime = currentTime2;
         }
     }
@@ -136,6 +137,7 @@ public class TrackElementController extends GameController{
         createWagon((long)(1500/currSurferSpeed));
         createPowerUp((long)(10000/currSurferSpeed));
         createCoin((long)(1000/currSurferSpeed));
+
         moveTrackElements((long)(100/currSurferSpeed));
     }
 }

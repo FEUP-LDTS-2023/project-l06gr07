@@ -14,6 +14,7 @@ import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import org.crazytracks.model.Position;
 import org.crazytracks.leaderboard.Player;
+import org.crazytracks.model.Surfer;
 
 import java.awt.*;
 import java.io.File;
@@ -54,7 +55,8 @@ public class LanternaGUI implements GUI {
 
     public Terminal terminalCreation(int terminalWidth, int terminalHeight) throws IOException, FontFormatException, URISyntaxException {
 //        URL resource = getClass().getClassLoader().getResource("fonts/AnonymousPro-Regular.ttf");
-        URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
+//        URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
+        URL resource = getClass().getClassLoader().getResource("fonts/Square-Regular.ttf");
         File fontFile = new File(resource.toURI());
         Font font =  Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
@@ -140,11 +142,30 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void drawSurfer(Position position) {
-        TextCharacter surferCharacter = new TextCharacter('S')
-                .withForegroundColor(TextColor.ANSI.BLUE)
-                .withBackgroundColor(trackColor);
-        putCharacter(position, surferCharacter);
+    public void drawSurfer(Surfer surfer) {
+        Position position = surfer.getPosition();
+        int animMode = surfer.getAnimMode();
+        if (animMode == 0){
+            TextCharacter surferCharacter = new TextCharacter('«')
+                    .withForegroundColor(TextColor.ANSI.BLUE)
+                    .withBackgroundColor(trackColor);
+            putCharacter(position, surferCharacter);
+        } else if (animMode == 1) {
+            TextCharacter surferCharacter = new TextCharacter('ª')
+                    .withForegroundColor(TextColor.ANSI.BLUE)
+                    .withBackgroundColor(trackColor);
+            putCharacter(position, surferCharacter);
+        } else if (animMode == 2){
+            TextCharacter surferCharacter = new TextCharacter('©')
+                    .withForegroundColor(TextColor.ANSI.BLUE)
+                    .withBackgroundColor(trackColor);
+            putCharacter(position, surferCharacter);
+        } else {
+            TextCharacter surferCharacter = new TextCharacter('ª')
+                    .withForegroundColor(TextColor.ANSI.BLUE)
+                    .withBackgroundColor(trackColor);
+            putCharacter(position, surferCharacter);
+        }
     }
 
     @Override
@@ -359,6 +380,8 @@ public class LanternaGUI implements GUI {
         putText("Write your name into", 3, 14);
         putText("history:", 3, 16);
         putText(textInput + "_", 3, 18, TextColor.ANSI.BLACK, TextColor.ANSI.GREEN_BRIGHT);
+        putText("Press ENTER to submit", 3, this.terminalHeight - 7);
+        putText("or ESC to exit", 3, this.terminalHeight - 5);
     }
 
     @Override
