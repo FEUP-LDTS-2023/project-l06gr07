@@ -7,11 +7,12 @@ import java.util.TimerTask;
 
 import static java.lang.Boolean.TRUE;
 
-public class Surfer extends Element{
+public class Surfer extends AnimatedElement{
     private double surferSpeed;
     private final double maxSurferSpeed = 25;
     private int score = 0;
-    private List<Integer> scoreDisplayList;
+    private final List<Integer> scoreDisplayList;
+    private int animMode;
 
     private int score_multiplier = 1;
     private boolean multiplierOn;
@@ -19,6 +20,17 @@ public class Surfer extends Element{
     boolean isAlive = TRUE;
 
     private int multiplierSteps = 0;
+
+    public Surfer(Position position) {
+        super(position, 4);
+        this.multiplierOn = false;
+        this.scoreDisplayList = new ArrayList<>();
+
+        this.animMode = 0;
+
+        this.surferSpeed = 5;
+        startAcceleration();
+    }
 
     public void setCurrentLane(int currentLane) {
         this.currentLane = currentLane;
@@ -30,16 +42,6 @@ public class Surfer extends Element{
 
     public void setAlive(boolean alive) {
         isAlive = alive;
-    }
-
-
-    public Surfer(Position position) {
-        super(position);
-        this.multiplierOn = false;
-        this.scoreDisplayList = new ArrayList<>();
-
-        this.surferSpeed = 5;
-        startAcceleration();
     }
 
     private void startAcceleration(){
@@ -67,7 +69,7 @@ public class Surfer extends Element{
     }
 
     public void increaseScore(int score, int score_multiplier){
-        Integer scoreInc = score * score_multiplier;
+        int scoreInc = score * score_multiplier;
         this.score += scoreInc;
         if (scoreInc > 2){
             scoreDisplayList.add(scoreInc);
@@ -104,7 +106,7 @@ public class Surfer extends Element{
         this.multiplierOn = false;
     }
     public void collectCoin(Coin coin){
-        Integer scoreInc = coin.getCoinValue();
+        int scoreInc = coin.getCoinValue();
         increaseScore(scoreInc, score_multiplier);
     }
 

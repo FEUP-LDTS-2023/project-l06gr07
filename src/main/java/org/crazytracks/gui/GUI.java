@@ -3,6 +3,7 @@ package org.crazytracks.gui;
 import com.googlecode.lanterna.TextColor;
 import org.crazytracks.model.Position;
 import org.crazytracks.leaderboard.Player;
+import org.crazytracks.model.Surfer;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,7 +15,7 @@ public interface GUI {
     void initGameGUI(int animMode);
     void drawTrack(int xMargin, int animMode, TextColor borderColor);
     void drawCoin(Position position);
-    void drawSurfer(Position position);
+    void drawSurfer(Surfer surfer);
     void drawPowerUp(Position position);
     void drawWagon(Position position);
     void putScoreDisplayList(List<Integer> scoreDisplayList);

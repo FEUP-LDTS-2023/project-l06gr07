@@ -7,6 +7,6 @@ import org.crazytracks.model.Surfer;
 public class SurferViewer implements ElementViewer<Surfer> {
     @Override
     public void draw(Element surfer, GUI gui) {
-        gui.drawSurfer(surfer.getPosition());
+        gui.drawSurfer((Surfer) surfer);
     }
 }
