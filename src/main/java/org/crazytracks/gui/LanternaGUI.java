@@ -355,7 +355,7 @@ public class LanternaGUI implements GUI {
     public void drawInputName(String textInput){
         putText("You may have crashed...", 3, 5);
         putText("but your journey,", 3, 7);
-        putText("shall never be forgotten.", 3, 9);
+        putText("will never be forgotten!", 3, 9);
         putText("Write your name into", 3, 14);
         putText("history:", 3, 16);
         putText(textInput + "_", 3, 18, TextColor.ANSI.BLACK, TextColor.ANSI.GREEN_BRIGHT);
