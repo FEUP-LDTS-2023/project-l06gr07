@@ -170,8 +170,8 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawPowerUp(Position position) {
-        TextCharacter powerUpCharacter = new TextCharacter('p')
-                .withForegroundColor(TextColor.ANSI.GREEN)
+        TextCharacter powerUpCharacter = new TextCharacter('P')
+                .withForegroundColor(TextColor.ANSI.GREEN_BRIGHT)
                 .withBackgroundColor(TextColor.ANSI.WHITE);
         putCharacter(position, powerUpCharacter);
     }
