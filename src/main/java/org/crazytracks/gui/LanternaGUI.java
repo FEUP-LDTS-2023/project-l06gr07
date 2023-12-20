@@ -4,7 +4,6 @@ import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.gui2.dialogs.TextInputDialogBuilder;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
@@ -12,8 +11,9 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import org.crazytracks.gui.sui.SUI;
 import org.crazytracks.model.Position;
-import org.crazytracks.leaderboard.Player;
+import org.crazytracks.model.leaderboard.Player;
 import org.crazytracks.model.Surfer;
 
 import java.awt.*;
@@ -21,7 +21,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -51,6 +50,7 @@ public class LanternaGUI implements GUI {
 
         this.screen = new TerminalScreen(terminal);
         this.screen.startScreen();
+        this.getSUI().playMusic();
     }
 
     public Terminal terminalCreation(int terminalWidth, int terminalHeight) throws IOException, FontFormatException, URISyntaxException {
@@ -426,6 +426,11 @@ public class LanternaGUI implements GUI {
     @Override
     public void closeScreen() throws IOException {
         screen.close();
+    }
+
+    @Override
+    public SUI getSUI(){
+        return sui;
     }
 }
 

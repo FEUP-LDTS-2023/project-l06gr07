@@ -1,7 +1,7 @@
 package org.crazytracks.viewer;
 
 import org.crazytracks.gui.GUI;
-import org.crazytracks.leaderboard.Leaderboard;
+import org.crazytracks.model.leaderboard.Leaderboard;
 
 import java.io.IOException;
 

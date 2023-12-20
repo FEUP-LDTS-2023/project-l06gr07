@@ -1,10 +1,9 @@
 package org.crazytracks.control;
 
-import com.googlecode.lanterna.input.KeyStroke;
 import org.crazytracks.Game;
 import org.crazytracks.gui.GUI;
-import org.crazytracks.leaderboard.InputName;
-import org.crazytracks.leaderboard.Player;
+import org.crazytracks.model.leaderboard.InputName;
+import org.crazytracks.model.leaderboard.Player;
 import org.crazytracks.model.GameOver;
 import org.crazytracks.model.Menu;
 import org.crazytracks.states.GameOverState;

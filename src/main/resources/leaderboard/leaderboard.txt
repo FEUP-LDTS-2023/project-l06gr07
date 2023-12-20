@@ -1,7 +1,12 @@
 daniel	13208	25
 daniel	7476	25
+	3602	19
+JACOME	3524	21
+	3119	19
 daniel	1850	13
 moving surfer	1439	14
+	954	12
+	238	8
 daniel123	120	10
 daniel	69	7
 daniel b	67	7
