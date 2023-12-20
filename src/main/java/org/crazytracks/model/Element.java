@@ -4,8 +4,10 @@ import org.crazytracks.viewer.SurferViewer;
 
 public class Element{
     Position position;
+    Animation anim;
     public Element(Position position){
         this.position = position;
+        this.anim = null;
     }
 
     public Position getPosition(){
@@ -34,5 +36,11 @@ public class Element{
 
     public Object getView() {
         return new SurferViewer();
+    }
+    public void setAnim(Animation anim){
+        this.anim = anim;
+    }
+    public Animation getAnim() {
+        return anim;
     }
 }
