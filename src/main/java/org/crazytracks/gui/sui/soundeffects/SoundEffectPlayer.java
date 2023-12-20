@@ -1,44 +1,38 @@
 package org.crazytracks.gui.sui.soundeffects;
 
-import javax.sound.sampled.*;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
-public class SoundEffectPlayer implements SoundEffects, WagonCollisionListener, CoinCollisionListener, PowerUpCollisionListener{
-    private List<Clip> playingClips = new ArrayList<>();
+import java.io.File;
+
+public class SoundEffectPlayer implements SoundEffects, WagonCollisionListener, CoinCollisionListener, PowerUpCollisionListener {
+    private MediaPlayer mediaPlayer;
+
+    public SoundEffectPlayer() {
+        new JFXPanel();
+    }
+
     @Override
     public void onCoinCollision() {
-        playSound("src/main/resources/sound/coinSoundEffect.wav");
+        playSound("src/main/resources/sound/coin.mp3");
     }
+
     @Override
     public void onPowerUpCollision() {
-        playSound("src/main/resources/sound/powerUpSoundEffect.wav");
-    }
-    @Override
-    public void playSound(String filePath) {
-        cleanup();
-        try {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath).getAbsoluteFile());
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
-            FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-            volume.setValue(-10.0f);
-            clip.start();
-            playingClips.add(clip);
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            e.printStackTrace();
-        }
+        playSound("src/main/resources/sound/powerup.mp3");
     }
 
     @Override
     public void onWagonCollision() {
-        playSound("src/main/resources/sound/wagonSoundEffect.wav");
+        playSound("src/main/resources/sound/wagon.mp3");
+    }
 
-    }
     @Override
-    public void cleanup() {
-        playingClips.removeIf(clip -> clip.getFramePosition() >= clip.getFrameLength());
+    public void playSound(String filePath) {
+        Media sound = new Media(new File(filePath).toURI().toString());
+        mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
     }
+
 }

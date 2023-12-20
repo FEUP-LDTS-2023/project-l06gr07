@@ -21,18 +21,18 @@ public class SurferController extends GameController{
             getModel().getSurfer().setMultiplier(getModel().getSurfer().getMultiplier() + 1);
             getModel().getSurfer().setMultiplierSteps(10*60);
             getModel().removeTrackElement(position);
-            getModel().notifySoundEffectListener("powerup");
+            getModel().notifyPowerUpCollisionListeners();
         }
         else if (getModel().getTrackElement(position) instanceof Coin) {
             Coin coin = (Coin) getModel().getTrackElement(position);
             getModel().getSurfer().setPosition(position);
             getModel().getSurfer().collectCoin(coin);
             getModel().removeTrackElement(position);
-            getModel().notifySoundEffectListener("coin");
+            getModel().notifyCoinCollisionListeners();
         }
         else if (getModel().getTrackElement(position) instanceof Wagon){
             getModel().getSurfer().setAlive(false);
-            getModel().notifySoundEffectListener("wagon");
+            getModel().notifyWagonCollisionListeners();
         }
 
     }
