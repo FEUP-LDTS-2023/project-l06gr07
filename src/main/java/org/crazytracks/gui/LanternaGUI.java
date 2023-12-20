@@ -373,13 +373,19 @@ public class LanternaGUI implements GUI {
         paintOptions(3, this.terminalHeight - 5, options, 0);
     };
 
-    public void drawInputName(String textInput){
+    public void drawInputName(String textInput, boolean invalidInputFlag){
         putText("You may have crashed...", 3, 5);
         putText("but your journey,", 3, 7);
         putText("shall never be forgotten.", 3, 9);
         putText("Write your name into", 3, 14);
         putText("history:", 3, 16);
         putText(textInput + "_", 3, 18, TextColor.ANSI.BLACK, TextColor.ANSI.GREEN_BRIGHT);
+        if (invalidInputFlag) {
+            putText("INVALID INPUT: must", 3, 20, TextColor.ANSI.BLACK, TextColor.ANSI.RED_BRIGHT);
+            putText("contain alphanumeric", 3, 21, TextColor.ANSI.BLACK, TextColor.ANSI.RED_BRIGHT);
+            putText("characters", 3, 22, TextColor.ANSI.BLACK, TextColor.ANSI.RED_BRIGHT);
+
+        }
         putText("Press ENTER to submit", 3, this.terminalHeight - 7);
         putText("or ESC to exit", 3, this.terminalHeight - 5);
     }

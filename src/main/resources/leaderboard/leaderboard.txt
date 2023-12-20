@@ -1,12 +1,13 @@
+JACOME	20000	25
 daniel	13208	25
 daniel	7476	25
-	3602	19
-JACOME	20000	25
-	3119	19
+rui	3602	19
+rui	3119	19
 daniel	1850	13
 moving surfer	1439	14
-	954	12
-	238	8
+jane doe	954	12
+john doe	238	8
 daniel123	120	10
+2	104	10
 daniel	69	7
 daniel b	67	7
