@@ -30,7 +30,7 @@ public interface GUI {
     void drawMenu(List<String> options, int selected) throws IOException;
     void drawGameOver(Player player, List<String> options, int selected) throws IOException;
     void drawLeaderboard(List<Player> listOfPlayers);
-    void drawInputName(String inputText);
+    void drawInputName(String inputText, boolean invalidInputFlag);
     void clearScreen();
     void refreshScreen() throws IOException;
     void closeScreen() throws IOException;

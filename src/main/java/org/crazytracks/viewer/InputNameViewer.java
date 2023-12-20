@@ -12,6 +12,6 @@ public class InputNameViewer extends Viewer<InputName>{
 
     @Override
     protected void drawElements(GUI gui) throws IOException {
-        gui.drawInputName(getModel().getInputText());
+        gui.drawInputName(getModel().getInputText(), getModel().isInputInvalid());
     }
 }

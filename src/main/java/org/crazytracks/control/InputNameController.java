@@ -26,13 +26,17 @@ public class InputNameController extends Controller<InputName>{
             getModel().eraseLastChar();
         }
         if (action == GUI.ACTION.SELECT){
-            Player player = new Player(
-                    getModel().getInputText(),
-                    getModel().getSurfer().getScore(),
-                    (int) getModel().getSurfer().getSurferSpeed()
-            );
-            game.getLeaderboard().insertPlayer(player);
-            game.setState(new GameOverState(new GameOver(player)));
+            if (getModel().getInputText().matches(".*[a-zA-Z0-9].*")) {
+                Player player = new Player(
+                        getModel().getInputText(),
+                        getModel().getSurfer().getScore(),
+                        (int) getModel().getSurfer().getSurferSpeed()
+                );
+                game.getLeaderboard().insertPlayer(player);
+                game.setState(new GameOverState(new GameOver(player)));
+            } else {
+                getModel().sendInvalidInputWarning();
+            }
         }
         if (action == GUI.ACTION.QUIT){
             game.setState(new MenuState(new Menu()));
