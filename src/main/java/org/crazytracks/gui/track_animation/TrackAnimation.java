@@ -1,8 +1,9 @@
-package org.crazytracks.gui;
+package org.crazytracks.gui.track_animation;
 import com.googlecode.lanterna.TextColor;
-import org.crazytracks.model.Position;
-import org.crazytracks.model.TrackElement;
-import org.crazytracks.model.Wagon;
+import org.crazytracks.gui.GUI;
+import org.crazytracks.model.track_element.Position;
+import org.crazytracks.model.track_element.TrackElement;
+import org.crazytracks.model.track_element.Wagon;
 
 import java.io.IOException;
 import java.util.ArrayList;

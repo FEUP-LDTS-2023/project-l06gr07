@@ -1,8 +1,8 @@
 package org.crazytracks.model.factory;
 
 import org.crazytracks.model.Element;
-import org.crazytracks.model.Position;
-import org.crazytracks.model.Wagon;
+import org.crazytracks.model.track_element.Position;
+import org.crazytracks.model.track_element.Wagon;
 
 import java.util.ArrayList;
 import java.util.List;

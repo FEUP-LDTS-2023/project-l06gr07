@@ -1,6 +1,5 @@
 package org.crazytracks.gui;
 
-import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.TextColor;
@@ -13,9 +12,10 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import org.crazytracks.gui.sui.SUI;
-import org.crazytracks.model.Position;
+import org.crazytracks.gui.track_animation.PositionAdapter;
+import org.crazytracks.gui.track_animation.TrackAnimation;
+import org.crazytracks.model.track_element.Position;
 import org.crazytracks.model.leaderboard.Player;
-import org.crazytracks.model.Surfer;
 
 import java.awt.*;
 import java.io.File;
@@ -134,11 +134,18 @@ public class LanternaGUI implements GUI {
         clearScreen();
         drawMenu(options, selected);
     }
-
     @Override
-    public void drawCoin(Position position) {
+    public void drawCopperCoin(Position position) {
         TextCharacter coinCharacter = new TextCharacter('$')
                 .withForegroundColor(TextColor.ANSI.YELLOW)
+                .withBackgroundColor(TextColor.ANSI.WHITE);
+        putCharacter(position, coinCharacter);
+
+    }
+    @Override
+    public void drawGoldCoin(Position position) {
+        TextCharacter coinCharacter = new TextCharacter('$')
+                .withForegroundColor(TextColor.ANSI.YELLOW_BRIGHT)
                 .withBackgroundColor(TextColor.ANSI.WHITE);
         putCharacter(position, coinCharacter);
     }

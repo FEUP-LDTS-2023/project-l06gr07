@@ -1,5 +1,8 @@
 package org.crazytracks.model;
 
+import org.crazytracks.model.track_element.Position;
+import org.crazytracks.model.track_element.coin.Coin;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -7,7 +10,7 @@ import java.util.TimerTask;
 
 import static java.lang.Boolean.TRUE;
 
-public class Surfer extends Element{
+public class Surfer extends Element {
     private double surferSpeed;
     private final double maxSurferSpeed = 25;
     private int score = 0;

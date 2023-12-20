@@ -1,6 +1,6 @@
 package org.crazytracks.model;
 
-import org.crazytracks.gui.PositionAdapter;
+import org.crazytracks.model.track_element.Position;
 
 public class TrackLoader extends TrackBuilder{
     @Override

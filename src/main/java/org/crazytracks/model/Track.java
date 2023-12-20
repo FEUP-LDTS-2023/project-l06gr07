@@ -4,6 +4,8 @@ import org.crazytracks.gui.sui.soundeffects.CoinCollisionListener;
 import org.crazytracks.gui.sui.soundeffects.PowerUpCollisionListener;
 import org.crazytracks.gui.sui.soundeffects.SoundEffectPlayer;
 import org.crazytracks.gui.sui.soundeffects.WagonCollisionListener;
+import org.crazytracks.model.track_element.*;
+import org.crazytracks.model.track_element.coin.Coin;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -3,9 +3,13 @@ package org.crazytracks.control;
 import org.crazytracks.Game;
 import org.crazytracks.gui.GUI;
 import org.crazytracks.model.*;
+import org.crazytracks.model.track_element.coin.Coin;
 import org.crazytracks.model.factory.CoinFactory;
 import org.crazytracks.model.factory.PowerUpFactory;
 import org.crazytracks.model.factory.WagonFactory;
+import org.crazytracks.model.track_element.PowerUp;
+import org.crazytracks.model.track_element.TrackElement;
+import org.crazytracks.model.track_element.Wagon;
 
 import java.io.IOException;
 import java.util.List;

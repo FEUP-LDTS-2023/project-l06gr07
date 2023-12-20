@@ -1,17 +1,16 @@
-import com.googlecode.lanterna.screen.Screen;
 import org.crazytracks.gui.GUI;
 import org.crazytracks.gui.LanternaGUI;
-import org.crazytracks.gui.PositionAdapter;
 import org.crazytracks.model.*;
+import org.crazytracks.model.Surfer;
+import org.crazytracks.model.track_element.Position;
+import org.crazytracks.model.track_element.PowerUp;
+import org.crazytracks.model.track_element.TrackElement;
+import org.crazytracks.model.track_element.Wagon;
 import org.crazytracks.viewer.GameViewer;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.net.URISyntaxException;
 
 import static java.lang.Boolean.TRUE;

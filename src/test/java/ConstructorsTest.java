@@ -1,4 +1,8 @@
 import org.crazytracks.model.*;
+import org.crazytracks.model.track_element.*;
+import org.crazytracks.model.Surfer;
+import org.crazytracks.model.track_element.coin.Coin;
+import org.crazytracks.model.track_element.coin.CopperCoin;
 import org.crazytracks.states.GameState;
 import org.crazytracks.states.MenuState;
 import org.junit.jupiter.api.Assertions;
@@ -11,7 +15,7 @@ public class ConstructorsTest {
 
     @Test
     public void testCoinConstructor() {
-        Coin coin = new Coin(new Position(0, 0));
+        Coin coin = new CopperCoin(new Position(0, 0));
         Assertions.assertEquals(0, coin.getPosition().getX());
         Assertions.assertEquals(0, coin.getPosition().getY());
     }

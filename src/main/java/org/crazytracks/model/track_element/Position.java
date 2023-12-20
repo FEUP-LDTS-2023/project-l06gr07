@@ -1,4 +1,4 @@
-package org.crazytracks.model;
+package org.crazytracks.model.track_element;
 
 public class Position {
     private int x;
