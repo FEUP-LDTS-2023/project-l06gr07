@@ -1,5 +1,6 @@
 package org.crazytracks.gui;
 
+import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.TextColor;
@@ -49,6 +50,7 @@ public class LanternaGUI implements GUI {
         this.currChar = 'a';
 
         this.screen = new TerminalScreen(terminal);
+        screen.setCursorPosition(null);
         this.screen.startScreen();
         this.getSUI().playMusic();
     }
