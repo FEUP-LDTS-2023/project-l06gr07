@@ -1,19 +1,19 @@
 JACOME	20000	25
 daniel	13208	25
 daniel	7476	25
-rui	3602	19
-rui	3119	19
-daniel	1850	13
-moving surfer	1439	14
-jane doe	954	12
-john doe	238	8
 ta feito	4978	23
+rui	3602	19
 	3602	19
+rui	3119	19
 	3119	19
 daniel	1850	13
+daniel	1850	13
 moving surfer	1439	14
+moving surfer	1439	14
+jane doe	954	12
 	954	12
 naooooo bugouuu	449	12
+john doe	238	8
 	238	8
 daniel123	120	10
 2	104	10

@@ -1,5 +1,5 @@
-import org.crazytracks.gui.PositionAdapter;
-import org.crazytracks.model.Position;
+import org.crazytracks.gui.track_animation.PositionAdapter;
+import org.crazytracks.model.track_element.Position;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

@@ -3,9 +3,8 @@ package org.crazytracks.gui;
 import com.googlecode.lanterna.TextColor;
 import org.crazytracks.gui.sui.SUI;
 import org.crazytracks.gui.sui.mainsound.MainSoundPlayer;
-import org.crazytracks.model.Position;
+import org.crazytracks.model.track_element.Position;
 import org.crazytracks.model.leaderboard.Player;
-import org.crazytracks.model.Surfer;
 
 import java.io.IOException;
 import java.util.List;
@@ -18,7 +17,10 @@ public interface GUI {
     char getCurrChar() throws IOException;
     void initGameGUI(int animMode);
     void drawTrack(int xMargin, int animMode, TextColor borderColor);
-    void drawCoin(Position position);
+
+    void drawCopperCoin(Position position);
+    void drawGoldCoin(Position position);
+
     void drawSurfer(Position position, int animMode);
     void drawPowerUp(Position position);
     void drawWagon(Position position);

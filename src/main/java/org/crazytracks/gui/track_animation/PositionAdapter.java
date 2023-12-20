@@ -1,6 +1,6 @@
-package org.crazytracks.gui;
+package org.crazytracks.gui.track_animation;
 
-import org.crazytracks.model.Position;
+import org.crazytracks.model.track_element.Position;
 
 public class PositionAdapter {
     private final int offsetX;

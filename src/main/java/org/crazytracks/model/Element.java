@@ -1,13 +1,17 @@
 package org.crazytracks.model;
 
+import org.crazytracks.model.track_element.Position;
+import org.crazytracks.model.track_element.DrawStrategy;
 import org.crazytracks.viewer.SurferViewer;
 
 public class Element{
     Position position;
     Animation anim;
+    private DrawStrategy drawStrategy;
     public Element(Position position){
         this.position = position;
         this.anim = null;
+        this.drawStrategy = null;
     }
 
     public Position getPosition(){
@@ -43,4 +47,11 @@ public class Element{
     public Animation getAnim() {
         return anim;
     }
+    public void setDrawStrategy(DrawStrategy drawStrategy){
+        this.drawStrategy = drawStrategy;
+    }
+    public DrawStrategy getDrawStrategy(){
+        return drawStrategy;
+    }
+
 }
