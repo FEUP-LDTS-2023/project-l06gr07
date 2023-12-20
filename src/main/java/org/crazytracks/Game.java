@@ -56,7 +56,7 @@ public class Game {
 
             if (sleepTime > 0) Thread.sleep(sleepTime);
         }
-
+        gui.getSUI().stopMusic();
         gui.closeScreen();
     }
 }

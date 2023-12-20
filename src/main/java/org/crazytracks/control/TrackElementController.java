@@ -45,6 +45,7 @@ public class TrackElementController extends GameController{
             if (getModel().getSurfer().getPosition().equals(coin.getPosition())) {
                 getModel().getSurfer().collectCoin(coin);
                 getModel().getTrackElements().remove(coin);
+                getModel().notifySoundEffectListener("coin");
             }
         }
     }

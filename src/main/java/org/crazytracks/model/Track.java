@@ -1,15 +1,19 @@
 package org.crazytracks.model;
 
+import org.crazytracks.gui.sui.soundeffects.SoundEffectPlayer;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Track {
     private Surfer surfer;
     private List<TrackElement> trackElements = new ArrayList<>();
+    private List<SoundEffectPlayer> soundListener = new ArrayList<>();
     private int animMode;
 
     public Track(){
         this.animMode = 0;
+        soundListener.add(new SoundEffectPlayer());
     }
 
     public Surfer getSurfer() {
@@ -93,5 +97,17 @@ public class Track {
 
     public int getAnimMode(){
         return animMode;
+    }
+
+    public void notifySoundEffectListener(String type) {
+        for (SoundEffectPlayer listener : soundListener) {
+            if (type.equals("coin")) {
+                listener.onCoinCollision();
+            } else if (type.equals("powerup")) {
+                listener.onPowerUpCollision();
+            } else if (type.equals("wagon")) {
+                listener.onWagonCollision();
+            }
+        }
     }
 }

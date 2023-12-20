@@ -1,6 +1,8 @@
 package org.crazytracks.gui;
 
 import com.googlecode.lanterna.TextColor;
+import org.crazytracks.gui.sui.SUI;
+import org.crazytracks.gui.sui.mainsound.MainSoundPlayer;
 import org.crazytracks.model.Position;
 import org.crazytracks.leaderboard.Player;
 import org.crazytracks.model.Surfer;
@@ -11,6 +13,8 @@ import java.util.List;
 public interface GUI {
     enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT, TYPING, UNDO}
     ACTION getNextAction() throws IOException;
+    SUI sui = new MainSoundPlayer();
+    SUI getSUI();
     char getCurrChar() throws IOException;
     void initGameGUI(int animMode);
     void drawTrack(int xMargin, int animMode, TextColor borderColor);
