@@ -1,6 +1,9 @@
 package org.crazytracks.model;
 
+import org.crazytracks.gui.sui.soundeffects.CoinCollisionListener;
+import org.crazytracks.gui.sui.soundeffects.PowerUpCollisionListener;
 import org.crazytracks.gui.sui.soundeffects.SoundEffectPlayer;
+import org.crazytracks.gui.sui.soundeffects.WagonCollisionListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,11 +11,15 @@ import java.util.List;
 public class Track {
     private Surfer surfer;
     private List<TrackElement> trackElements = new ArrayList<>();
-    private List<SoundEffectPlayer> soundListener = new ArrayList<>();
+    private List<CoinCollisionListener> coinCollisionListeners = new ArrayList<>();
+    private List<WagonCollisionListener> wagonCollisionListeners = new ArrayList<>();
+    private List<PowerUpCollisionListener> powerUpCollisionListeners = new ArrayList<>();
     private final Animation anim;
     public Track(){
         this.anim = new Animation(4);
-        soundListener.add(new SoundEffectPlayer());
+        coinCollisionListeners.add(new SoundEffectPlayer());
+        wagonCollisionListeners.add(new SoundEffectPlayer());
+        powerUpCollisionListeners.add(new SoundEffectPlayer());
     }
 
     public Surfer getSurfer() {
@@ -98,15 +105,21 @@ public class Track {
         return this.anim.getAnimMode();
     }
 
-    public void notifySoundEffectListener(String type) {
-        for (SoundEffectPlayer listener : soundListener) {
-            if (type.equals("coin")) {
-                listener.onCoinCollision();
-            } else if (type.equals("powerup")) {
-                listener.onPowerUpCollision();
-            } else if (type.equals("wagon")) {
-                listener.onWagonCollision();
-            }
+    public void notifyCoinCollisionListeners() {
+        for (CoinCollisionListener coinCollisionListener : coinCollisionListeners) {
+            coinCollisionListener.onCoinCollision();
+        }
+    }
+
+    public void notifyWagonCollisionListeners() {
+        for (WagonCollisionListener wagonCollisionListener : wagonCollisionListeners) {
+            wagonCollisionListener.onWagonCollision();
+        }
+    }
+
+    public void notifyPowerUpCollisionListeners() {
+        for (PowerUpCollisionListener powerUpCollisionListener : powerUpCollisionListeners) {
+            powerUpCollisionListener.onPowerUpCollision();
         }
     }
 }
