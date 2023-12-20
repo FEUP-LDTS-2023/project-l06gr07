@@ -71,7 +71,7 @@ public class Surfer extends AnimatedElement{
     public void increaseScore(int score, int score_multiplier){
         int scoreInc = score * score_multiplier;
         this.score += scoreInc;
-        if (scoreInc > 2){
+        if (scoreInc > 8){
             scoreDisplayList.add(scoreInc);
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
