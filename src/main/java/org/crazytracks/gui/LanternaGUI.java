@@ -13,7 +13,7 @@ import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import org.crazytracks.gui.sui.SUI;
 import org.crazytracks.model.Position;
-import org.crazytracks.leaderboard.Player;
+import org.crazytracks.model.leaderboard.Player;
 import org.crazytracks.model.Surfer;
 
 import java.awt.*;

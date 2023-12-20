@@ -1,6 +1,6 @@
 package org.crazytracks.model;
 
-import org.crazytracks.leaderboard.Player;
+import org.crazytracks.model.leaderboard.Player;
 
 import java.util.Arrays;
 import java.util.List;

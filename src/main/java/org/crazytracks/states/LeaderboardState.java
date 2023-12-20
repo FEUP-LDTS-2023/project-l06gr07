@@ -2,7 +2,7 @@ package org.crazytracks.states;
 
 import org.crazytracks.control.Controller;
 import org.crazytracks.control.LeaderboardController;
-import org.crazytracks.leaderboard.Leaderboard;
+import org.crazytracks.model.leaderboard.Leaderboard;
 import org.crazytracks.viewer.LeaderboardViewer;
 import org.crazytracks.viewer.Viewer;
 

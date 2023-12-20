@@ -1,4 +1,4 @@
-package org.crazytracks.leaderboard;
+package org.crazytracks.model.leaderboard;
 
 public class Player {
     private final int savedScore;

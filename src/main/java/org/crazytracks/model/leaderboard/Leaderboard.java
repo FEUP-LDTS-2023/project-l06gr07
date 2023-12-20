@@ -1,4 +1,4 @@
-package org.crazytracks.leaderboard;
+package org.crazytracks.model.leaderboard;
 
 import java.util.*;
 

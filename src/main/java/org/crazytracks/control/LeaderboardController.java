@@ -2,11 +2,8 @@ package org.crazytracks.control;
 
 import org.crazytracks.Game;
 import org.crazytracks.gui.GUI;
-import org.crazytracks.leaderboard.Leaderboard;
-import org.crazytracks.model.GameOver;
+import org.crazytracks.model.leaderboard.Leaderboard;
 import org.crazytracks.model.Menu;
-import org.crazytracks.model.TrackLoader;
-import org.crazytracks.states.GameState;
 import org.crazytracks.states.MenuState;
 
 import java.io.IOException;

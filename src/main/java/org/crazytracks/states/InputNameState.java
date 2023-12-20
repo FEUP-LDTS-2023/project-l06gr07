@@ -2,7 +2,7 @@ package org.crazytracks.states;
 
 import org.crazytracks.control.Controller;
 import org.crazytracks.control.InputNameController;
-import org.crazytracks.leaderboard.InputName;
+import org.crazytracks.model.leaderboard.InputName;
 import org.crazytracks.viewer.InputNameViewer;
 import org.crazytracks.viewer.Viewer;
 

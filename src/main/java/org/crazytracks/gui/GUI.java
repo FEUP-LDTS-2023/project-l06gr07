@@ -4,7 +4,7 @@ import com.googlecode.lanterna.TextColor;
 import org.crazytracks.gui.sui.SUI;
 import org.crazytracks.gui.sui.mainsound.MainSoundPlayer;
 import org.crazytracks.model.Position;
-import org.crazytracks.leaderboard.Player;
+import org.crazytracks.model.leaderboard.Player;
 import org.crazytracks.model.Surfer;
 
 import java.io.IOException;
