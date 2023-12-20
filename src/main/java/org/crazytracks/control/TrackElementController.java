@@ -35,6 +35,7 @@ public class TrackElementController extends GameController{
                 getModel().getSurfer().setMultiplier(getModel().getSurfer().getMultiplier() + 1);
                 getModel().getSurfer().setMultiplierSteps(10*60);
                 getModel().getTrackElements().remove(powerUp);
+                getModel().notifySoundEffectListener("powerup");
             }
         }
     }
@@ -55,6 +56,7 @@ public class TrackElementController extends GameController{
         for (Wagon wagon : wagons) {
             if (getModel().getSurfer().getPosition().equals(wagon.getPosition())) {
                 getModel().getSurfer().setAlive(FALSE);
+                getModel().notifySoundEffectListener("wagon");
             }
             if (wagon.getPosition().getY() == 40){
                 getModel().removeTrackElement(wagon.getPosition());
