@@ -9,10 +9,9 @@ public class Track {
     private Surfer surfer;
     private List<TrackElement> trackElements = new ArrayList<>();
     private List<SoundEffectPlayer> soundListener = new ArrayList<>();
-    private int animMode;
-
+    private final Animation anim;
     public Track(){
-        this.animMode = 0;
+        this.anim = new Animation(4);
         soundListener.add(new SoundEffectPlayer());
     }
 
@@ -92,11 +91,11 @@ public class Track {
         for (TrackElement trackElement : trackElements) {
             trackElement.setPosition(trackElement.getDownPosition());
         }
-        this.animMode = (this.animMode+1)%4;
+        this.anim.nextAnimMode();
     }
 
     public int getAnimMode(){
-        return animMode;
+        return this.anim.getAnimMode();
     }
 
     public void notifySoundEffectListener(String type) {

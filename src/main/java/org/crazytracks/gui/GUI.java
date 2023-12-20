@@ -19,7 +19,7 @@ public interface GUI {
     void initGameGUI(int animMode);
     void drawTrack(int xMargin, int animMode, TextColor borderColor);
     void drawCoin(Position position);
-    void drawSurfer(Surfer surfer);
+    void drawSurfer(Position position, int animMode);
     void drawPowerUp(Position position);
     void drawWagon(Position position);
     void putScoreDisplayList(List<Integer> scoreDisplayList);

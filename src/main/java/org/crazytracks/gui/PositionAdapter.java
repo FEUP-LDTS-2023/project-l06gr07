@@ -3,8 +3,8 @@ package org.crazytracks.gui;
 import org.crazytracks.model.Position;
 
 public class PositionAdapter {
-    private int offsetX;
-    private int sizeOfTrack;
+    private final int offsetX;
+    private final int sizeOfTrack;
     public PositionAdapter(int offsetX, int sizeOfTrack){
         this.offsetX = offsetX;
         this.sizeOfTrack = sizeOfTrack;

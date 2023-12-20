@@ -142,9 +142,7 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void drawSurfer(Surfer surfer) {
-        Position position = surfer.getPosition();
-        int animMode = surfer.getAnimMode();
+    public void drawSurfer(Position position, int animMode) {
         if (animMode == 0){
             TextCharacter surferCharacter = new TextCharacter('«')
                     .withForegroundColor(TextColor.ANSI.BLUE)

@@ -7,31 +7,25 @@ import java.util.TimerTask;
 
 import static java.lang.Boolean.TRUE;
 
-public class Surfer extends AnimatedElement{
+public class Surfer extends Element{
     private double surferSpeed;
     private final double maxSurferSpeed = 25;
     private int score = 0;
     private final List<Integer> scoreDisplayList;
-    private int animMode;
-
     private int score_multiplier = 1;
     private boolean multiplierOn;
     private int currentLane = 1;
     boolean isAlive = TRUE;
-
     private int multiplierSteps = 0;
 
     public Surfer(Position position) {
-        super(position, 4);
+        super(position);
         this.multiplierOn = false;
         this.scoreDisplayList = new ArrayList<>();
-
-        this.animMode = 0;
-
         this.surferSpeed = 5;
+        this.setAnim(new Animation(4));
         startAcceleration();
     }
-
     public void setCurrentLane(int currentLane) {
         this.currentLane = currentLane;
     }
@@ -71,7 +65,7 @@ public class Surfer extends AnimatedElement{
     public void increaseScore(int score, int score_multiplier){
         int scoreInc = score * score_multiplier;
         this.score += scoreInc;
-        if (scoreInc > 2){
+        if (scoreInc > 8){
             scoreDisplayList.add(scoreInc);
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
