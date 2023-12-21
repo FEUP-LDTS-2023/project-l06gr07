@@ -53,7 +53,8 @@ This represents the overall design of our game, with its respective MVC architec
   -**Complexity:** Implementing multiple states might increase initial complexity, especially if the states have intricate interactions or dependencies.    
   -**Overhead:** There might be a slight performance overhead due to managing the list of states and transitioning between them, but this overhead is typically negligible in most scenarios.
 
---- -**Problem in Context:** Introducing diverse objects within the game's tracks to enhance gameplay variety.      
+--- 
+-**Problem in Context:** Introducing diverse objects within the game's tracks to enhance gameplay variety.      
 -**The Pattern:** The Factory Method Pattern is used to manage the creation of diverse track objects effectively. This pattern allows us to encapsulate the creation logic for various track objects (such as obstacles, power-ups, or scenery elements) within separate factory classes. Each factory is responsible for generating a specific type of object, ensuring a cohesive and modular approach to object creation.      
 -**Implementation:** In your game, you have different factory classes for each type of track object. Each factory class has a method that creates and returns an instance of the appropriate object. This implementation allows the game to create diverse track objects without needing to know the specific details of how each object is created.
 
