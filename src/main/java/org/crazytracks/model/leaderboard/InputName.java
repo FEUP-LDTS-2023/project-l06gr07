@@ -24,6 +24,10 @@ public class InputName {
         return this.isInputInvalid;
     }
 
+    public void setInputInvalid(boolean isInputInvalid){
+        this.isInputInvalid = isInputInvalid;
+    }
+
     public GUI getGUI(){
         return this.gui;
     }
@@ -35,23 +39,6 @@ public class InputName {
     public void setInputText(String inputText) {
         if (this.inputText.length() < inputTextLimit){
             this.inputText = inputText;
-        }
-    }
-
-    public void sendInvalidInputWarning(){
-        this.isInputInvalid = true;
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                isInputInvalid = false;
-            }
-        }, 2000);
-    }
-
-    public void eraseLastChar(){
-        if (!inputText.isEmpty()){
-            inputText = inputText.substring(0, inputText.length()-1);
         }
     }
 

@@ -10,10 +10,31 @@ import org.crazytracks.states.GameOverState;
 import org.crazytracks.states.MenuState;
 
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class InputNameController extends Controller<InputName>{
     public InputNameController(InputName model) {
         super(model);
+    }
+
+    private void sendInvalidInputWarning(){
+        getModel().setInputInvalid(true);
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                getModel().setInputInvalid(false);
+            }
+        }, 2000);
+    }
+
+    private void eraseLastChar(){
+        String inputText = getModel().getInputText();
+        if (!inputText.isEmpty()){
+            inputText = inputText.substring(0, inputText.length()-1);
+            getModel().setInputText(inputText);
+        }
     }
 
     @Override
@@ -23,7 +44,7 @@ public class InputNameController extends Controller<InputName>{
             getModel().setInputText(getModel().getInputText() + currChar);
         }
         if (action == GUI.ACTION.UNDO){
-            getModel().eraseLastChar();
+            eraseLastChar();
         }
         if (action == GUI.ACTION.SELECT){
             if (getModel().getInputText().matches(".*[a-zA-Z0-9].*")) {
@@ -35,7 +56,7 @@ public class InputNameController extends Controller<InputName>{
                 game.getLeaderboard().insertPlayer(player);
                 game.setState(new GameOverState(new GameOver(player)));
             } else {
-                getModel().sendInvalidInputWarning();
+                sendInvalidInputWarning();
             }
         }
         if (action == GUI.ACTION.QUIT){
