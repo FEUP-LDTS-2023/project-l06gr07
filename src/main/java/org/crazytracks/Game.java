@@ -2,6 +2,7 @@ package org.crazytracks;
 
 import org.crazytracks.gui.GUI;
 import org.crazytracks.gui.LanternaGUI;
+import org.crazytracks.gui.sui.mainsound.CompatibilitySoundPlayer;
 import org.crazytracks.model.leaderboard.Leaderboard;
 import org.crazytracks.model.Menu;
 import org.crazytracks.states.MenuState;
@@ -46,7 +47,6 @@ public class Game {
     private void start() throws IOException, InterruptedException {
         int FPS = 60;
         int frameTime = 1000 / FPS;
-        gui.getSUI().playMusic();
 
         while (this.state != null) {
             long startTime = System.currentTimeMillis();

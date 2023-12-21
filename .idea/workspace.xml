@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/mainsound/CompatibilitySoundPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/LanternaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/LanternaGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,6 +78,7 @@
     "WebServerToolWindowFactoryState": "false",
     "extract.method.default.visibility": "private",
     "git-widget-placeholder": "bugs/sound__compatibility",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/daniel/Documents/FEUP_LEIC/1º semestre/LDTS/project/project-l06gr07",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -216,7 +215,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-249ae16d76d6-29f91840" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-920bfa72" />
       </set>
     </attachedChunks>
   </component>
@@ -234,6 +233,7 @@
       <workItem from="1700837920589" duration="3219000" />
       <workItem from="1701356076324" duration="554000" />
       <workItem from="1701357310361" duration="2811000" />
+      <workItem from="1703195577327" duration="1415000" />
     </task>
     <servers />
   </component>
