@@ -1,4 +1,4 @@
-package gui_tests;
+package gui.track_animation;
 
 import org.crazytracks.gui.track_animation.PositionAdapter;
 import org.crazytracks.model.track_element.Position;

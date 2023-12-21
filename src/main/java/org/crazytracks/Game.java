@@ -40,6 +40,10 @@ public class Game {
         this.state = state;
     }
 
+    public State getState(){
+        return this.state;
+    }
+
     private void start() throws IOException, InterruptedException {
         int FPS = 60;
         int frameTime = 1000 / FPS;

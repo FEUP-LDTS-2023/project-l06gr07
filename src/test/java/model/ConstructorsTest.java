@@ -1,4 +1,4 @@
-package model_tests;
+package model;
 
 import org.crazytracks.model.Menu;
 import org.crazytracks.model.Surfer;
