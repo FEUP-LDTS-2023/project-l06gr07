@@ -129,10 +129,10 @@ To address this we ended up creating Duplicate Code, code smell that occurs when
 -**Data Clump**
 The game uses Position objects frequently throughout the codebase. These Position objects, which represent a point in the game's 2D space, are often used together and passed around together.  We ended up not separating the class generating a Data Clumps, a code smell that occurs when the same data hang around together, and they should be separated into their respective classes. this leads to increased complexity, increased maintenance and decreased modularity.
 
---**Switch statements**
+-**Switch statements**
 The game needs to handle different types of game events, such as user input or collisions between game objects. These events need to be handled differently depending on their type. We used to much switch statements on the step method which is a common code smell in object oriented programming which leads to increased complexity, increased maintenance and decreased modularity.
 
---**Data Class**
+-**Data Class**
 The Track class in our game primarily serves as a container for data. It holds various lists of game elements like Wagon, Coin, PowerUp, Surfer and Collision listeners. While it does contain some behavior, much of its functionality involves managing these data collections. We ended up with Data Class code smell which is a code smell that occurs when a class primarily contains fields for storing data values and lacks significant methods that encapsulate behavior.  In spite of this, the use of this code smell allows for the code to be easier to understand. This data smell leads to lack of encapsulation, difficulty in testing and increased coupling.
 
 
