@@ -56,5 +56,6 @@ public class Game {
         }
         gui.getSUI().stopMusic();
         gui.closeScreen();
+        System.exit(0);
     }
 }
