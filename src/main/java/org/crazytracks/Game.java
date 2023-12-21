@@ -20,7 +20,6 @@ public class Game {
         this.gui = new LanternaGUI(30, 40);
         this.state = new MenuState(new Menu());
         this.leaderboard = new Leaderboard(null);
-
         this.leaderboard.load();
     }
 
@@ -47,6 +46,7 @@ public class Game {
     private void start() throws IOException, InterruptedException {
         int FPS = 60;
         int frameTime = 1000 / FPS;
+        gui.getSUI().playMusic();
 
         while (this.state != null) {
             long startTime = System.currentTimeMillis();

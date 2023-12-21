@@ -12,6 +12,8 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import org.crazytracks.gui.sui.SUI;
+import org.crazytracks.gui.sui.mainsound.CompatibilitySoundPlayer;
+import org.crazytracks.gui.sui.mainsound.MainSoundPlayer;
 import org.crazytracks.gui.track_animation.PositionAdapter;
 import org.crazytracks.gui.track_animation.TrackAnimation;
 import org.crazytracks.model.track_element.Position;
@@ -35,8 +37,8 @@ public class LanternaGUI implements GUI {
     private final TextColor trackColor = new TextColor.RGB(188,187,156);
     PositionAdapter positionAdapter;
     private TrackAnimation animTrack;
-
     private char currChar;
+    SUI sui;
 
     public LanternaGUI(int terminalWidth, int terminalHeight) throws IOException, URISyntaxException, FontFormatException {
         this.leftMargin = 14;
@@ -49,10 +51,20 @@ public class LanternaGUI implements GUI {
 
         this.currChar = 'a';
 
+        try {
+            this.sui = new MainSoundPlayer();
+//            this.sui = new CompatibilitySoundPlayer();
+        } catch (Exception e) {
+            System.out.println("CAUGHT EXCEPTION");
+            System.out.println("CAUGHT EXCEPTION");
+            System.out.println("CAUGHT EXCEPTION");
+            System.out.println("CAUGHT EXCEPTION");
+            this.sui = new CompatibilitySoundPlayer();
+        }
+
         this.screen = new TerminalScreen(terminal);
         screen.setCursorPosition(null);
         this.screen.startScreen();
-        this.getSUI().playMusic();
     }
 
     public Terminal terminalCreation(int terminalWidth, int terminalHeight) throws IOException, FontFormatException, URISyntaxException {
