@@ -1,7 +1,16 @@
 package org.crazytracks.model.leaderboard;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
+import java.util.regex.Pattern;
+
+import com.google.common.base.Splitter;
+import com.google.common.collect.Lists;
+
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class LeaderboardLoader {
     private String filepath;
@@ -10,7 +19,7 @@ public class LeaderboardLoader {
     }
 
     public void save(Leaderboard leaderboard){
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filepath))){
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(filepath), UTF_8)){
             List<Player> listPlayers = leaderboard.getListOfPlayers();
             for (Player player : listPlayers){
                 writer.write(player.getName());
@@ -29,15 +38,15 @@ public class LeaderboardLoader {
     public List<Player> loadList(){
         System.out.println("loadingList");
         List<Player> newListPlayers = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(filepath))){
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get(filepath), UTF_8)){
             String line;
             while ((line = reader.readLine()) != null) {
-                String[] attrs = line.split("\t");
-                if (attrs.length == 3){
+                List<String> attrs = Splitter.on(Pattern.compile("\t")).splitToList(line);
+                if (attrs.size() == 3){
                     Player currPlayer = new Player(
-                            attrs[0],
-                            Integer.parseInt(attrs[1]),
-                            Integer.parseInt(attrs[2])
+                            attrs.get(0),
+                            Integer.parseInt(attrs.get(1)),
+                            Integer.parseInt(attrs.get(2))
                     );
                     newListPlayers.add(currPlayer);
                 }

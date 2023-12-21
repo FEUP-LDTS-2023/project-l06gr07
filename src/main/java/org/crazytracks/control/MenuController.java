@@ -9,7 +9,6 @@ import org.crazytracks.states.LeaderboardState;
 
 import java.io.IOException;
 public class MenuController extends Controller<Menu> {
-    private Menu model;
     public MenuController(Menu model) {
         super(model);
     }
@@ -22,6 +21,13 @@ public class MenuController extends Controller<Menu> {
             case DOWN:
                 getModel().nextEntry();
                 break;
+            case LEFT:
+            case RIGHT:
+            case TYPING:
+            case NONE:
+            case UNDO:
+            case QUIT:
+                break; // unused actions
             case SELECT:
                 if (getModel().isSelectedExit()) game.setState(null);
                 if (getModel().isSelectedStart()) game.setState(new GameState(new TrackLoader().createTrack()));

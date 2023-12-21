@@ -1,6 +1,12 @@
-import org.crazytracks.model.*;
-import org.crazytracks.model.track_element.*;
+package model_tests;
+
+import org.crazytracks.model.Menu;
 import org.crazytracks.model.Surfer;
+import org.crazytracks.model.Track;
+import org.crazytracks.model.track_element.Position;
+import org.crazytracks.model.track_element.PowerUp;
+import org.crazytracks.model.track_element.TrackElement;
+import org.crazytracks.model.track_element.Wagon;
 import org.crazytracks.model.track_element.coin.Coin;
 import org.crazytracks.model.track_element.coin.CopperCoin;
 import org.crazytracks.states.GameState;

@@ -1,5 +1,7 @@
 package org.crazytracks.model.track_element;
 
+import java.util.Objects;
+
 public class Position {
     private int x;
     private int y;
@@ -26,7 +28,20 @@ public class Position {
         this.y = y;
     }
 
-    public boolean equals(Position position){
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Position)) {
+            return false;
+        }
+        Position position = (Position) obj;
         return this.getX() == position.getX() && this.getY() == position.getY();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getX(), getY());
     }
 }

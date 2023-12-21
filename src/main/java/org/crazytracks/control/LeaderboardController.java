@@ -10,8 +10,6 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class LeaderboardController extends Controller<Leaderboard> {
-    private Leaderboard model;
-
     public LeaderboardController(Leaderboard model) {
         super(model);
     }
@@ -27,6 +25,14 @@ public class LeaderboardController extends Controller<Leaderboard> {
                 break;
             case SELECT:
                 if (Objects.equals(getModel().getCurrentEntry(), "Back to Menu")) game.setState(new MenuState(new Menu()));
+                break;
+            case RIGHT:
+            case LEFT:
+            case TYPING:
+            case NONE:
+            case UNDO:
+            case QUIT:
+                break; // unused actions
         }
     }
 }

@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.9'
+    id "org.kordamp.gradle.errorprone" version "0.53.0"
 }
 
 sourceCompatibility = 1.8
@@ -16,6 +17,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     testImplementation 'org.mockito:mockito-core:3.7.7'
     implementation group: 'com.googlecode.lanterna', name: 'lanterna', version: '3.1.1'
+    implementation 'com.google.guava:guava:30.1-jre'
 }
 
 test {

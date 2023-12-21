@@ -14,10 +14,10 @@ public class TrackAnimation implements Runnable {
     private final TextColor borderColor;
     private final GUI gui;
     private int animMode;
-    private int trackHeight;
-    private List<TrackElement> trackElements;
+    private final int trackHeight;
+    private final List<TrackElement> trackElements;
 
-    private PositionAdapter positionAdapter;
+    private final PositionAdapter positionAdapter;
 
 
     public TrackAnimation(GUI gui, int xMargin, TextColor borderColor, int trackHeight) throws IOException {
@@ -39,10 +39,6 @@ public class TrackAnimation implements Runnable {
     public void drawTrackAnimation() throws IOException {
         gui.drawTrack(xMargin, animMode, borderColor);
         drawTrackElements();
-    }
-
-    private void initAnimation(){
-        gui.drawTrack(xMargin, animMode, borderColor);
     }
 
     private List<TrackElement> loadTrackList(){
