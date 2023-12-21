@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/soundeffects/CompatibilityEffectsPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sound/coinSoundEffect.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sound/music.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sound/powerUpSoundEffect.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sound/wagonSoundEffect.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/soundeffects/SoundEffectThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/mainsound/CompatibilitySoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/mainsound/CompatibilitySoundPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/soundeffects/CompatibilityEffectsPlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/soundeffects/SoundEffectPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/soundeffects/SoundEffectPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/leaderboard/leaderboard.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/leaderboard/leaderboard.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,6 +245,7 @@
       <workItem from="1701356076324" duration="554000" />
       <workItem from="1701357310361" duration="2811000" />
       <workItem from="1703195577327" duration="1415000" />
+      <workItem from="1703199875021" duration="1251000" />
     </task>
     <servers />
   </component>
