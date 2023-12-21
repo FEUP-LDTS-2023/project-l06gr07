@@ -32,8 +32,7 @@ public class InputNameController extends Controller<InputName>{
     private void eraseLastChar(){
         String inputText = getModel().getInputText();
         if (!inputText.isEmpty()){
-            inputText = inputText.substring(0, inputText.length()-1);
-            getModel().setInputText(inputText);
+            getModel().setInputText(inputText.substring(0, inputText.length()-1));
         }
     }
 

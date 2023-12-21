@@ -5,6 +5,6 @@ import org.crazytracks.model.track_element.coin.Coin;
 
 public class CopperCoin extends Coin {
     public CopperCoin(Position position) {
-        super(position, 50, COLOR.BROWN, new CopperCoinDrawStrategy());
+        super(position, 50, new CopperCoinDrawStrategy());
     }
 }

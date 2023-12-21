@@ -94,6 +94,14 @@ public class SurferController extends GameController{
             case RIGHT:
                 moveSurferRight();
                 break;
+            case UP:
+            case DOWN:
+            case SELECT:
+            case TYPING:
+            case NONE:
+            case UNDO:
+            case QUIT: // unused actions
+                break;
         }
     }
 }

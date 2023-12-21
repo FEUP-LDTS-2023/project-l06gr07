@@ -18,7 +18,7 @@ public class GameViewer extends Viewer<Track>{
     private <T extends Element> void drawElement(GUI gui, Element element, ElementViewer<T> viewer) {
         viewer.draw(element, gui);
     }
-
+    @Override
     protected void drawElements(GUI gui){
         gui.initGameGUI(getModel().getAnimMode());
         drawElements(gui, getModel().getPowerUps(), new PowerUpViewer());

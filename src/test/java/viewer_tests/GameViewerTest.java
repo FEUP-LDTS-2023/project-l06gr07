@@ -1,3 +1,5 @@
+package viewer_tests;
+
 import org.crazytracks.gui.GUI;
 import org.crazytracks.gui.LanternaGUI;
 import org.crazytracks.model.*;
@@ -30,7 +32,7 @@ public class GameViewerTest {
         int i = 0;
         int FPS = 60;
         int frameTime = 1000 / FPS;
-        while (TRUE){
+        while (true){
             if (i==100){
                 track.addTrackElement(new Wagon(new Position(15, 7)));
                 track.addTrackElement(new Wagon(new Position(15, 8)));

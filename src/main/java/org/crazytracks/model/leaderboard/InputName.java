@@ -36,9 +36,9 @@ public class InputName {
         return surfer;
     }
 
-    public void setInputText(String inputText) {
-        if (this.inputText.length() < inputTextLimit){
-            this.inputText = inputText;
+    public void setInputText(String newInputText) {
+        if (newInputText.length() < inputTextLimit){
+            this.inputText = newInputText;
         }
     }
 

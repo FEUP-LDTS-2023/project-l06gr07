@@ -19,6 +19,6 @@ public class GameOverState extends State<GameOver>{
 
     @Override
     protected Controller<GameOver> getController() {
-        return new GameOverController((getModel()));
+        return new GameOverController(getModel());
     }
 }

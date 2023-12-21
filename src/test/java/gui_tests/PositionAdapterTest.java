@@ -1,3 +1,5 @@
+package gui_tests;
+
 import org.crazytracks.gui.track_animation.PositionAdapter;
 import org.crazytracks.model.track_element.Position;
 import org.junit.jupiter.api.Assertions;

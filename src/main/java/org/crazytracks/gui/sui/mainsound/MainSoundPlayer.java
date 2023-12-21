@@ -23,7 +23,7 @@ public class MainSoundPlayer implements SUI {
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE); // Loop indefinitely
         mediaPlayer.play();
     }
-
+    @Override
     public void stopMusic() {
         if (mediaPlayer != null) {
             mediaPlayer.stop();

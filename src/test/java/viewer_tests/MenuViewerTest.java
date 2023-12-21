@@ -1,3 +1,5 @@
+package viewer_tests;
+
 import org.crazytracks.gui.GUI;
 import org.crazytracks.gui.LanternaGUI;
 import org.crazytracks.model.Menu;
