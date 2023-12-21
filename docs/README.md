@@ -26,7 +26,7 @@
 - ### Architecture
 ---
 <p align="center">
-  <img width=800 src="generaluml.png">
+  <img width=800 src="images/generaluml.png">
 </p>
 This represents the overall design of our game, with its respective MVC architecture
 <br>
@@ -46,7 +46,7 @@ This represents the overall design of our game, with its respective MVC architec
 
 - **Implementation.**
 <p align="center">
-<a><img src="statepattern.png" alt=""></a>
+<a><img src="images/statepattern.png" alt=""></a>
 </p>
 
 -   **Consequences:**
@@ -63,7 +63,7 @@ This represents the overall design of our game, with its respective MVC architec
 -   **The Pattern:** We've utilized the Factory Method Pattern to manage the creation of diverse track objects effectively. This pattern allows us to encapsulate the creation logic for various track objects (such as obstacles, power-ups, or scenery elements) within separate factory classes. Each factory is responsible for generating a specific type of object, ensuring a cohesive and modular approach to object creation.
 -   **Implementation:**
 <p align="center">
-  <img width=500 src="factorypattern.png">
+  <img width=500 src="images/factorypattern.png">
 </p>
 
 -   **Consequences:**
@@ -81,7 +81,7 @@ This represents the overall design of our game, with its respective MVC architec
 -   **The Pattern:** To address this, we've implemented the Strategy Pattern. This pattern enables us to encapsulate varying collision reactions into separate strategy classes. Each strategy represents a distinct reaction (e.g., player death or score increment) upon collision with different types of objects. By dynamically assigning the appropriate strategy to an object, we can control the player's reactions without modifying the player or object classes extensively.
 -   **Implementation:**
 <p align="center">
-  <img width=500 src="factorypattern.png">
+  <img width=500 src="images/factorypattern.png">
 </p>
 
 -   **Consequences:**
@@ -98,6 +98,6 @@ This represents the overall design of our game, with its respective MVC architec
 ### TESTING
 
 <p align="center">
-<img width="500" src="coveragereport.png">
+<img width="500" src="images/coveragereport.png">
 </p>
 
