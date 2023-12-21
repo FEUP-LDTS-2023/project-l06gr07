@@ -6,8 +6,6 @@
 - This game is a java version of Subway Surfers in 2D, you must move your character left and right to avoid being ran over by the trains.
 - This project is being developed by _Abecassis Devesse_ (up202209729@fe.up.pt), _Daniel Basílio_ (up201806838@fe.up.pt) and _Rui Borges_ (up202207475@fe.up.pt) for LDTS 2022/2023
 
----
-
 ### FEATURES
 
 - **Menu** - Responsive menu that allows for the user to choose between starting a game, checking the leaderboard and exiting, it also has a track animation to make it prettier.
@@ -23,16 +21,12 @@
 - **Graphics** - The graphics are based on Lanterna with a 1:1 pixel, character scale, making use of fonts to slightly improve the design of the game.
 - **Music and sound effects** - The game has background music, and plays specific sounds when it detects certain collisions depending on the type of objects that collide.
 
----
-
 ### DESIGN
 
 - ### Architecture
-
-<p align="center">      
+- <p align="center">      
 <img width=800 src="images/uml.png">  
 </p>      
-
 This represents the overall design of our game, with its respective MVC architecture      
 <br>      
 
@@ -58,9 +52,8 @@ This represents the overall design of our game, with its respective MVC architec
 - _Liabilities:_    
   -**Complexity:** Implementing multiple states might increase initial complexity, especially if the states have intricate interactions or dependencies.    
   -**Overhead:** There might be a slight performance overhead due to managing the list of states and transitioning between them, but this overhead is typically negligible in most scenarios.
----
 
--**Problem in Context:** Introducing diverse objects within the game's tracks to enhance gameplay variety.      
+--- -**Problem in Context:** Introducing diverse objects within the game's tracks to enhance gameplay variety.      
 -**The Pattern:** The Factory Method Pattern is used to manage the creation of diverse track objects effectively. This pattern allows us to encapsulate the creation logic for various track objects (such as obstacles, power-ups, or scenery elements) within separate factory classes. Each factory is responsible for generating a specific type of object, ensuring a cohesive and modular approach to object creation.      
 -**Implementation:** In your game, you have different factory classes for each type of track object. Each factory class has a method that creates and returns an instance of the appropriate object. This implementation allows the game to create diverse track objects without needing to know the specific details of how each object is created.
 
@@ -78,7 +71,7 @@ This represents the overall design of our game, with its respective MVC architec
   -**Overhead:** There might be a slight performance overhead due to the use of multiple factory classes, but this overhead is typically negligible in most scenarios.
 
       
----
+---   
 -**Problem in Context:** The game needs to draw different types of coins on the screen, each with its own unique visual representation.      
 -**The Pattern:** The Strategy Pattern is used to encapsulate the drawing logic for each type of coin into separate strategy classes. Each strategy represents a distinct drawing method. By dynamically assigning the appropriate strategy to a coin, we can control how coins are drawn without modifying the coin classes extensively.    
 -**Implementation:** In our game, we have different strategy classes for each type of drawing method (e.g., GoldCoinDrawStrategy, CopperCoinDrawStrategy). Each strategy class implements a common interface (DrawStrategy) and defines its own version of a method that handles the drawing. The coin objects hold a reference to their draw strategy and delegate the drawing task to the strategy object when needed.
@@ -94,7 +87,7 @@ This represents the overall design of our game, with its respective MVC architec
   -**Increased Complexity:** Managing multiple strategies and their interactions might add complexity, especially if strategies are interdependent or have complex logic.    
   -**Overhead:** There might be a slight performance overhead due to managing the list of strategies and choosing the appropriate one, but this overhead is typically negligible in most scenarios.
 
----
+---   
 -**Problem in Context:** The game needs to play different sound effects based on various events that occur during gameplay, such as when the player collects a power-up, collides with an obstacle, or achieves a new high score.      
 -**The Pattern:** The Observer Pattern is used to allow the SoundEffects class to subscribe to these events and play the appropriate sound effect when these events occur. This pattern allows us to decouple the sound effects from the rest of the game logic, so that the sound effects can be managed independently while still being able to react to relevant events.      
 -**Implementation:** In our game, the SoundEffects class is an observer that listens for specific events. When an event such as a power-up being collected occurs, the Observable class (which could be the Game class or any other class that manages game events) calls the update method of the SoundEffects class. The update method receives relevant information about the event, such as the type of power-up collected. Based on this information, the SoundEffects class plays the appropriate sound effect. This implementation allows the SoundEffects class to react to game events independently, without needing to be tightly coupled with the rest of the game logic.
@@ -122,11 +115,26 @@ This represents the overall design of our game, with its respective MVC architec
 -**Consequences:**
 - _Benefits:_      
   -**Simplicity:** The Facade Pattern simplifies the usage of the complex Lanterna library, making it easier to use and reducing the likelihood of errors.    
-  -**Decoupling:** The LanternaGUI class decouples the rest of your game code from the specifics of the Lanterna library. This makes it easier to change to a different library in the future if needed.    
-  -**Encapsulation:** The LanternaGUI class encapsulates the details of the Lanterna library, preventing the rest of your game code from becoming tightly coupled to these details.
+  .**Decoupling:** The LanternaGUI class decouples the rest of your game code from the specifics of the Lanterna library. This makes it easier to change to a different library in the future if needed.    
+  .**Encapsulation:** The LanternaGUI class encapsulates the details of the Lanterna library, preventing the rest of your game code from becoming tightly coupled to these details.
 - _Liabilities:_    
   -**Limited Flexibility:** While the LanternaGUI class simplifies the usage of the Lanterna library, it also limits the flexibility. If you need to use features of the Lanterna library that are not exposed by the LanternaGUI class, you would need to modify the LanternaGUI class.    
   -**Overhead:** There might be a slight performance overhead due to the additional layer of abstraction, but this overhead is typically negligible in most scenarios.
+---
+### CODE SMELLS
+-**Duplicate Code**
+The game has multiple menu classes with different controllers. Each of these classes and controllers seems to have similar functionality, which could lead to code duplication.
+To address this we ended up creating Duplicate Code, code smell that occurs when similar code is found in more than one location, in this case the menus are individual when they should be inherited from a Menu interface or simply a Menu class. In the context of our game, the multiple menu classes with different controllers contain duplicate code. This duplication can make the code harder to maintain, as changes to the functionality might need to be made in multiple places. It can also increase the likelihood of bugs, as a bug fixed in one location might still exist in another location.
+
+-**Data Clump**
+The game uses Position objects frequently throughout the codebase. These Position objects, which represent a point in the game's 2D space, are often used together and passed around together.  We ended up not separating the class generating a Data Clumps, a code smell that occurs when the same data hang around together, and they should be separated into their respective classes. this leads to increased complexity, increased maintenance and decreased modularity.
+
+--**Switch statements**
+The game needs to handle different types of game events, such as user input or collisions between game objects. These events need to be handled differently depending on their type. We used to much switch statements on the step method which is a common code smell in object oriented programming which leads to increased complexity, increased maintenance and decreased modularity.
+
+--**Data Class**
+The Track class in our game primarily serves as a container for data. It holds various lists of game elements like Wagon, Coin, PowerUp, Surfer and Collision listeners. While it does contain some behavior, much of its functionality involves managing these data collections. We ended up with Data Class code smell which is a code smell that occurs when a class primarily contains fields for storing data values and lacks significant methods that encapsulate behavior.  In spite of this, the use of this code smell allows for the code to be easier to understand. This data smell leads to lack of encapsulation, difficulty in testing and increased coupling.
+
 
 ---   
 ### TESTING
