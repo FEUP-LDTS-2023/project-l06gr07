@@ -24,7 +24,7 @@
 ### DESIGN
 
 - ### Architecture
-- <p align="center">      
+<p align="center">      
 <img width=800 src="images/uml.png">  
 </p>      
 This represents the overall design of our game, with its respective MVC architecture      
