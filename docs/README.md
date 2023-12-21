@@ -24,9 +24,11 @@
 ### DESIGN
 
 - ### Architecture
+
 <p align="center">      
 <img width=800 src="images/uml.png">  
 </p>      
+
 This represents the overall design of our game, with its respective MVC architecture      
 <br>      
 
@@ -116,8 +118,8 @@ This represents the overall design of our game, with its respective MVC architec
 -**Consequences:**
 - _Benefits:_      
   -**Simplicity:** The Facade Pattern simplifies the usage of the complex Lanterna library, making it easier to use and reducing the likelihood of errors.    
-  .**Decoupling:** The LanternaGUI class decouples the rest of your game code from the specifics of the Lanterna library. This makes it easier to change to a different library in the future if needed.    
-  .**Encapsulation:** The LanternaGUI class encapsulates the details of the Lanterna library, preventing the rest of your game code from becoming tightly coupled to these details.
+  -**Decoupling:** The LanternaGUI class decouples the rest of your game code from the specifics of the Lanterna library. This makes it easier to change to a different library in the future if needed.    
+  -**Encapsulation:** The LanternaGUI class encapsulates the details of the Lanterna library, preventing the rest of your game code from becoming tightly coupled to these details.
 - _Liabilities:_    
   -**Limited Flexibility:** While the LanternaGUI class simplifies the usage of the Lanterna library, it also limits the flexibility. If you need to use features of the Lanterna library that are not exposed by the LanternaGUI class, you would need to modify the LanternaGUI class.    
   -**Overhead:** There might be a slight performance overhead due to the additional layer of abstraction, but this overhead is typically negligible in most scenarios.
