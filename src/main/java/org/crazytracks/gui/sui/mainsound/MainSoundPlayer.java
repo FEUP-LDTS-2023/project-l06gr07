@@ -16,7 +16,7 @@ public class MainSoundPlayer implements SUI {
 
     @Override
     public void playMusic() {
-        String filePath = "src/main/resources/sound/music.mp3";
+        String filePath = "src/main/resources/sound/mainsounds/music.mp3";
         Media media = new Media(new File(filePath).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setVolume(0.5); // Set volume to 50%

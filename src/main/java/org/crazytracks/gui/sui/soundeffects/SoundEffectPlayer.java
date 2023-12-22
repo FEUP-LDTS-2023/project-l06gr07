@@ -18,27 +18,27 @@ public class SoundEffectPlayer implements SoundEffects, WagonCollisionListener, 
     @Override
     public void onCoinCollision() {
         try {
-            playSound("src/main/resources/sound/coin.mp3");
+            playSound("src/main/resources/sound/mainsounds/coin.mp3");
         } catch (Exception e) {
-            compatPlaySound("src/main/resources/sound/coinSoundEffect.wav");
+            compatPlaySound("src/main/resources/sound/compatsounds/coinSoundEffect.wav");
         }
     }
 
     @Override
     public void onPowerUpCollision() {
         try {
-            playSound("src/main/resources/sound/powerup.mp3");
+            playSound("src/main/resources/sound/mainsounds/powerup.mp3");
         } catch (Exception e) {
-            compatPlaySound("src/main/resources/sound/powerUpSoundEffect.wav");
+            compatPlaySound("src/main/resources/sound/compatsounds/powerUpSoundEffect.wav");
         }
     }
 
     @Override
     public void onWagonCollision() {
         try {
-            playSound("src/main/resources/sound/wagon.mp3");
+            playSound("src/main/resources/sound/mainsounds/wagon.mp3");
         } catch (Exception e) {
-            compatPlaySound("src/main/resources/sound/wagonSoundEffect.wav");
+            compatPlaySound("src/main/resources/sound/compatsounds/wagonSoundEffect.wav");
         }
     }
 
