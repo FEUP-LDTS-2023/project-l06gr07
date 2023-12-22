@@ -13,7 +13,7 @@
 ### FEATURES
 
 - **Menu** - Responsive menu that allows for the user to choose between starting a game, checking the leaderboard and exiting, it also has a track animation to make it prettier.
-- 
+
 <p align="center">  
   <img alt="Menu Demo" width="600" src="images/Menu-Demo.gif"/>
 </p>
