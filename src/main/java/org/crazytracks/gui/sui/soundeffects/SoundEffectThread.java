@@ -18,7 +18,7 @@ public class SoundEffectThread extends Thread{
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException();
         }
         interrupt();
     }
@@ -32,7 +32,7 @@ public class SoundEffectThread extends Thread{
             volume.setValue(-10.0f);
             clip.start();
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            e.printStackTrace();
+            throw new RuntimeException();
         }
     }
 }

@@ -19,7 +19,7 @@ public class CompatibilitySoundPlayer implements SUI {
             volume.setValue(-20.0f);
             backgroundMusic.loop(Clip.LOOP_CONTINUOUSLY);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            e.printStackTrace();
+            throw new RuntimeException();
         }
     }
 
