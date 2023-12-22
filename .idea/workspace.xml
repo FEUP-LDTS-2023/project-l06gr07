@@ -5,8 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/images/CopperCoin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/GoldCoin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/Leaderboard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/Menu-Demo.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/PowerUp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/character_animation.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/character_movement.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/track_movement.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/track_randomness.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GameViewerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameViewerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/menu.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/mainsound/CompatibilitySoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/mainsound/CompatibilitySoundPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/mainsound/MainSoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/mainsound/MainSoundPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/soundeffects/SoundEffectPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/soundeffects/SoundEffectPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/leaderboard/leaderboard.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/leaderboard/leaderboard.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sound/coin.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sound/mainsounds/coin.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sound/coinSoundEffect.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sound/compatsounds/coinSoundEffect.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sound/music.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sound/mainsounds/music.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sound/music.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sound/compatsounds/music.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sound/powerUpSoundEffect.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sound/compatsounds/powerUpSoundEffect.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sound/powerup.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sound/mainsounds/powerup.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sound/wagon.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sound/mainsounds/wagon.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sound/wagonSoundEffect.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sound/compatsounds/wagonSoundEffect.wav" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,9 +101,9 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "testing/updates",
+    "git-widget-placeholder": "final__touch/organizing__repo",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/daniel/Documents/FEUP_LEIC/1º semestre/LDTS/project/project-l06gr07",
+    "last_opened_file_path": "/home/daniel/Documents/FEUP_LEIC/1º semestre/LDTS/project/project-l06gr07/docs/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -94,13 +118,17 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/images" />
+      <recent name="$PROJECT_DIR$/docs/videos" />
       <recent name="$PROJECT_DIR$/src/main/resources/sound" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/sound/compatsounds" />
+      <recent name="$PROJECT_DIR$/src/main/resources/sound/mainsounds" />
       <recent name="$PROJECT_DIR$/src/main/resources/sound/main_sounds" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GameViewerTest">
+  <component name="RunManager" selected="Application.Game">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.crazytracks.Game" />
       <module name="project-l06gr07.main" />
@@ -243,6 +271,7 @@
       <workItem from="1701357310361" duration="2811000" />
       <workItem from="1703195577327" duration="1415000" />
       <workItem from="1703199875021" duration="1251000" />
+      <workItem from="1703256573278" duration="6773000" />
     </task>
     <servers />
   </component>

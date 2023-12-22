@@ -25,7 +25,11 @@ public class Game {
     }
 
     public static void main(String[] args) throws IOException, FontFormatException, URISyntaxException, InterruptedException {
-        new Game().start();
+        try {
+            new Game().start();
+        } catch (Exception e) {
+            System.exit(1);
+        }
     }
 
     public GUI getGUI(){

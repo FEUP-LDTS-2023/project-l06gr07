@@ -9,14 +9,29 @@
 ### FEATURES
 
 - **Menu** - Responsive menu that allows for the user to choose between starting a game, checking the leaderboard and exiting, it also has a track animation to make it prettier.
+  ![Menu Demo](images/Menu-Demo.gif)
 - **Game over menu** - When you die a menu with an option to insert your name will be given to you so your playtime can be remembered on Leaderboard.
+  ![Game Over Menu](images/GameOverMenu.gif)
 - **Leaderboard** -  Page that keeps track of the players with the highest scores.
+  ![Leaderboard](images/Leaderboard.png)
 - **Character animation** - The character of the game as an animation to simulate the running.
+
+  ![character_animation.gif](images/character_animation.gif)
 -  **Character movement** - The character can move left and right, inside of the limits of the track, not being able to move when is at the extremities of the track.
+
+  ![character_movement.gif](images/character_movement.gif)
 -  **Coins** -  There are two types of coins, copper and gold, that the player can catch that will give him a score bonus.
+
+   ![Copper Coin](images/CopperCoin.png)
+   ![Gold Coin](images/GoldCoin.png)
 - **Power ups** - The player can catch a power up that will.  for a certain period of time, increase his score multiplier.
+   
+   ![PowerUp](images/PowerUp.png)
 -  **Track randomness** - The game uses a random wagon generator to make sure you will never get the same track (with the same wagon positions).
+
+   ![track_randomness](images/track_randomness.gif)
 - **Track movement** - All of the elements in the track will move downwards, inclusive the limits of the track to make the illusion of surfer movement better.
+  ![track_movement](images/track_movement.gif)
 -  **Collision Detection** - The game checks for collisions with coins, power ups and wagons, with the last causing the game to end.
 - **Graphics** - The graphics are based on Lanterna with a 1:1 pixel, character scale, making use of fonts to slightly improve the design of the game.
 - **Music and sound effects** - The game has background music, and plays specific sounds when it detects certain collisions depending on the type of objects that collide.
