@@ -5,6 +5,7 @@ import org.crazytracks.control.MenuController;
 import org.crazytracks.gui.GUI;
 import org.crazytracks.model.Menu;
 import org.crazytracks.states.GameState;
+import org.crazytracks.states.LeaderboardState;
 import org.crazytracks.states.State;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -44,5 +45,12 @@ public class MenuControllerTest {
         Mockito.when(mockMenu.isSelectedStart()).thenReturn(true);
         menuController.step(mockGame, GUI.ACTION.SELECT, 1000L);
         verify(mockGame, times(1)).setState(Mockito.any(State.class));
+    }
+
+    @Test
+    void testStepSelectAction2() throws IOException {
+        Mockito.when(mockMenu.isSelectedLeaderboard()).thenReturn(true);
+        menuController.step(mockGame, GUI.ACTION.SELECT, 1000L);
+        verify(mockGame, times(1)).setState(Mockito.any(LeaderboardState.class));
     }
 }
