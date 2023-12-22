@@ -1,12 +1,10 @@
 import org.crazytracks.gui.GUI;
-import org.crazytracks.gui.LanternaGUI;
 import org.crazytracks.model.*;
 import org.crazytracks.model.Surfer;
 import org.crazytracks.model.track_element.Position;
 import org.crazytracks.model.track_element.PowerUp;
 import org.crazytracks.model.track_element.TrackElement;
 import org.crazytracks.model.track_element.Wagon;
-import org.crazytracks.model.track_element.coin.Coin;
 import org.crazytracks.model.track_element.coin.CopperCoin;
 import org.crazytracks.model.track_element.coin.GoldCoin;
 import org.crazytracks.viewer.GameViewer;
@@ -17,13 +15,15 @@ import org.mockito.Mockito;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
-
-import static java.lang.Boolean.TRUE;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GameViewerTest {
     private GUI gui;
     private GameViewer viewer;
     private Track track;
+
+    private List<TrackElement> trackElementList = new ArrayList<TrackElement>();
 
     @BeforeEach
     void setUp() throws IOException, URISyntaxException, FontFormatException {
@@ -31,36 +31,81 @@ public class GameViewerTest {
         gui = Mockito.mock(GUI.class);
         viewer = new GameViewer(track);
 
-        track.setTrackElements(new java.util.ArrayList<TrackElement>() {{
-            add(new Wagon(new Position(15, 0)));
-            add(new Wagon(new Position(15, 1)));
-            add(new Wagon(new Position(15, 2)));
-            add(new Wagon(new Position(15, 3)));
-            add(new Wagon(new Position(15, 4)));
-            add(new PowerUp(new Position(15, 5)));
-            add(new PowerUp(new Position(15, 6)));
-            add(new GoldCoin(new Position(16, 5)));
-            add(new CopperCoin(new Position(16, 6)));
-        }});
+        Wagon wagon = new Wagon(new Position(15, 0));
+        track.addTrackElement(wagon);
+        trackElementList.add(wagon);
 
-        track.setSurfer(new Surfer(new Position(0, 0)));
+        wagon = new Wagon(new Position(15, 1));
+        track.addTrackElement(wagon);
+        trackElementList.add(wagon);
+
+        wagon = new Wagon(new Position(15, 2));
+        track.addTrackElement(wagon);
+        trackElementList.add(wagon);
+
+        wagon = new Wagon(new Position(15, 3));
+        track.addTrackElement(wagon);
+        trackElementList.add(wagon);
+
+        wagon = new Wagon(new Position(15, 4));
+        track.addTrackElement(wagon);
+        trackElementList.add(wagon);
+
+        PowerUp powerUp = new PowerUp(new Position(15, 5));
+        track.addTrackElement(powerUp);
+        trackElementList.add(powerUp);
+
+        powerUp = new PowerUp(new Position(15, 6));
+        track.addTrackElement(powerUp);
+        trackElementList.add(powerUp);
+
+        GoldCoin goldCoin = new GoldCoin(new Position(16, 5));
+        track.addTrackElement(goldCoin);
+        trackElementList.add(goldCoin);
+
+        CopperCoin copperCoin = new CopperCoin(new Position(16, 6));
+        track.addTrackElement(copperCoin);
+        trackElementList.add(copperCoin);
+
+        Surfer surfer = new Surfer(new Position(0, 0));
+        Animation anim = new Animation(4);
+        surfer.setAnim(anim);
+        track.setSurfer(surfer);
     }
 
     @Test
     void drawWagons() throws IOException {
         viewer.draw(gui);
+        for (TrackElement trackElement : trackElementList) {
+            if (trackElement instanceof Wagon) {
+                Mockito.verify(gui, Mockito.times(1)).drawWagon(trackElement.getPosition());
+            }
+        }
         Mockito.verify(gui, Mockito.times(5)).drawWagon(Mockito.any(Position.class));
     }
 
     @Test
     void drawPowerUps() throws IOException {
         viewer.draw(gui);
+        for (TrackElement trackElement : trackElementList) {
+            if (trackElement instanceof PowerUp) {
+                Mockito.verify(gui, Mockito.times(1)).drawPowerUp(trackElement.getPosition());
+            }
+        }
         Mockito.verify(gui, Mockito.times(2)).drawPowerUp(Mockito.any(Position.class));
     }
 
     @Test
     void drawCoins() throws IOException {
         viewer.draw(gui);
+        for (TrackElement trackElement : trackElementList) {
+            if (trackElement instanceof GoldCoin) {
+                Mockito.verify(gui, Mockito.times(1)).drawGoldCoin(trackElement.getPosition());
+            }
+            if (trackElement instanceof CopperCoin) {
+                Mockito.verify(gui, Mockito.times(1)).drawCopperCoin(trackElement.getPosition());
+            }
+        }
         Mockito.verify(gui, Mockito.times(1)).drawGoldCoin(Mockito.any(Position.class));
         Mockito.verify(gui, Mockito.times(1)).drawCopperCoin(Mockito.any(Position.class));
     }

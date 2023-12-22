@@ -5,95 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/mainsound/CompatibilitySoundPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/soundeffects/SoundEffectThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sound/coinSoundEffect.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sound/music.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sound/powerUpSoundEffect.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sound/wagonSoundEffect.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/control/ControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/control/GameControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/control/GameOverControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/control/InputNameControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/control/LeaderboardControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/control/MenuControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/control/SurferControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/control/TrackControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/control/TrackElementControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gui/sui/mainsound/MainSoundPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gui/sui/soundeffects/SoundEffectPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gui/track_animation/TrackAnimationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/AnimationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/ElementTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/GameOverTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/MenuTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/SurferTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/TrackBuilderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/TrackLoaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/TrackTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/factory/CoinFactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/factory/ElementFactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/factory/PowerUpFactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/factory/WagonFactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/leaderboard/InputNameTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/leaderboard/LeaderboardLoaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/leaderboard/LeaderboardTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/leaderboard/PlayerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/PositionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/PowerUpTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/TrackElementTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/WagonTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/coin/CoinTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/coin/CopperCoinDrawStrategyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/coin/CopperCoinTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/coin/GoldCoinDrawStrategyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/coin/GoldCoinTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/states/GameOverStateTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/states/GameStateTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/states/InputNameStateTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/states/LeaderboardStateTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/states/MenuStateTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/states/StateTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/CoinViewerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/GameOverViewerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/GameViewerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/InputNameViewerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/LeaderboardViewerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/MenuViewerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/PowerUpViewerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/SurferViewerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/ViewerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/WagonViewerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/GameOverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/GameOverController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/InputNameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/InputNameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/LeaderboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/LeaderboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/SurferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/SurferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/TrackElementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/TrackElementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/LanternaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/LanternaGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/mainsound/MainSoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/mainsound/MainSoundPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/soundeffects/SoundEffectPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/soundeffects/SoundEffectPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/track_animation/TrackAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/track_animation/TrackAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Surfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Surfer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/leaderboard/InputName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/leaderboard/InputName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/leaderboard/LeaderboardLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/leaderboard/LeaderboardLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/coin/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/coin/Coin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/coin/CopperCoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/coin/CopperCoin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/coin/GoldCoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/coin/GoldCoin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/states/GameOverState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/states/GameOverState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/GameViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/GameViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/leaderboard/leaderboard.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/leaderboard/leaderboard.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ConstructorsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ConstructorsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GameViewerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameViewerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MenuViewerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PositionAdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gui/track_animation/PositionAdapterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TrackElementStrategyTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +75,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "Merging testing/updates",
+    "git-widget-placeholder": "testing/updates",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/daniel/Documents/FEUP_LEIC/1º semestre/LDTS/project/project-l06gr07",
     "node.js.detected.package.eslint": "true",
