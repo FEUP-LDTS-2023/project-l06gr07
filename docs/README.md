@@ -3,8 +3,10 @@
 
 
 
-- This game is a java version of Subway Surfers in 2D, you must move your character left and right to avoid being ran over by the trains.
-- This project is being developed by _Abecassis Devesse_ (up202209729@fe.up.pt), _Daniel Basílio_ (up201806838@fe.up.pt) and _Rui Borges_ (up202207475@fe.up.pt) for LDTS 2022/2023
+- This game is a java version of Subway Surfers in 2D, you must move your character left and right to avoid crashing into trains.
+- This project is being developed by _Abecassis Devesse_ (up202209729@fe.up.pt), _Daniel Basílio_ (up201806838@fe.up.pt) and _Rui Borges_ (up202207475@fe.up.pt) for LDTS 2023/2024
+
+![CrazyTracks Demo](images/CrazyTracks-Demo.gif)
 
 ### FEATURES
 
@@ -33,6 +35,8 @@
 - **Track movement** - All of the elements in the track will move downwards, inclusive the limits of the track to make the illusion of surfer movement better.
   ![track_movement](images/track_movement.gif)
 -  **Collision Detection** - The game checks for collisions with coins, power ups and wagons, with the last causing the game to end.
+
+   ![collision_detection](images/collision_detection.gif)
 - **Graphics** - The graphics are based on Lanterna with a 1:1 pixel, character scale, making use of fonts to slightly improve the design of the game.
 - **Music and sound effects** - The game has background music, and plays specific sounds when it detects certain collisions depending on the type of objects that collide.
 
