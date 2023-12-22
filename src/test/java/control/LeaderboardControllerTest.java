@@ -20,11 +20,9 @@ public class LeaderboardControllerTest {
         // Arrange
         Leaderboard mockLeaderboard = Mockito.mock(Leaderboard.class);
         Mockito.when(mockLeaderboard.getCurrentEntry()).thenReturn("SomeEntry");
-
-        LeaderboardController leaderboardController = new LeaderboardController(mockLeaderboard);
-
         Game mockedGame = Mockito.mock(Game.class);
         GUI.ACTION action = GUI.ACTION.SELECT;
+        LeaderboardController leaderboardController = new LeaderboardController(mockLeaderboard);
 
         // Act
         leaderboardController.step(mockedGame, action, 1000L);
@@ -52,11 +50,9 @@ public class LeaderboardControllerTest {
     public void downAction() throws IOException {
         // Arrange
         Leaderboard mockLeaderboard = Mockito.mock(Leaderboard.class);
-
-        LeaderboardController leaderboardController = new LeaderboardController(mockLeaderboard);
-
         Game mockedGame = Mockito.mock(Game.class);
         GUI.ACTION action = GUI.ACTION.DOWN;
+        LeaderboardController leaderboardController = new LeaderboardController(mockLeaderboard);
 
         // Act
         leaderboardController.step(mockedGame, action, 1000L);
