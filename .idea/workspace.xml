@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.jqwik-database" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GameViewerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/viewer/GameOverViewerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/viewer/GameOverViewerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/viewer/GameViewerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/viewer/GameViewerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/viewer/InputNameViewerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/viewer/InputNameViewerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/viewer/LeaderboardViewerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/viewer/LeaderboardViewerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/viewer/MenuViewerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/viewer/MenuViewerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/viewer/PowerUpViewerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/viewer/PowerUpViewerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/viewer/SurferViewerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/viewer/SurferViewerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/viewer/ViewerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/viewer/WagonViewerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/viewer/WagonViewerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/track_element/PositionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/track_element/PositionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,11 +76,13 @@
     "Gradle.GameViewerTest.executor": "Run",
     "Gradle.InputNameViewerTest.executor": "Run",
     "Gradle.LeaderboardViewerTest.executor": "Run",
+    "Gradle.Load Gradle Dependencies.executor": "Run",
     "Gradle.MenuViewerTest.executor": "Coverage",
+    "Gradle.PositionTest.executor": "Run",
     "Gradle.PowerUpViewerTest.executor": "Run",
     "Gradle.SurferViewerTest.executor": "Run",
     "Gradle.Tests in 'project-l06gr07.test'.executor": "Coverage",
-    "Gradle.Tests in 'viewer'.executor": "Coverage",
+    "Gradle.Tests in 'viewer'.executor": "Run",
     "Gradle.WagonViewerTest.executor": "Run",
     "Gradle.project-l06gr07 [:Game.main()].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -118,7 +113,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/sound/main_sounds" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'viewer'">
+  <component name="RunManager" selected="Gradle.PositionTest">
     <configuration name="GameOverViewerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -191,7 +186,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MenuViewerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PositionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -204,7 +199,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;viewer.MenuViewerTest&quot;" />
+            <option value="&quot;model.track_element.PositionTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -241,11 +236,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PositionTest" />
         <item itemvalue="Gradle.Tests in 'viewer'" />
         <item itemvalue="Gradle.GameOverViewerTest" />
         <item itemvalue="Gradle.InputNameViewerTest" />
         <item itemvalue="Gradle.LeaderboardViewerTest" />
-        <item itemvalue="Gradle.MenuViewerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +279,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/project_l06gr07$ConstructorsTest_testSurferConstructor.ic" NAME="ConstructorsTest.testSurferConstructor Coverage Results" MODIFIED="1700932099195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/project_l06gr07$MenuViewerTest.ic" NAME="MenuViewerTest Coverage Results" MODIFIED="1703261718298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/project_l06gr07$Tests_in__viewer_.ic" NAME="Tests in 'viewer' Coverage Results" MODIFIED="1703261754835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/project_l06gr07$Tests_in__viewer_.ic" NAME="Tests in 'viewer' Coverage Results" MODIFIED="1703263199307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/project_l06gr07$Tests_in__project_l06gr07_test_.ic" NAME="Tests in 'project-l06gr07.test' Coverage Results" MODIFIED="1703261557805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
