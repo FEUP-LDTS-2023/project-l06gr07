@@ -11,7 +11,10 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import javafx.scene.media.MediaException;
 import org.crazytracks.gui.sui.SUI;
+import org.crazytracks.gui.sui.mainsound.CompatibilitySoundPlayer;
+import org.crazytracks.gui.sui.mainsound.MainSoundPlayer;
 import org.crazytracks.gui.track_animation.PositionAdapter;
 import org.crazytracks.gui.track_animation.TrackAnimation;
 import org.crazytracks.model.track_element.Position;
@@ -33,10 +36,9 @@ public class LanternaGUI implements GUI {
     private final int numLanes = 3;
     private final int leftMargin;
     private final TextColor trackColor = new TextColor.RGB(188,187,156);
-    PositionAdapter positionAdapter;
     private TrackAnimation animTrack;
-
     private char currChar;
+    SUI sui;
 
     public LanternaGUI(int terminalWidth, int terminalHeight) throws IOException, URISyntaxException, FontFormatException {
         this.leftMargin = 14;
@@ -49,10 +51,22 @@ public class LanternaGUI implements GUI {
 
         this.currChar = 'a';
 
+        try {
+            this.sui = new MainSoundPlayer();
+        } catch (MediaException e) {
+            this.sui = new CompatibilitySoundPlayer();
+        }
+
         this.screen = new TerminalScreen(terminal);
         screen.setCursorPosition(null);
         this.screen.startScreen();
-        this.getSUI().playMusic();
+
+        try {
+            this.sui.playMusic();
+        } catch (Exception e) {
+            this.sui = new CompatibilitySoundPlayer();
+            this.sui.playMusic();
+        }
     }
 
     public Terminal terminalCreation(int terminalWidth, int terminalHeight) throws IOException, FontFormatException, URISyntaxException {
@@ -78,7 +92,6 @@ public class LanternaGUI implements GUI {
     @Override
     public void initGameGUI(int animMode) {
         clearScreen();
-        int trackHeight = this.terminalHeight;
 
         // Paint the grass
         TextCharacter solidBlock = new TextCharacter(' ').withBackgroundColor(TextColor.ANSI.GREEN);
@@ -91,6 +104,7 @@ public class LanternaGUI implements GUI {
         drawTrack(this.leftMargin, animMode, borderColor);
     }
 
+    @Override
     public void drawTrack(int xMargin, int animMode, TextColor borderColor){
         // Paint the track
         TextCharacter block = new TextCharacter('H')
@@ -106,7 +120,6 @@ public class LanternaGUI implements GUI {
 
     private void paintBorders(int xMargin, int animMode, TextColor bgColor){
         // Paint the borders of track
-        TextCharacter block;
         int x = xMargin-1;
         paintOneBorder(x, animMode, bgColor);
         x = xMargin + numLanes;
@@ -207,7 +220,7 @@ public class LanternaGUI implements GUI {
                 .setBackgroundColor(TextColor.ANSI.GREEN);
         textGraphics.putString(x, y + 1, "+" + String.valueOf(scoreIncrease));
     }
-
+    @Override
     public void putScoreDisplayList(List<Integer> scoreDisplayList){
         for (int i = 0; i < scoreDisplayList.size(); i++){
             drawScoreIncrease(scoreDisplayList.get(i), i);
@@ -284,7 +297,7 @@ public class LanternaGUI implements GUI {
         }
         return speedColor;
     }
-
+    @Override
     public void refreshScreen() throws IOException {
         screen.refresh();
     }
@@ -351,7 +364,7 @@ public class LanternaGUI implements GUI {
             textGraphics.putString(xMargin, y, options.get(i));
         }
     }
-
+    @Override
     public void drawLeaderboard(List<Player> listOfPlayers){
         int xMargin = 3;
         int currLine = 5;
@@ -379,7 +392,7 @@ public class LanternaGUI implements GUI {
         List<String> options = Collections.singletonList("Back to Menu");
         paintOptions(3, this.terminalHeight - 5, options, 0);
     };
-
+    @Override
     public void drawInputName(String textInput, boolean invalidInputFlag){
         putText("You may have crashed...", 3, 5);
         putText("but your journey,", 3, 7);
@@ -405,7 +418,7 @@ public class LanternaGUI implements GUI {
     public int getTerminalHeight() {
         return this.terminalHeight;
     }
-
+    @Override
     public char getCurrChar() throws IOException {
         return this.currChar;
     }
@@ -413,7 +426,7 @@ public class LanternaGUI implements GUI {
     public void setCurrChar(char nextChar){
         this.currChar = nextChar;
     }
-
+    @Override
     public ACTION getNextAction() throws IOException {
         KeyStroke keyStroke = screen.pollInput();
         if (keyStroke == null) return ACTION.NONE;

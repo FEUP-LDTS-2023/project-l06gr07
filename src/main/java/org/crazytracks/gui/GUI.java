@@ -12,7 +12,6 @@ import java.util.List;
 public interface GUI {
     enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT, TYPING, UNDO}
     ACTION getNextAction() throws IOException;
-    SUI sui = new MainSoundPlayer();
     SUI getSUI();
     char getCurrChar() throws IOException;
     void initGameGUI(int animMode);

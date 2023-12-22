@@ -11,8 +11,8 @@ import java.util.TimerTask;
 import static java.lang.Boolean.TRUE;
 
 public class Surfer extends Element {
-    private double surferSpeed;
-    private final double maxSurferSpeed = 25;
+    private int surferSpeed;
+    private final int maxSurferSpeed = 25;
     private int score = 0;
     private final List<Integer> scoreDisplayList;
     private int score_multiplier = 1;
@@ -26,8 +26,6 @@ public class Surfer extends Element {
         this.multiplierOn = false;
         this.scoreDisplayList = new ArrayList<>();
         this.surferSpeed = 5;
-        this.setAnim(new Animation(4));
-        startAcceleration();
     }
     public void setCurrentLane(int currentLane) {
         this.currentLane = currentLane;
@@ -39,22 +37,6 @@ public class Surfer extends Element {
 
     public void setAlive(boolean alive) {
         isAlive = alive;
-    }
-
-    private void startAcceleration(){
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                increaseSurferSpeed();
-                if (surferSpeed < maxSurferSpeed){
-                    startAcceleration();
-                }
-            }
-        }, 5000);
-    }
-    private void increaseSurferSpeed(){
-        this.surferSpeed += 1;
     }
 
     public int getScore() {
@@ -131,8 +113,12 @@ public class Surfer extends Element {
         return scoreDisplayList;
     }
 
-    public double getSurferSpeed(){
+    public int getSurferSpeed(){
         return surferSpeed;
+    }
+
+    public void setSurferSpeed(int surferSpeed){
+        this.surferSpeed = surferSpeed;
     }
 
     public double getMaxSurferSpeed(){

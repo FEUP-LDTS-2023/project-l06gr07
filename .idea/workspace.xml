@@ -5,16 +5,95 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/mainsound/CompatibilitySoundPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/soundeffects/SoundEffectThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sound/coinSoundEffect.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sound/music.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sound/powerUpSoundEffect.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sound/wagonSoundEffect.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/control/ControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/control/GameControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/control/GameOverControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/control/InputNameControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/control/LeaderboardControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/control/MenuControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/control/SurferControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/control/TrackControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/control/TrackElementControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/gui/sui/mainsound/MainSoundPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/gui/sui/soundeffects/SoundEffectPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/gui/track_animation/TrackAnimationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/AnimationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/ElementTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/GameOverTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/MenuTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/SurferTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/TrackBuilderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/TrackLoaderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/TrackTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/factory/CoinFactoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/factory/ElementFactoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/factory/PowerUpFactoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/factory/WagonFactoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/leaderboard/InputNameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/leaderboard/LeaderboardLoaderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/leaderboard/LeaderboardTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/leaderboard/PlayerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/PositionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/PowerUpTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/TrackElementTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/WagonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/coin/CoinTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/coin/CopperCoinDrawStrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/coin/CopperCoinTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/coin/GoldCoinDrawStrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/track_element/coin/GoldCoinTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/states/GameOverStateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/states/GameStateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/states/InputNameStateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/states/LeaderboardStateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/states/MenuStateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/states/StateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/CoinViewerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/GameOverViewerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/GameViewerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/InputNameViewerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/LeaderboardViewerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/MenuViewerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/PowerUpViewerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/SurferViewerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/ViewerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/viewer/WagonViewerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/GameOverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/GameOverController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/InputNameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/InputNameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/LeaderboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/LeaderboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/SurferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/SurferController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/TrackElementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/control/TrackElementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/LanternaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/LanternaGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/TrackAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/TrackAnimation.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/TrackAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/TrackAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/mainsound/MainSoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/mainsound/MainSoundPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/soundeffects/SoundEffectPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/sui/soundeffects/SoundEffectPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/track_animation/TrackAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/gui/track_animation/TrackAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Surfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/Surfer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/leaderboard/InputName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/leaderboard/InputName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/leaderboard/LeaderboardLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/leaderboard/LeaderboardLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/coin/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/coin/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/coin/CopperCoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/coin/CopperCoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/coin/GoldCoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/model/track_element/coin/GoldCoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/states/GameOverState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/states/GameOverState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/GameViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/GameViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/Viewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crazytracks/viewer/Viewer.java" afterDir="false" />
->>>>>>> 3cb26f2aa4fae63373b032e8ee4b20dacd93d81d
+      <change beforePath="$PROJECT_DIR$/src/main/resources/leaderboard/leaderboard.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/leaderboard/leaderboard.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ConstructorsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ConstructorsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GameViewerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameViewerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MenuViewerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PositionAdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gui/track_animation/PositionAdapterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TrackElementStrategyTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,40 +150,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/viewer__update1&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/daniel/Documents/FEUP_LEIC/1º semestre/LDTS/project/project-l06gr07&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RunManager" selected="Gradle.MenuViewerTest.menuViewerTest">
-=======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Gradle.ControllerTest.executor": "Run",
+    "Gradle.ControllerTest.testControllerStep.executor": "Run",
+    "Gradle.GameControllerTest.executor": "Run",
+    "Gradle.GameOverControllerTest.executor": "Run",
+    "Gradle.project-l06gr07 [:Game.main()].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "feature/initial__view",
+    "git-widget-placeholder": "Merging testing/updates",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/daniel/Documents/FEUP_LEIC/1º semestre/LDTS/project/project-l06gr07",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -118,9 +178,29 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.MenuViewerTest">
->>>>>>> 3cb26f2aa4fae63373b032e8ee4b20dacd93d81d
-    <configuration name="GameViewerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/sound" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/sound/main_sounds" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Game">
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.crazytracks.Game" />
+      <module name="project-l06gr07.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.crazytracks.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -133,7 +213,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;GameViewerTest&quot;" />
+            <option value="&quot;control.ControllerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -144,7 +224,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameViewerTest.testNewViewer" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ControllerTest.testControllerStep" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -157,7 +237,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;GameViewerTest.testNewViewer&quot;" />
+            <option value="&quot;control.ControllerTest.testControllerStep&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -168,7 +248,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MenuViewerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GameControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -181,7 +261,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;MenuViewerTest&quot;" />
+            <option value="&quot;control.GameControllerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -192,7 +272,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MenuViewerTest.menuViewerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GameOverControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -205,31 +285,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;MenuViewerTest.menuViewerTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ViewerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ViewerTest&quot;" />
+            <option value="&quot;control.GameOverControllerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -242,13 +298,20 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.MenuViewerTest.menuViewerTest" />
-        <item itemvalue="Gradle.GameViewerTest.testNewViewer" />
-        <item itemvalue="Gradle.MenuViewerTest" />
-        <item itemvalue="Gradle.GameViewerTest" />
-        <item itemvalue="Gradle.ViewerTest" />
+        <item itemvalue="Application.Game" />
+        <item itemvalue="Gradle.GameOverControllerTest" />
+        <item itemvalue="Gradle.ControllerTest" />
+        <item itemvalue="Gradle.GameControllerTest" />
+        <item itemvalue="Gradle.ControllerTest.testControllerStep" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-920bfa72" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -264,6 +327,8 @@
       <workItem from="1700837920589" duration="3219000" />
       <workItem from="1701356076324" duration="554000" />
       <workItem from="1701357310361" duration="2811000" />
+      <workItem from="1703195577327" duration="1415000" />
+      <workItem from="1703199875021" duration="1251000" />
     </task>
     <servers />
   </component>

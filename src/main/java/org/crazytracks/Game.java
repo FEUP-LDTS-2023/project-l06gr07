@@ -2,6 +2,7 @@ package org.crazytracks;
 
 import org.crazytracks.gui.GUI;
 import org.crazytracks.gui.LanternaGUI;
+import org.crazytracks.gui.sui.mainsound.CompatibilitySoundPlayer;
 import org.crazytracks.model.leaderboard.Leaderboard;
 import org.crazytracks.model.Menu;
 import org.crazytracks.states.MenuState;
@@ -20,7 +21,6 @@ public class Game {
         this.gui = new LanternaGUI(30, 40);
         this.state = new MenuState(new Menu());
         this.leaderboard = new Leaderboard(null);
-
         this.leaderboard.load();
     }
 
@@ -40,6 +40,10 @@ public class Game {
         this.state = state;
     }
 
+    public State getState(){
+        return this.state;
+    }
+
     private void start() throws IOException, InterruptedException {
         int FPS = 60;
         int frameTime = 1000 / FPS;
@@ -56,5 +60,6 @@ public class Game {
         }
         gui.getSUI().stopMusic();
         gui.closeScreen();
+        System.exit(0);
     }
 }
