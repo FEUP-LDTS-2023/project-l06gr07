@@ -19,7 +19,7 @@ public class LeaderboardControllerTest {
     public void selectAction() throws IOException {
         // Arrange
         Leaderboard mockLeaderboard = Mockito.mock(Leaderboard.class);
-        Mockito.when(mockLeaderboard.getCurrentEntry()).thenReturn("SomeEntry");
+        Mockito.when(mockLeaderboard.getCurrentEntry()).thenReturn("Back to Menu");
         Game mockedGame = Mockito.mock(Game.class);
         GUI.ACTION action = GUI.ACTION.SELECT;
         LeaderboardController leaderboardController = new LeaderboardController(mockLeaderboard);
