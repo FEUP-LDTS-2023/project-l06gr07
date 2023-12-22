@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.jqwik-database" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/control/LeaderboardControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/control/LeaderboardControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/track_element/PositionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/track_element/PositionTest.java" afterDir="false" /
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,39 +70,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Gradle.ControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ControllerTest.testControllerStep.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GameControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GameOverControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.InputNameControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.InputNameControllerTest.insertPlayerAndSetGameOverState.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.LeaderboardControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.LeaderboardControllerTest.selectAction.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Load Gradle Dependencies.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.project-l06gr07 [:Game.main()].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;tests/control&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/daniel/Documents/FEUP_LEIC/1º semestre/LDTS/project/project-l06gr07&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Gradle.ControllerTest.executor": "Run",
+    "Gradle.ControllerTest.testControllerStep.executor": "Run",
+    "Gradle.GameControllerTest.executor": "Run",
+    "Gradle.GameOverControllerTest.executor": "Run",
+    "Gradle.GameOverViewerTest.executor": "Run",
+    "Gradle.GameViewerTest.executor": "Run",
+    "Gradle.InputNameViewerTest.executor": "Run",
+    "Gradle.LeaderboardViewerTest.executor": "Run",
+    "Gradle.Load Gradle Dependencies.executor": "Run",
+    "Gradle.MenuViewerTest.executor": "Coverage",
+    "Gradle.PositionTest.executor": "Run",
+    "Gradle.PowerUpViewerTest.executor": "Run",
+    "Gradle.SurferViewerTest.executor": "Run",
+    "Gradle.Tests in 'project-l06gr07.test'.executor": "Coverage",
+    "Gradle.Tests in 'viewer'.executor": "Run",
+    "Gradle.WagonViewerTest.executor": "Run",
+    "Gradle.project-l06gr07 [:Game.main()].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "testing/updates",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/daniel/Documents/FEUP_LEIC/1º semestre/LDTS/project/project-l06gr07",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -111,22 +118,8 @@
       <recent name="$PROJECT_DIR$/src/main/resources/sound/main_sounds" />
     </key>
   </component>
-
-  <component name="RunManager" selected="Gradle.LeaderboardControllerTest.selectAction">
-    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.crazytracks.Game" />
-      <module name="project-l06gr07.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.crazytracks.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InputNameControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.PositionTest">
+    <configuration name="GameOverViewerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -139,7 +132,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;control.InputNameControllerTest&quot;" />
+            <option value="&quot;viewer.GameOverViewerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -150,30 +143,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="InputNameControllerTest.insertPlayerAndSetGameOverState" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;control.InputNameControllerTest.insertPlayerAndSetGameOverState&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="LeaderboardControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="InputNameViewerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -186,7 +156,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;control.LeaderboardControllerTest&quot;" />
+            <option value="&quot;viewer.InputNameViewerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -197,7 +167,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LeaderboardControllerTest.selectAction" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LeaderboardViewerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -210,7 +180,55 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;control.LeaderboardControllerTest.selectAction&quot;" />
+            <option value="&quot;viewer.LeaderboardViewerTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="PositionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;model.track_element.PositionTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'viewer'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;viewer.*&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -223,11 +241,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LeaderboardControllerTest.selectAction" />
-        <item itemvalue="Gradle.LeaderboardControllerTest" />
-        <item itemvalue="Gradle.InputNameControllerTest" />
-        <item itemvalue="Gradle.InputNameControllerTest.insertPlayerAndSetGameOverState" />
-        <item itemvalue="Application.Game" />
+        <item itemvalue="Gradle.PositionTest" />
+        <item itemvalue="Gradle.Tests in 'viewer'" />
+        <item itemvalue="Gradle.GameOverViewerTest" />
+        <item itemvalue="Gradle.InputNameViewerTest" />
+        <item itemvalue="Gradle.LeaderboardViewerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -267,6 +285,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/project_l06gr07$ConstructorsTest_testSurferConstructor.ic" NAME="ConstructorsTest.testSurferConstructor Coverage Results" MODIFIED="1700932099195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/project_l06gr07$Tests_in__project_l06gr07_test_.ic" NAME="Tests in 'project-l06gr07.test' Coverage Results" MODIFIED="1700932667970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/project_l06gr07$MenuViewerTest.ic" NAME="MenuViewerTest Coverage Results" MODIFIED="1703261718298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/project_l06gr07$Tests_in__viewer_.ic" NAME="Tests in 'viewer' Coverage Results" MODIFIED="1703263199307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/project_l06gr07$Tests_in__project_l06gr07_test_.ic" NAME="Tests in 'project-l06gr07.test' Coverage Results" MODIFIED="1703261557805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
