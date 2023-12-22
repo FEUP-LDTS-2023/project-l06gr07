@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1908ff56-26b3-4093-9f70-8d663c1d9f14" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GameViewerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameViewerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/control/LeaderboardControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/control/LeaderboardControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +30,12 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="project-l06gr07" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -63,33 +68,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Gradle.ControllerTest.executor": "Run",
-    "Gradle.ControllerTest.testControllerStep.executor": "Run",
-    "Gradle.GameControllerTest.executor": "Run",
-    "Gradle.GameOverControllerTest.executor": "Run",
-    "Gradle.GameViewerTest.executor": "Run",
-    "Gradle.project-l06gr07 [:Game.main()].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "testing/updates",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/daniel/Documents/FEUP_LEIC/1º semestre/LDTS/project/project-l06gr07",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "vue.rearranger.settings.migration": "true"
+
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Gradle.ControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ControllerTest.testControllerStep.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GameControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GameOverControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.InputNameControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.InputNameControllerTest.insertPlayerAndSetGameOverState.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LeaderboardControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LeaderboardControllerTest.selectAction.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Load Gradle Dependencies.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.project-l06gr07 [:Game.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;tests/control&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/daniel/Documents/FEUP_LEIC/1º semestre/LDTS/project/project-l06gr07&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+
   }
 }]]></component>
   <component name="RecentsManager">
@@ -100,7 +111,8 @@
       <recent name="$PROJECT_DIR$/src/main/resources/sound/main_sounds" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GameViewerTest">
+
+  <component name="RunManager" selected="Gradle.LeaderboardControllerTest.selectAction">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.crazytracks.Game" />
       <module name="project-l06gr07.main" />
@@ -114,7 +126,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="InputNameControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -127,7 +139,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;control.ControllerTest&quot;" />
+            <option value="&quot;control.InputNameControllerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -138,8 +150,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
+    <configuration name="InputNameControllerTest.insertPlayerAndSetGameOverState" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
@@ -151,7 +162,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;control.GameControllerTest&quot;" />
+            <option value="&quot;control.InputNameControllerTest.insertPlayerAndSetGameOverState&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -162,7 +173,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameOverControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LeaderboardControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -175,7 +186,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;control.GameOverControllerTest&quot;" />
+            <option value="&quot;control.LeaderboardControllerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -186,7 +197,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameViewerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LeaderboardControllerTest.selectAction" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -199,7 +210,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;GameViewerTest&quot;" />
+            <option value="&quot;control.LeaderboardControllerTest.selectAction&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -212,11 +223,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.GameViewerTest" />
+        <item itemvalue="Gradle.LeaderboardControllerTest.selectAction" />
+        <item itemvalue="Gradle.LeaderboardControllerTest" />
+        <item itemvalue="Gradle.InputNameControllerTest" />
+        <item itemvalue="Gradle.InputNameControllerTest.insertPlayerAndSetGameOverState" />
         <item itemvalue="Application.Game" />
-        <item itemvalue="Gradle.GameOverControllerTest" />
-        <item itemvalue="Gradle.ControllerTest" />
-        <item itemvalue="Gradle.GameControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -243,6 +254,8 @@
       <workItem from="1701357310361" duration="2811000" />
       <workItem from="1703195577327" duration="1415000" />
       <workItem from="1703199875021" duration="1251000" />
+      <workItem from="1703242236957" duration="2345000" />
+      <workItem from="1703250058972" duration="1061000" />
     </task>
     <servers />
   </component>
