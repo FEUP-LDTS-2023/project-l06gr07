@@ -8,7 +8,7 @@
       <change afterPath="$PROJECT_DIR$/.jqwik-database" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/track_element/PositionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/track_element/PositionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/track_element/PositionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/track_element/PositionTest.java" afterDir="false" /
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +32,12 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="project-l06gr07" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -267,6 +272,8 @@
       <workItem from="1701357310361" duration="2811000" />
       <workItem from="1703195577327" duration="1415000" />
       <workItem from="1703199875021" duration="1251000" />
+      <workItem from="1703242236957" duration="2345000" />
+      <workItem from="1703250058972" duration="1061000" />
     </task>
     <servers />
   </component>
