@@ -6,38 +6,75 @@
 - This game is a java version of Subway Surfers in 2D, you must move your character left and right to avoid crashing into trains.
 - This project is being developed by _Abecassis Devesse_ (up202209729@fe.up.pt), _Daniel Basílio_ (up201806838@fe.up.pt) and _Rui Borges_ (up202207475@fe.up.pt) for LDTS 2023/2024
 
-![CrazyTracks Demo](images/CrazyTracks-Demo.gif)
+<p align="center">  
+  <img alt="CrazyTracks Demo" width="600" src="images/CrazyTracks-Demo.gif"/>
+</p>
 
 ### FEATURES
 
 - **Menu** - Responsive menu that allows for the user to choose between starting a game, checking the leaderboard and exiting, it also has a track animation to make it prettier.
-  ![Menu Demo](images/Menu-Demo.gif)
+- 
+<p align="center">  
+  <img alt="Menu Demo" width="600" src="images/Menu-Demo.gif"/>
+</p>
+
 - **Game over menu** - When you die a menu with an option to insert your name will be given to you so your playtime can be remembered on Leaderboard.
-  ![Game Over Menu](images/GameOverMenu.gif)
-- **Leaderboard** -  Page that keeps track of the players with the highest scores.
-  ![Leaderboard](images/Leaderboard.png)
+  
+  <p align="center">
+    <img alt="Game Over Menu" width="600" src="images/GameOverMenu.gif"/>
+  </p>
+  
+- **Leaderboard** - Page that keeps track of the players with the highest scores.
+
+  <p align="center">
+    <img alt="Leaderboard" width="600" src="images/Leaderboard.png"/>
+  </p>
+  
 - **Character animation** - The character of the game as an animation to simulate the running.
 
-  ![character_animation.gif](images/character_animation.gif)
+  <p align="left">
+    <img alt="character_animation.gif" src="images/character_animation.gif"/>
+  </p>
+  
 -  **Character movement** - The character can move left and right, inside of the limits of the track, not being able to move when is at the extremities of the track.
 
-  ![character_movement.gif](images/character_movement.gif)
--  **Coins** -  There are two types of coins, copper and gold, that the player can catch that will give him a score bonus.
+  <p align="left">
+    <img alt="character_movement.gif" src="images/character_movement.gif"/>
+  </p>
 
-   ![Copper Coin](images/CopperCoin.png)
-   ![Gold Coin](images/GoldCoin.png)
+- **Coins** -  There are two types of coins, copper and gold, that the player can catch that will give him a score bonus.
+
+  <p align="left">
+    <img alt="Copper Coin" src="images/CopperCoin.png"/>
+    <img alt="Gold Coin" src="images/GoldCoin.png"/>
+  </p>
+  
 - **Power ups** - The player can catch a power up that will.  for a certain period of time, increase his score multiplier.
-   
-   ![PowerUp](images/PowerUp.png)
--  **Track randomness** - The game uses a random wagon generator to make sure you will never get the same track (with the same wagon positions).
 
-   ![track_randomness](images/track_randomness.gif)
-- **Track movement** - All of the elements in the track will move downwards, inclusive the limits of the track to make the illusion of surfer movement better.
-  ![track_movement](images/track_movement.gif)
--  **Collision Detection** - The game checks for collisions with coins, power ups and wagons, with the last causing the game to end.
+  <p align="left">
+    <img alt="PowerUp" src="images/PowerUp.png"/>
+  </p>
+  
+- **Track randomness** - The game uses a random wagon generator to make sure you will never get the same track (with the same wagon positions).
 
-   ![collision_detection](images/collision_detection.gif)
+  <p align="left">
+    <img alt="track_randomness" src="images/track_movement.gif"/>
+  </p>
+  
+- **Track movement** - All the elements in the track will move downwards, inclusive the limits of the track to make the illusion of surfer movement better.
+
+  <p align="left">
+    <img alt="track_movement" src="images/track_randomness.gif"/>
+  </p>
+  
+- **Collision Detection** - The game checks for collisions with coins, power ups and wagons, with the last causing the game to end.
+
+  <p align="left">
+    <img alt="collision_detection" src="images/collision_detection.gif"/>
+  </p>
+  
 - **Graphics** - The graphics are based on Lanterna with a 1:1 pixel, character scale, making use of fonts to slightly improve the design of the game.
+
 - **Music and sound effects** - The game has background music, and plays specific sounds when it detects certain collisions depending on the type of objects that collide.
 
 ### DESIGN
