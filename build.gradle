@@ -16,6 +16,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     testImplementation 'org.mockito:mockito-core:3.7.7'
     implementation group: 'com.googlecode.lanterna', name: 'lanterna', version: '3.1.1'
+    implementation'org.bytedeco:ffmpeg-platform:5.1.2-1.5.8'
 }
 
 test {
