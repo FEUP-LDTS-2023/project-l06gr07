@@ -7,5 +7,4 @@ _Abecassis Devesse_ (up202209729@fe.up.pt), _Daniel Basílio_ (up201806838@fe.up
 
 - [Documentation](docs/)
 
-
 - [Code](src/)
