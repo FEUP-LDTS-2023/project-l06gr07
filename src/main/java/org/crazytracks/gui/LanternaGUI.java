@@ -30,7 +30,7 @@ import java.util.List;
 
 
 public class LanternaGUI implements GUI {
-    private final Screen screen;
+    private Screen screen;
     private final int terminalWidth;
     private final int terminalHeight;
     private final int numLanes = 3;
@@ -457,6 +457,14 @@ public class LanternaGUI implements GUI {
     @Override
     public SUI getSUI(){
         return sui;
+    }
+
+    public Screen getScreen() {
+        return screen;
+    }
+
+    public void setScreen(Screen screen) {
+        this.screen = screen;
     }
 }
 
