@@ -185,9 +185,6 @@ This represents the overall design of our game, with its respective MVC architec
 The game has multiple menu classes with different controllers. Each of these classes and controllers seems to have similar functionality, which could lead to code duplication.
 To address this we ended up creating Duplicate Code, code smell that occurs when similar code is found in more than one location, in this case the menus are individual when they should be inherited from a Menu interface or simply a Menu class. In the context of our game, the multiple menu classes with different controllers contain duplicate code. This duplication can make the code harder to maintain, as changes to the functionality might need to be made in multiple places. It can also increase the likelihood of bugs, as a bug fixed in one location might still exist in another location.
 
--**Data Clump**
-The game uses Position objects frequently throughout the codebase. These Position objects, which represent a point in the game's 2D space, are often used together and passed around together.  We ended up not separating the class generating a Data Clumps, a code smell that occurs when the same data hang around together, and they should be separated into their respective classes. this leads to increased complexity, increased maintenance and decreased modularity.
-
 -**Switch statements**
 The game needs to handle different types of game events, such as user input or collisions between game objects. These events need to be handled differently depending on their type. We used to much switch statements on the step method which is a common code smell in object oriented programming which leads to increased complexity, increased maintenance and decreased modularity.
 
