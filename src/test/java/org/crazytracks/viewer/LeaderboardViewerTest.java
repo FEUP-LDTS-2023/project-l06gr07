@@ -20,11 +20,6 @@ public class LeaderboardViewerTest {
     void setUp() {
         gui = Mockito.mock(GUI.class);
 
-        List<Player> playerList = new ArrayList<>();
-        playerList.add(new Player("Player1", 10000,25));
-        playerList.add(new Player("Player2", 5000,20));
-        playerList.add(new Player("Player3", 1000,15));
-
         Leaderboard leaderboard = Mockito.mock(Leaderboard.class);
         viewer = new LeaderboardViewer(leaderboard);
     }
