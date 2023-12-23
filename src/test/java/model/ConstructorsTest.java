@@ -51,6 +51,7 @@ public class ConstructorsTest {
     @Test
     public void GameStateConstructor() {
         Track track = new Track();
+        track.setSurfer(new Surfer(new Position(0, 0)));
         GameState gameState = new GameState(track);
         Assertions.assertEquals(track, gameState.getModel());
     }

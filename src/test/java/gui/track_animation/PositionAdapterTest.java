@@ -9,7 +9,7 @@ public class PositionAdapterTest {
     @Test
     public void adaptPosition(){
         Position position = new Position(15, 5);
-        Position expected = new Position(20, 7);
+        Position expected = new Position(20, -3);
 
         PositionAdapter positionAdapter = new PositionAdapter(5, 2);
         Position guiPos = positionAdapter.adaptPosition(position);

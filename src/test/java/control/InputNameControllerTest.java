@@ -98,5 +98,21 @@ public class InputNameControllerTest {
         // Assert
         Mockito.verify(mockedGame).setState(Mockito.any(MenuState.class));
     }
+
+    @Test
+    public void transitionToGameOverTest() throws IOException {
+        Game game = Mockito.mock(Game.class);
+        Leaderboard leaderboard = Mockito.mock(Leaderboard.class);
+        Surfer surfer = Mockito.mock(Surfer.class);
+        InputName inputName = Mockito.mock(InputName.class);
+        Mockito.when(game.getLeaderboard()).thenReturn(leaderboard);
+        Mockito.when(inputName.getSurfer()).thenReturn(surfer);
+        Mockito.when(surfer.getScore()).thenReturn(100);
+        Mockito.when(surfer.getSurferSpeed()).thenReturn(10);
+        Mockito.when(inputName.getInputText()).thenReturn("Test");
+        InputNameController inputNameController = new InputNameController(inputName);
+        inputNameController.step(game, GUI.ACTION.SELECT, 1000L);
+        Mockito.verify(game).setState(Mockito.any());
+    }
 }
 

@@ -1,55 +1,79 @@
 package model;
 
 import org.crazytracks.model.Menu;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+
+import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MenuTest {
     private Menu menu;
 
     @BeforeEach
-    public void setUp(){
-        this.menu = new Menu();
-
+    void setUp() {
+        menu = new Menu();
     }
 
     @Test
-    public void nextEntry(){
-        String expected1 = menu.getEntries().get(0);
-        String expected2 = menu.getEntries().get(1);
-        String expected3 = menu.getEntries().get(2);
-        String expected4 = menu.getEntries().get(0);
-
-        Assertions.assertEquals(menu.getCurrentEntry(), expected1);
-
-        menu.nextEntry();
-        Assertions.assertEquals(menu.getCurrentEntry(), expected2);
-
-        menu.nextEntry();
-        Assertions.assertEquals(menu.getCurrentEntry(), expected3);
-
-        menu.nextEntry();
-        Assertions.assertEquals(menu.getCurrentEntry(), expected4);
+    void testMenu() {
+        assertNotNull(menu);
     }
 
     @Test
-    public void previousEntry(){
-        String expected1 = menu.getEntries().get(0);
-        String expected2 = menu.getEntries().get(1);
-        String expected3 = menu.getEntries().get(2);
-        String expected4 = menu.getEntries().get(3);
+    void testGetEntries() {
+        assertEquals(Arrays.asList("Start", "Leaderboard", "Exit"), menu.getEntries());
+    }
 
-        Assertions.assertEquals(menu.getCurrentEntry(), expected1);
+    @Test
+    void testGetCurrentEntry() {
+        assertEquals("Start", menu.getCurrentEntry());
+    }
 
+    @Test
+    void testNextEntry() {
+        menu.nextEntry();
+        assertEquals("Leaderboard", menu.getCurrentEntry());
+    }
+
+    @Test
+    void testPreviousEntry() {
         menu.previousEntry();
-        Assertions.assertEquals(menu.getCurrentEntry(), expected2);
+        assertEquals("Exit", menu.getCurrentEntry());
+    }
 
-        menu.previousEntry();
-        Assertions.assertEquals(menu.getCurrentEntry(), expected3);
+    @Test
+    void testGetEntry() {
+        assertEquals("Start", menu.getEntry(0));
+        assertEquals("Leaderboard", menu.getEntry(1));
+        assertEquals("Exit", menu.getEntry(2));
+    }
 
-        menu.previousEntry();
-        Assertions.assertEquals(menu.getCurrentEntry(), expected4);
+    @Test
+    void testGetCurrentEntryIndex() {
+        assertEquals(0, menu.getCurrentEntryIndex());
+    }
+
+    @Test
+    void testIsSelected() {
+        assertTrue(menu.IsSelected(0));
+        assertFalse(menu.IsSelected(1));
+        assertFalse(menu.IsSelected(2));
+    }
+
+    @Test
+    void testIsSelectedStart() {
+        assertTrue(menu.isSelectedStart());
+    }
+
+    @Test
+    void testIsSelectedLeaderboard() {
+        assertFalse(menu.isSelectedLeaderboard());
+    }
+
+    @Test
+    void testIsSelectedExit() {
+        assertFalse(menu.isSelectedExit());
     }
 }
