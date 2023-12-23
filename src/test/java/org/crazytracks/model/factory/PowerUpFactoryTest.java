@@ -20,13 +20,11 @@ public class PowerUpFactoryTest {
     }
 
     @Test
-    void testCreateElement() {
+    void createElement() {
         List<Element> powerUps = powerUpFactory.createElement();
 
-        // Check that a power-up was created
         assertFalse(powerUps.isEmpty());
 
-        // Check that the created power-up is of the correct type
         Element powerUp = powerUps.get(0);
         assertTrue(powerUp instanceof PowerUp);
     }
