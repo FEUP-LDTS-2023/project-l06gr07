@@ -83,7 +83,7 @@
 
 ## DESIGN
 
-### Architecture
+### ARCHITECTURE
 
 <p align="center">              
 <img width=800 src="images/uml.png">          
@@ -99,7 +99,7 @@ This represents the overall design of our game, with its respective MVC architec
         
 ---
 
-### Design Patterns
+### DESIGN PATTERNS
 
 -**Problem in Context:** The game will change between the menu, the game itself, and the game over sub-menu.              
 -**The Pattern:** For this problem, we used the State Pattern because it allows encapsulation of the object state transitions, and still allows for different types of states to be added in the future respecting the Open Closed SOLID principle.              
