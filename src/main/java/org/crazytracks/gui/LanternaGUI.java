@@ -69,6 +69,33 @@ public class LanternaGUI implements GUI {
         }
     }
 
+    public LanternaGUI(Screen screen) throws IOException, URISyntaxException, FontFormatException {
+        this.leftMargin = 14;
+
+        this.terminalHeight = 40;
+        this.terminalWidth = 30;
+
+        this.animTrack = new TrackAnimation(this, leftMargin, trackColor, this.terminalHeight);
+
+        this.currChar = 'a';
+
+        this.screen = screen;
+
+        try {
+            this.sui = new MainSoundPlayer();
+        } catch (MediaException e) {
+            this.sui = new CompatibilitySoundPlayer();
+        }
+
+
+        try {
+            this.sui.playMusic();
+        } catch (Exception e) {
+            this.sui = new CompatibilitySoundPlayer();
+            this.sui.playMusic();
+        }
+    }
+
     public Terminal terminalCreation(int terminalWidth, int terminalHeight) throws IOException, FontFormatException, URISyntaxException {
 //        URL resource = getClass().getClassLoader().getResource("fonts/AnonymousPro-Regular.ttf");
 //        URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
@@ -204,14 +231,14 @@ public class LanternaGUI implements GUI {
         putCharacter(position, wagonCharacter);
     }
 
-    private void putCharacter(Position position, TextCharacter wagonCharacter) {
+    public void putCharacter(Position position, TextCharacter wagonCharacter) {
         if (position.getY() >= 0 && position.getY() < this.terminalHeight){
             if (position.getX() >= 0 && position.getX() < this.terminalWidth){
                 screen.setCharacter(position.getX(), position.getY(), wagonCharacter);
             }
         }
     }
-    private void drawScoreIncrease(Integer scoreIncrease, int lineNum){
+    public void drawScoreIncrease(Integer scoreIncrease, int lineNum){
         TextGraphics textGraphics = screen.newTextGraphics();
         int x = 2;
         int y = lineNum + 4;

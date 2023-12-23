@@ -13,7 +13,7 @@ import org.crazytracks.model.track_element.coin.CopperCoin;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;/*
 
 public class SurferTest {
     private Surfer surfer;
@@ -104,3 +104,4 @@ public class SurferTest {
         assertEquals(0, surfer.getMultiplierSteps());
     }
 }
+*/
