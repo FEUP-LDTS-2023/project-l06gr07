@@ -27,11 +27,7 @@ public class GameControllerTest {
         Mockito.doNothing().when(gameController).step(mockedGame, mockedAction, mockedTime);
 
         // Act
-        try {
-            gameController.step(mockedGame, mockedAction, mockedTime);
-        } catch (IOException e) {
-            Assertions.fail("IOException occurred during step execution: " + e.getMessage());
-        }
+        gameController.step(mockedGame, mockedAction, mockedTime);
 
         // Assert
         Mockito.verify(gameController).step(mockedGame, mockedAction, mockedTime);

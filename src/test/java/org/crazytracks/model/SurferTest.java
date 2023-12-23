@@ -1,5 +1,6 @@
 package org.crazytracks.model;
 
+import org.junit.jupiter.api.Assertions;
 import org.mockito.Mockito;
 
 import java.util.Timer;
