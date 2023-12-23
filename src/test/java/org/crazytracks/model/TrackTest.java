@@ -17,7 +17,6 @@ import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.List;
-/*
 public class TrackTest {
     private Track track;
     private CoinCollisionListener coinCollisionListener;
@@ -150,4 +149,4 @@ public class TrackTest {
         track.notifyPowerUpCollisionListeners();
         Mockito.verify(powerUpCollisionListener, Mockito.times(1)).onPowerUpCollision();
     }
-}*/
+}
