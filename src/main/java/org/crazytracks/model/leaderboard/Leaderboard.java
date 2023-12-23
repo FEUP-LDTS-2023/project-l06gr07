@@ -7,9 +7,14 @@ public class Leaderboard {
     private int currentEntry;
     private List<Player> listOfPlayers;
     private final LeaderboardLoader ll;
-    public Leaderboard(List<Player> listOfPlayers){
-        this.ll = new LeaderboardLoader("src/main/resources/leaderboard/leaderboard.txt");
-        this.listOfPlayers = ll.loadList();
+    public Leaderboard(List<Player> listOfPlayers, String filepath){
+        this.ll = new LeaderboardLoader(filepath);
+        this.listOfPlayers = new ArrayList<>(listOfPlayers != null ? listOfPlayers : Collections.emptyList());
+
+        List<Player> loadedPlayers = ll.loadList();
+        if (loadedPlayers != null) {
+            this.listOfPlayers.addAll(loadedPlayers);
+        }
 
         this.entries = Collections.singletonList("Back to Menu");
         this.currentEntry = 0;
@@ -20,7 +25,7 @@ public class Leaderboard {
         ll.save(this);
 
     }
-    public void save() {
+    private void save() {
         ll.save(this);
     }
     public void load(){

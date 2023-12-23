@@ -18,9 +18,17 @@ import static org.junit.jupiter.api.Assertions.*;/*
 public class SurferTest {
     private Surfer surfer;
 
+    // a useful helper function to avoid repeating code and save time
+    public Position posHelper(int x, int y){
+        Position position = Mockito.mock(Position.class);
+        Mockito.when(position.getX()).thenReturn(x);
+        Mockito.when(position.getY()).thenReturn(y);
+        return position;
+    }
+
     @BeforeEach
     public void setUp(){
-        this.surfer = new Surfer(Mockito.mock(Position.class));
+        this.surfer = new Surfer(posHelper(15, 30));
     }
 
     @Test
@@ -42,9 +50,8 @@ public class SurferTest {
 
     @Test
     void testCollectCoin() {
-        Coin coin = new CopperCoin(new Position(15, 30));
+        Coin coin = new CopperCoin(Mockito.mock(Position.class));
         surfer.collectCoin(coin);
-        // Assuming Surfer has a getCoins method
         assertEquals(50, surfer.getScore());
     }
 
@@ -56,7 +63,7 @@ public class SurferTest {
 
     @Test
     void testPosition() {
-        Position newPosition = new Position(20, 40);
+        Position newPosition = posHelper(20, 40);
         surfer.setPosition(newPosition);
         assertEquals(newPosition, surfer.getPosition());
     }
@@ -76,14 +83,19 @@ public class SurferTest {
 
     @Test
     void testGetLeftPosition() {
-        assertEquals(new Position(14, 30), surfer.getLeftPosition());
+        Position expectedPosition = posHelper(14, 30);
+        Position actualPosition = surfer.getLeftPosition();
+        assertEquals(expectedPosition.getX(), actualPosition.getX());
+        assertEquals(expectedPosition.getY(), actualPosition.getY());
     }
 
     @Test
     void testGetRightPosition() {
-        assertEquals(new Position(16, 30), surfer.getRightPosition());
+        Position expectedPosition = posHelper(16, 30);
+        Position actualPosition = surfer.getRightPosition();
+        assertEquals(expectedPosition.getX(), actualPosition.getX());
+        assertEquals(expectedPosition.getY(), actualPosition.getY());
     }
-
     @Test
     void testGetCurrentLane() {
         assertEquals(1, surfer.getCurrentLane());

@@ -21,13 +21,11 @@ public class CoinFactoryTest {
     }
 
     @Test
-    void testCreateElement() {
+    void createElement() {
         List<Element> coins = coinFactory.createElement();
 
-        // Check that a coin was created
         assertFalse(coins.isEmpty());
 
-        // Check that the created coin is either a CopperCoin or a GoldCoin
         Element coin = coins.get(0);
         assertTrue(coin instanceof CopperCoin || coin instanceof GoldCoin);
     }

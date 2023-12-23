@@ -15,7 +15,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 public class LeaderboardLoader {
     private String filepath;
     public LeaderboardLoader(String filepath){
-        this.filepath = filepath; // for future implementation of persistent data
+        this.filepath = filepath;
     }
 
     public void save(Leaderboard leaderboard){

@@ -20,7 +20,7 @@ public class Game {
     public Game() throws FontFormatException, IOException, URISyntaxException {
         this.gui = new LanternaGUI(30, 40);
         this.state = new MenuState(new Menu());
-        this.leaderboard = new Leaderboard(null);
+        this.leaderboard = new Leaderboard(null, "src/main/resources/leaderboard/leaderboard.txt");
         this.leaderboard.load();
     }
 
@@ -28,7 +28,7 @@ public class Game {
         try {
             new Game().start();
         } catch (Exception e) {
-            System.exit(1);
+            System.exit(-1);
         }
     }
 

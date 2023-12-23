@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LeaderboardViewerTest {
-    private Leaderboard leaderboard;
     private LeaderboardViewer viewer;
     private GUI gui;
 
@@ -26,7 +25,7 @@ public class LeaderboardViewerTest {
         playerList.add(new Player("Player2", 5000,20));
         playerList.add(new Player("Player3", 1000,15));
 
-        leaderboard = new Leaderboard(playerList);
+        Leaderboard leaderboard = Mockito.mock(Leaderboard.class);
         viewer = new LeaderboardViewer(leaderboard);
     }
 

@@ -20,7 +20,7 @@ public class WagonFactoryTest {
     }
 
     @Test
-    void testCreateElement() {
+    void createElement() {
         List<Element> wagons = wagonFactory.createElement();
 
         assertFalse(wagons.isEmpty());
