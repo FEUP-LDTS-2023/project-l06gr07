@@ -36,7 +36,6 @@ public class LeaderboardLoader {
     }
 
     public List<Player> loadList(){
-        System.out.println("loadingList");
         List<Player> newListPlayers = new ArrayList<>();
         try (BufferedReader reader = Files.newBufferedReader(Paths.get(filepath), UTF_8)){
             String line;

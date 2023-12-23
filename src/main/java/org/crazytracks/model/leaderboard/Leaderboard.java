@@ -19,14 +19,11 @@ public class Leaderboard {
         this.entries = Collections.singletonList("Back to Menu");
         this.currentEntry = 0;
     }
-    public void insertPlayer(Player playerToInsert){
+    public void insertPlayer(Player playerToInsert) {
         this.listOfPlayers.add(playerToInsert);
         this.listOfPlayers.sort(Comparator.comparingInt(Player::getSavedScore).reversed());
         ll.save(this);
 
-    }
-    private void save() {
-        ll.save(this);
     }
     public void load(){
         this.listOfPlayers = ll.loadList();
