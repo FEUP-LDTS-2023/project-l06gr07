@@ -124,4 +124,16 @@ public class Track {
             powerUpCollisionListener.onPowerUpCollision();
         }
     }
+
+    public List<CoinCollisionListener> getCoinCollisionListeners() {
+        return this.coinCollisionListeners;
+    }
+
+    public List<WagonCollisionListener> getWagonCollisionListeners() {
+        return this.wagonCollisionListeners;
+    }
+
+    public List<PowerUpCollisionListener> getPowerUpCollisionListeners() {
+        return this.powerUpCollisionListeners;
+    }
 }
