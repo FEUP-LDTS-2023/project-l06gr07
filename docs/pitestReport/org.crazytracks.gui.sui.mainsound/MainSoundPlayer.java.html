@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>MainSoundPlayer.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package org.crazytracks.gui.sui.mainsound;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.embed.swing.JFXPanel;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.scene.media.Media;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import javafx.scene.media.MediaPlayer;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.crazytracks.gui.sui.SUI;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.File;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class MainSoundPlayer implements SUI {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private MediaPlayer mediaPlayer;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public MainSoundPlayer() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        new JFXPanel();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void playMusic() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String filePath = &#34;src/main/resources/sound/mainsounds/music.mp3&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Media media = new Media(new File(filePath).toURI().toString());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        mediaPlayer = new MediaPlayer(media);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_22'/>
+22
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_22'>1</a>
+<span>
+1. playMusic : removed call to javafx/scene/media/MediaPlayer::setVolume &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        mediaPlayer.setVolume(0.5); // Set volume to 50%</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_23'/>
+23
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_23'>1</a>
+<span>
+1. playMusic : removed call to javafx/scene/media/MediaPlayer::setCycleCount &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE); // Loop indefinitely</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_24'/>
+24
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_24'>1</a>
+<span>
+1. playMusic : removed call to javafx/scene/media/MediaPlayer::play &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        mediaPlayer.play();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void stopMusic() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_28'/>
+28
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_28'>1</a>
+<span>
+1. stopMusic : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        if (mediaPlayer != null) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_29'/>
+29
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_29'>1</a>
+<span>
+1. stopMusic : removed call to javafx/scene/media/MediaPlayer::stop &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            mediaPlayer.stop();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@68f9e807_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@68f9e807_22'>22</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_22'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>playMusic<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/media/MediaPlayer::setVolume &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@68f9e807_23'>23</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_23'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>playMusic<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/media/MediaPlayer::setCycleCount &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@68f9e807_24'>24</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_24'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>playMusic<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/media/MediaPlayer::play &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@68f9e807_28'>28</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_28'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>stopMusic<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@68f9e807_29'>29</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@68f9e807_29'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>stopMusic<br/><b>Killed by : </b>none</span></span> removed call to javafx/scene/media/MediaPlayer::stop &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testSetCurrChar()] (7 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testRefreshScreen()] (8 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testGetSUI()] (8 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testGetScreen()] (8 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testSetScreen()] (9 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testGetCurrChar()] (9 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testGetNextAction()] (9 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testGetNextActionForEscape()] (9 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testDrawScoreIncrease()] (9 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testGetNextActionForArrowUp()] (9 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testClearScreen()] (11 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testGetNextActionForArrowLeft()] (9 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testPutMultiplierWithMultiplierOff()] (9 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testPutScore()] (11 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testCloseScreen()] (12 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testDrawWagon()] (8 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testPutMultiplier()] (11 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testDrawInputName()] (11 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testGetNextActionForNull()] (13 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testGetNextActionForEOF()] (14 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testDrawCopperCoin()] (11 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testGetNextActionForEnter()] (13 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testGetNextActionForArrowRight()] (14 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testGetNextActionForCharacter()] (15 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testPutCharacter()] (14 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testDrawInputNameWithInvalidInput()] (15 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testDrawSurfer()] (15 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testDrawSurferWithDifferentAnimModes()] (12 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testPutSurferSpeed()] (23 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testGetTerminalHeight()] (33 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testDrawTrack()] (30 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testDrawPowerUp()] (41 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testGetNextActionForBackspace()] (45 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testDrawMenu()] (39 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testInitMenuGUI()] (48 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testGetNextActionForArrowDown()] (63 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testDrawGameOver()] (49 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testDrawLeaderboard()] (76 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testInitGameGUI()] (91 ms)</li><li>org.crazytracks.gui.LanternaGUITests.[engine:junit-jupiter]/[class:org.crazytracks.gui.LanternaGUITests]/[method:testDrawGoldCoin()] (127 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.15.0
+
+</body>
+</html>

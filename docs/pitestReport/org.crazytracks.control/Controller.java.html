@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Controller.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package org.crazytracks.control;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.crazytracks.Game;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.crazytracks.gui.GUI;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.IOException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public abstract class Controller&#60;T&#62; {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private final T model;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public Controller(T model) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.model = model;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public T getModel() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_14'/>
+14
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_14'>1</a>
+<span>
+1. getModel : replaced return value with null for org/crazytracks/control/Controller::getModel &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return model;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public abstract void step(Game game, GUI.ACTION action, long time) throws IOException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@18692e80_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@18692e80_14'>14</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@18692e80_14'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getModel<br/><b>Killed by : </b>org.crazytracks.control.GameOverControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.GameOverControllerTest]/[method:testStepDownAction()]</span></span> replaced return value with null for org/crazytracks/control/Controller::getModel &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>org.crazytracks.control.GameOverControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.GameOverControllerTest]/[method:testStepDownAction()] (1 ms)</li><li>org.crazytracks.control.LeaderboardControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.LeaderboardControllerTest]/[method:downAction()] (2 ms)</li><li>org.crazytracks.control.GameOverControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.GameOverControllerTest]/[method:testStepUpAction()] (2 ms)</li><li>org.crazytracks.control.MenuControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.MenuControllerTest]/[method:testStepUpAction()] (2 ms)</li><li>org.crazytracks.control.MenuControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.MenuControllerTest]/[method:testStepDownAction()] (3 ms)</li><li>org.crazytracks.control.LeaderboardControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.LeaderboardControllerTest]/[method:upAction()] (2 ms)</li><li>org.crazytracks.control.InputNameControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.InputNameControllerTest]/[method:eraseLastCharacterFromInputText()] (2 ms)</li><li>org.crazytracks.model.TrackLoaderTest.[engine:junit-jupiter]/[class:org.crazytracks.model.TrackLoaderTest]/[method:testCreateTrack()] (1 ms)</li><li>org.crazytracks.control.LeaderboardControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.LeaderboardControllerTest]/[method:selectAction()] (2 ms)</li><li>org.crazytracks.control.InputNameControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.InputNameControllerTest]/[method:sendInvalidInputWarning()] (4 ms)</li><li>org.crazytracks.control.GameOverControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.GameOverControllerTest]/[method:testStepSelectAction2()] (2 ms)</li><li>org.crazytracks.control.InputNameControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.InputNameControllerTest]/[method:insertPlayerAndSetGameOverState()] (3 ms)</li><li>org.crazytracks.control.MenuControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.MenuControllerTest]/[method:testStepSelectAction2()] (4 ms)</li><li>org.crazytracks.model.ConstructorsTest.[engine:junit-jupiter]/[class:org.crazytracks.model.ConstructorsTest]/[method:GameStateConstructor()] (1 ms)</li><li>org.crazytracks.control.TrackElementControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.TrackElementControllerTest]/[method:testPowerUpCollision()] (7 ms)</li><li>org.crazytracks.control.SurferControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.SurferControllerTest]/[method:testStepRightAction()] (7 ms)</li><li>org.crazytracks.control.SurferControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.SurferControllerTest]/[method:testStepLeftAction()] (11 ms)</li><li>org.crazytracks.model.TrackTest.[engine:junit-jupiter]/[class:org.crazytracks.model.TrackTest]/[method:getPowerUps()] (26 ms)</li><li>org.crazytracks.control.GameOverControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.GameOverControllerTest]/[method:testStepSelectAction()] (26 ms)</li><li>org.crazytracks.control.InputNameControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.InputNameControllerTest]/[method:transitionToGameOverTest()] (33 ms)</li><li>org.crazytracks.control.InputNameControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.InputNameControllerTest]/[method:appendCharacterToInputText()] (41 ms)</li><li>org.crazytracks.control.MenuControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.MenuControllerTest]/[method:testStepSelectAction()] (36 ms)</li><li>org.crazytracks.control.SurferControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.SurferControllerTest]/[method:testCollisionWithPowerUp()] (67 ms)</li><li>org.crazytracks.control.SurferControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.SurferControllerTest]/[method:testCollisionWithCoin()] (87 ms)</li><li>org.crazytracks.control.GameControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.GameControllerTest]/[method:surferDeadTest()] (208 ms)</li><li>org.crazytracks.control.SurferControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.SurferControllerTest]/[method:testCollisionWithWagon()] (384 ms)</li><li>org.crazytracks.control.GameControllerTest.[engine:junit-jupiter]/[class:org.crazytracks.control.GameControllerTest]/[method:step()] (616 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.15.0
+
+</body>
+</html>
