@@ -2,6 +2,7 @@ package org.crazytracks.viewer;
 import org.crazytracks.gui.GUI;
 import org.crazytracks.model.Element;
 import org.crazytracks.model.Track;
+import org.crazytracks.viewer.coin.CoinViewer;
 
 import java.util.List;
 

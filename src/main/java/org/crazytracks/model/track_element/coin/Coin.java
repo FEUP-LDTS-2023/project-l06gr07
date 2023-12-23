@@ -1,6 +1,6 @@
 package org.crazytracks.model.track_element.coin;
 
-import org.crazytracks.model.track_element.DrawStrategy;
+import org.crazytracks.viewer.coin.DrawStrategy;
 import org.crazytracks.model.track_element.Position;
 import org.crazytracks.model.track_element.TrackElement;
 

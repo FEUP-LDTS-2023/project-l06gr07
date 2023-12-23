@@ -1,7 +1,7 @@
 package org.crazytracks.model;
 
 import org.crazytracks.model.track_element.Position;
-import org.crazytracks.model.track_element.DrawStrategy;
+import org.crazytracks.viewer.coin.DrawStrategy;
 import org.crazytracks.viewer.SurferViewer;
 
 public class Element{
