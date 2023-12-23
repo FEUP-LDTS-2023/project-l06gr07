@@ -2,11 +2,11 @@ package org.crazytracks.model;
 
 public abstract class TrackBuilder {
     public Track createTrack() {
-        Track arena = new Track();
+        Track track = new Track();
 
-        arena.setSurfer(createSurfer());
+        track.setSurfer(createSurfer());
 
-        return arena;
+        return track;
     }
     protected abstract Surfer createSurfer();
 }
