@@ -222,3 +222,6 @@ To address this we ended up creating Duplicate Code, code smell that occurs when
 
 ### SELF EVALUATION
 
+-**Abecassis Devesse** - 20%<br>
+-**Daniel Basílio** - 40%<br>
+-**Rui Borges** - 40%
