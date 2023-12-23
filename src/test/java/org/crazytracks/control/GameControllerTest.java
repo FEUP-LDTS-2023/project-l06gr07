@@ -19,18 +19,19 @@ public class GameControllerTest {
 
     @Test
     public void step() throws IOException {
-        // Arrange
-        GameController gameController = mock(GameController.class);
-        Game mockedGame = mock(Game.class);
+        GameController gameController = new GameController(new Track()) {
+            @Override
+            public void step(Game game, GUI.ACTION action, long time) throws IOException {
+                // not implemented
+            }
+        };
+        Game mockedGame = Mockito.mock(Game.class);
         GUI.ACTION mockedAction = GUI.ACTION.NONE;
         long mockedTime = 100L;
-        Mockito.doNothing().when(gameController).step(mockedGame, mockedAction, mockedTime);
 
-        // Act
         gameController.step(mockedGame, mockedAction, mockedTime);
 
-        // Assert
-        Mockito.verify(gameController).step(mockedGame, mockedAction, mockedTime);
+        Assertions.assertNotNull(gameController.getModel());
     }
 
     @Test
