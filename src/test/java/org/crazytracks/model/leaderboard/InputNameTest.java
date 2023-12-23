@@ -13,14 +13,14 @@ public class InputNameTest {
     private InputName inputName;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         surfer = Mockito.mock(Surfer.class);
         gui = Mockito.mock(GUI.class);
         inputName = new InputName(surfer, gui);
     }
 
     @Test
-    void setInputText() {
+    public void setInputText() {
         String newInput = "ThisIsALongInputThatExceedsTheLimit";
         inputName.setInputText(newInput);
         Assertions.assertNotEquals(newInput, inputName.getInputText());
@@ -32,7 +32,7 @@ public class InputNameTest {
     }
 
     @Test
-    void isInputInvalid() {
+    public void isInputInvalid() {
         Assertions.assertFalse(inputName.isInputInvalid()); // Initially, input should not be considered invalid
 
         inputName.setInputInvalid(true);
@@ -43,12 +43,12 @@ public class InputNameTest {
     }
 
     @Test
-    void getSurfer() {
+    public void getSurfer() {
         Assertions.assertEquals(surfer, inputName.getSurfer());
     }
 
     @Test
-    void getGUI() {
+    public void getGUI() {
         Assertions.assertEquals(gui, inputName.getGUI());
     }
 }
