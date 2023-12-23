@@ -202,7 +202,7 @@ To address this we ended up creating Duplicate Code, code smell that occurs when
 ## TESTING
 **Note:** Please note that due to some problems with audio and different distros and operative system incompatibilities we use a system that uses the library that suits your computer, with that that is reflected on the sound classes coverages, because it will run the ones that are suited to your computer.
 
---**TEST COVERAGE**
+-**TEST COVERAGE**
 <p align="center">              
 <img width="500" src="images/coverageReport.png">              
 </p>      
@@ -211,7 +211,7 @@ To address this we ended up creating Duplicate Code, code smell that occurs when
 
 ---
 
---**PITEST REPORT**
+-**PITEST REPORT**
 <p align="center">              
 <img width="500" src="images/pitestReport.png">              
 </p>      
