@@ -18,6 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SurferTest {
     private Surfer surfer;
 
+    // a useful helper function to not have to repeat code and save time
     public Position posHelper(int x, int y){
         Position position = Mockito.mock(Position.class);
         Mockito.when(position.getX()).thenReturn(x);
