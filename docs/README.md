@@ -218,9 +218,8 @@ To address this we ended up creating Duplicate Code, code smell that occurs when
 
 - [PITEST report](docs/pitestReport)
 
----
 
-### SELF EVALUATION
+## SELF EVALUATION
 
 -**Abecassis Devesse** - 20%<br>
 -**Daniel Basílio** - 40%<br>
