@@ -12,14 +12,14 @@ public class CompatibilitySoundPlayer implements SUI {
     @Override
     public void playMusic() {
         try {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/main/resources/sound/music.wav").getAbsoluteFile());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("src/main/resources/sound/compatsounds/music.wav").getAbsoluteFile());
             backgroundMusic = AudioSystem.getClip();
             backgroundMusic.open(audioInputStream);
             FloatControl volume = (FloatControl) backgroundMusic.getControl(FloatControl.Type.MASTER_GAIN);
             volume.setValue(-20.0f);
             backgroundMusic.loop(Clip.LOOP_CONTINUOUSLY);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            e.printStackTrace();
+            throw new RuntimeException();
         }
     }
 

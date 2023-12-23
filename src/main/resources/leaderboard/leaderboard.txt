@@ -6,21 +6,20 @@ MVC_ROCKS!	8505	25
 daniel	7476	25
 ta feito	4978	23
 rui	3602	19
-	3602	19
 rui	3119	19
-	3119	19
+surfer123	2234	15
 daniel	1850	13
 daniel	1850	13
+surfer123	1747	14
 moving surfer	1439	14
 moving surfer	1439	14
 jane doe	954	12
-	954	12
 naooooo bugouuu	449	12
 john doe	238	8
-	238	8
 errorprone	146	13
 daniel123	120	10
-2	104	10
 fjdklsajflkdsaj	103	9
+daniel	103	8
 daniel	69	7
 daniel b	67	7
+surfer123	53	13
