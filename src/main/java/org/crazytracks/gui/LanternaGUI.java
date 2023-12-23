@@ -11,7 +11,10 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import javafx.scene.media.MediaException;
 import org.crazytracks.gui.sui.SUI;
+import org.crazytracks.gui.sui.mainsound.CompatibilitySoundPlayer;
+import org.crazytracks.gui.sui.mainsound.MainSoundPlayer;
 import org.crazytracks.gui.track_animation.PositionAdapter;
 import org.crazytracks.gui.track_animation.TrackAnimation;
 import org.crazytracks.model.track_element.Position;
@@ -27,16 +30,15 @@ import java.util.List;
 
 
 public class LanternaGUI implements GUI {
-    private final Screen screen;
+    private Screen screen;
     private final int terminalWidth;
     private final int terminalHeight;
     private final int numLanes = 3;
     private final int leftMargin;
     private final TextColor trackColor = new TextColor.RGB(188,187,156);
-    PositionAdapter positionAdapter;
     private TrackAnimation animTrack;
-
     private char currChar;
+    SUI sui;
 
     public LanternaGUI(int terminalWidth, int terminalHeight) throws IOException, URISyntaxException, FontFormatException {
         this.leftMargin = 14;
@@ -49,10 +51,22 @@ public class LanternaGUI implements GUI {
 
         this.currChar = 'a';
 
+        try {
+            this.sui = new MainSoundPlayer();
+        } catch (MediaException e) {
+            this.sui = new CompatibilitySoundPlayer();
+        }
+
         this.screen = new TerminalScreen(terminal);
         screen.setCursorPosition(null);
         this.screen.startScreen();
-        this.getSUI().playMusic();
+
+        try {
+            this.sui.playMusic();
+        } catch (Exception e) {
+            this.sui = new CompatibilitySoundPlayer();
+            this.sui.playMusic();
+        }
     }
 
     public Terminal terminalCreation(int terminalWidth, int terminalHeight) throws IOException, FontFormatException, URISyntaxException {
@@ -443,6 +457,14 @@ public class LanternaGUI implements GUI {
     @Override
     public SUI getSUI(){
         return sui;
+    }
+
+    public Screen getScreen() {
+        return screen;
+    }
+
+    public void setScreen(Screen screen) {
+        this.screen = screen;
     }
 }
 

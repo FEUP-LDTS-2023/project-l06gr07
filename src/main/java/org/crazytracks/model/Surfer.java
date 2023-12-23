@@ -15,6 +15,7 @@ public class Surfer extends Element {
     private final int maxSurferSpeed = 25;
     private int score = 0;
     private final List<Integer> scoreDisplayList;
+    private Timer scoreDisplayTimer;
     private int score_multiplier = 1;
     private boolean multiplierOn;
     private int currentLane = 1;
@@ -25,7 +26,11 @@ public class Surfer extends Element {
         super(position);
         this.multiplierOn = false;
         this.scoreDisplayList = new ArrayList<>();
+        this.scoreDisplayTimer = new Timer();
         this.surferSpeed = 5;
+    }
+    public void setScoreDisplayTimer(Timer timer){
+        this.scoreDisplayTimer = timer;
     }
     public void setCurrentLane(int currentLane) {
         this.currentLane = currentLane;
@@ -52,8 +57,7 @@ public class Surfer extends Element {
         this.score += scoreInc;
         if (scoreInc > 8){
             scoreDisplayList.add(scoreInc);
-            Timer timer = new Timer();
-            timer.schedule(new TimerTask() {
+            this.scoreDisplayTimer.schedule(new TimerTask() {
                 @Override
                 public void run() {
                     scoreDisplayList.remove(0);

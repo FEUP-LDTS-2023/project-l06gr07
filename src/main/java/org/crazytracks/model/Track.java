@@ -13,9 +13,9 @@ import java.util.List;
 public class Track {
     private Surfer surfer;
     private List<TrackElement> trackElements = new ArrayList<>();
-    private List<CoinCollisionListener> coinCollisionListeners = new ArrayList<>();
-    private List<WagonCollisionListener> wagonCollisionListeners = new ArrayList<>();
-    private List<PowerUpCollisionListener> powerUpCollisionListeners = new ArrayList<>();
+    private final List<CoinCollisionListener> coinCollisionListeners = new ArrayList<>();
+    private final List<WagonCollisionListener> wagonCollisionListeners = new ArrayList<>();
+    private final List<PowerUpCollisionListener> powerUpCollisionListeners = new ArrayList<>();
     private final Animation anim;
     public Track(){
         this.anim = new Animation(4);
