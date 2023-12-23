@@ -152,7 +152,8 @@ This represents the overall design of our game, with its respective MVC architec
   -**Increased Complexity:** Managing multiple strategies and their interactions might add complexity, especially if strategies are interdependent or have complex logic.              
   -**Overhead:** There might be a slight performance overhead due to managing the list of strategies and choosing the appropriate one, but this overhead is typically negligible in most scenarios.
 
---- -**Problem in Context:** The game needs to play different sound effects based on various events that occur during gameplay, such as when the player collects a power-up, collides with an obstacle, or achieves a new high score.                
+--- 
+-**Problem in Context:** The game needs to play different sound effects based on various events that occur during gameplay, such as when the player collects a power-up, collides with an obstacle, or achieves a new high score.                
 -**The Pattern:** The Observer Pattern is used to allow the SoundEffects class to subscribe to these events and play the appropriate sound effect when these events occur. This pattern allows us to decouple the sound effects from the rest of the game logic, so that the sound effects can be managed independently while still being able to react to relevant events.                
 -**Implementation:** In our game, the SoundEffects class is an observer that listens for specific events. When an event such as a power-up being collected occurs, the Observable class (which could be the Game class or any other class that manages game events) calls the update method of the SoundEffects class. The update method receives relevant information about the event, such as the type of power-up collected. Based on this information, the SoundEffects class plays the appropriate sound effect. This implementation allows the SoundEffects class to react to game events independently, without needing to be tightly coupled with the rest of the game logic.
 <p align="center">                
@@ -170,9 +171,9 @@ This represents the overall design of our game, with its respective MVC architec
   -**Debugging Difficulty:** Debugging can be more challenging, as it can be harder to follow the flow of control in an event-driven system compared to a procedural one.
      
   ---   
-  -**Problem in Context:** The game needs to provide a graphical user interface (GUI) for the players. The GUI should be easy to use and should abstract away the complexities of the underlying system.                
-  -**The Pattern:** The Facade Pattern is used to provide a simplified interface to a complex subsystem. In the context of your game, the LanternaGUI acts as a facade to the complex system of handling user input and rendering graphics on the screen.                
-  -**Implementation:** In our game, the LanternaGUI class provides a simplified interface for drawing on the screen and handling user input. It hides the complexities of the underlying Lanterna library and provides methods that are easy to use from the rest of your game code. The LanternaGUI class encapsulates the details of initializing the screen, handling keyboard input, and drawing characters and strings at specific positions.
+-**Problem in Context:** The game needs to provide a graphical user interface (GUI) for the players. The GUI should be easy to use and should abstract away the complexities of the underlying system.                
+-**The Pattern:** The Facade Pattern is used to provide a simplified interface to a complex subsystem. In the context of your game, the LanternaGUI acts as a facade to the complex system of handling user input and rendering graphics on the screen.                
+-**Implementation:** In our game, the LanternaGUI class provides a simplified interface for drawing on the screen and handling user input. It hides the complexities of the underlying Lanterna library and provides methods that are easy to use from the rest of your game code. The LanternaGUI class encapsulates the details of initializing the screen, handling keyboard input, and drawing characters and strings at specific positions.
 <p align="center">                
   <img width=500 src="images/FacadePattern.png">                
 </p>                
