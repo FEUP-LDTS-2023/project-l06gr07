@@ -1,4 +1,4 @@
-package org.crazytracks.model.track_element;
+package org.crazytracks.viewer.coin;
 
 import org.crazytracks.gui.GUI;
 import org.crazytracks.model.Element;
