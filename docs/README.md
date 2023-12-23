@@ -67,7 +67,7 @@
   <img alt="track_randomness" src="images/track_movement.gif"/>            
 </p>            
 
--  **Track movement** - All the elements in the track will move downwards, inclusive the limits of the track to make the illusion of surfer movement better.
+-  **Track movement** - All the elements in the track will move downwards, on the other hand, the borders of the track alternate between for states to create the illusion of movement.
 
 <p align="left">            
   <img alt="track_movement" src="images/track_randomness.gif"/>            
@@ -80,6 +80,10 @@
 </p>            
 
 - **Difficulty progression** - As you move further in the game, the game gets faster making it harder for the player to stay alive.
+
+<p align="left">            
+  <img alt="speed_progression" src="images/progression.gif"/>            
+</p>     
 - **Graphics** - The graphics are based on Lanterna with a 1:1 pixel, character scale, making use of fonts to slightly improve the design of the game.
 
 - **Music and sound effects** - The game has background music, and plays specific sounds when it detects certain collisions depending on the type of objects that collide.
